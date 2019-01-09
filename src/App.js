@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/layout/Header";
 
 import Entries from "./components/Entries";
+import Calories from "./components/Calories";
+
 class App extends Component {
   render() {
     return (
@@ -10,6 +12,7 @@ class App extends Component {
         <Header />
 
         <div className="container">
+          <Calories />
           <Entries />
         </div>
       </div>
