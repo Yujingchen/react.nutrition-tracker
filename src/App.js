@@ -4,18 +4,21 @@ import Header from "./components/layout/Header";
 
 import Entries from "./components/Entries";
 import Calories from "./components/Calories";
+import { Provider } from "./Context";
 
 class App extends Component {
   render() {
     return (
-      <div className="APP">
-        <Header />
+      <Provider>
+        <div className="APP">
+          <Header />
 
-        <div className="container">
-          <Calories />
-          <Entries />
+          <div className="container">
+            <Calories />
+            <Entries />
+          </div>
         </div>
-      </div>
+      </Provider>
     );
   }
 }
