@@ -36,7 +36,6 @@ class Entry extends Component {
             <div>
               <div className="card card-body mb-3" key={id}>
                 <h4>
-                  {" "}
                   {name}
                   <i
                     onClick={this.showEntry}

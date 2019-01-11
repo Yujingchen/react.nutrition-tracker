@@ -5,6 +5,7 @@ import Header from "./components/layout/Header";
 import Entries from "./components/Entries";
 import Calories from "./components/Calories";
 import { Provider } from "./Context";
+import AddEntry from "./components/AddEntry";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <Header />
 
           <div className="container">
+            <AddEntry />
             <Calories />
             <Entries />
           </div>

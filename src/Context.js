@@ -8,6 +8,11 @@ const reducer = (state, action) => {
         ...state,
         entries: state.entries.filter(entry => entry.id !== action.payload)
       };
+    case "ADD_ENTRY":
+      return {
+        ...state,
+        entries: [action.payload, ...state.entries]
+      };
     default:
       return state;
   }
