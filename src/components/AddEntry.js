@@ -8,7 +8,7 @@ class AddEntry extends Component {
     id: uuid(),
     name: "",
     perFat: "",
-    percarb: "",
+    perCarbs: "",
     perProtein: "",
     size: "",
     servings: "",
@@ -38,7 +38,7 @@ class AddEntry extends Component {
       size,
       servings,
       perFat,
-      percarb,
+      perCarbs,
       perProtein,
       id,
       calories
@@ -60,35 +60,34 @@ class AddEntry extends Component {
     //     this.setState({ errors: { perFat: "Fat is required" } });
     //     return;
     //   }
-    //   if (percarb == "") {
-    //     this.setState({ errors: { percarb: "carb is required" } });
+    //   if (perCarbs == "") {
+    //     this.setState({ errors: { perCarbs: "carb is required" } });
     //     return;
     //   }
     //   if (perProtein == "") {
     //     this.setState({ errors: { perProtein: "Protein is required" } });
     //     return;
     //   }
-    let fat = perFat * servings;
-    let carb = percarb * servings;
-    let protein = perProtein * servings;
+    const fat = perFat * servings;
+    const carb = perCarbs * servings;
+    const protein = perProtein * servings;
 
     const newEntry = {
       id,
+      fat: fat,
       name,
+      carb: carb,
+      protein: protein,
       servings,
-      fat: { fat },
-      carb: { carb },
-      protein: { protein },
       calories
     };
-
     dispatch({ type: "ADD_ENTRY", payload: newEntry });
 
     this.setState({
       id: "",
       name: "",
       perFat: "",
-      percarb: "",
+      perCarbs: "",
       perProtein: "",
       size: "",
       servings: "",
@@ -99,14 +98,14 @@ class AddEntry extends Component {
     });
     //clear state
 
-    console.log(fat);
+    console.log(newEntry);
   };
 
   render() {
     const {
       name,
       perFat,
-      percarb,
+      perCarbs,
       perProtein,
       size,
       servings,
@@ -217,9 +216,9 @@ class AddEntry extends Component {
                         </div>
                         <input
                           type="text"
-                          name="percarb"
+                          name="perCarbs"
                           className="form-control"
-                          value={percarb}
+                          value={perCarbs}
                           onChange={this.onChange}
                         />
                       </div>
