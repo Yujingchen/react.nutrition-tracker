@@ -15,7 +15,7 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <a className="nav-link" href="#/entry/add">
                 <i className="fas fa-plus" />
                 ADD
               </a>
