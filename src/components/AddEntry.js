@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../Context";
 import classnames from "classnames";
 import uuid from "uuid";
+import "../App.css";
 
 class AddEntry extends Component {
   state = {
@@ -15,20 +16,6 @@ class AddEntry extends Component {
     calories: "200",
     errors: {}
   };
-
-  // calculate = (fatPerservings, carbPerservings, proteinPerservings, servings) => {
-  // const fat = this.state.servings.fatPerservings * this.state.servings.servings;
-  // const carb =
-  //   this.state.servings.carbPerservings * this.state.servings.servings;
-  // const protein =
-  //   this.state.servings.proteinPerservings * this.state.servings.servings;
-  //   this.setState({
-  //     fat: { fat },
-  //     carb: { carb },
-  //     protein: { protein }
-  //   });
-  //   console.log(this.state);
-  // };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
   onSubmit = (dispatch, e) => {
@@ -56,18 +43,7 @@ class AddEntry extends Component {
       this.setState({ errors: { servings: "servings is required" } });
       return;
     }
-    //   if (perFat == "") {
-    //     this.setState({ errors: { perFat: "Fat is required" } });
-    //     return;
-    //   }
-    //   if (perCarbs == "") {
-    //     this.setState({ errors: { perCarbs: "carb is required" } });
-    //     return;
-    //   }
-    //   if (perProtein == "") {
-    //     this.setState({ errors: { perProtein: "Protein is required" } });
-    //     return;
-    //   }
+
     const fat = perFat * servings;
     const carb = perCarbs * servings;
     const protein = perProtein * servings;
@@ -81,6 +57,7 @@ class AddEntry extends Component {
       servings,
       calories
     };
+
     dispatch({ type: "ADD_ENTRY", payload: newEntry });
 
     this.setState({
@@ -96,9 +73,7 @@ class AddEntry extends Component {
       protein: "",
       errors: {}
     });
-    //clear state
-
-    console.log(newEntry);
+    this.props.history.push("/");
   };
 
   render() {
@@ -111,6 +86,7 @@ class AddEntry extends Component {
       servings,
       errors
     } = this.state;
+
     return (
       <Consumer>
         {value => {
@@ -119,7 +95,6 @@ class AddEntry extends Component {
             <div>
               <div className="card mb-3">
                 <div className="card-header">Add Entry</div>
-
                 <div className="card-body">
                   <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                     <div className="form group">
@@ -144,8 +119,8 @@ class AddEntry extends Component {
 
                       <div className="input-group mb-3">
                         <div className="input-group-prepend">
-                          <span className="input-group-text">
-                            servings Size:
+                          <span className="input-group-text" id="prepend">
+                            Servings Size:
                           </span>
                         </div>
 
@@ -171,7 +146,9 @@ class AddEntry extends Component {
 
                       <div className="input-group mb-3">
                         <div className="input-group-prepend">
-                          <span className="input-group-text">servings:</span>
+                          <span className="input-group-text" id="prepend">
+                            Servings Quantity:
+                          </span>
                         </div>
 
                         <input
@@ -179,7 +156,7 @@ class AddEntry extends Component {
                           name="servings"
                           value={servings}
                           onChange={this.onChange}
-                          placeholder="1,2,3,4,..."
+                          placeholder="How many servings? 1,2,3,4,5..."
                           className={classnames(
                             "form-control form-control-lg",
                             {
@@ -195,11 +172,13 @@ class AddEntry extends Component {
                       </div>
 
                       <label htmlFor="gramsPerservings">
-                        Grams per servings
+                        Grams Per Servings
                       </label>
                       <div className="input-group mb-3">
                         <div className="input-group-prepend">
-                          <span className="input-group-text">Fat:</span>
+                          <span className="input-group-text" id="prepend">
+                            Fat:
+                          </span>
                         </div>
                         <input
                           type="text"
@@ -212,7 +191,9 @@ class AddEntry extends Component {
 
                       <div className="input-group mb-3">
                         <div className="input-group-prepend">
-                          <span className="input-group-text">Carb:</span>
+                          <span className="input-group-text" id="prepend">
+                            Carb:
+                          </span>
                         </div>
                         <input
                           type="text"
@@ -225,7 +206,9 @@ class AddEntry extends Component {
 
                       <div className="input-group mb-3">
                         <div className="input-group-prepend">
-                          <span className="input-group-text">Protein:</span>
+                          <span className="input-group-text" id="prepend">
+                            Protein:
+                          </span>
                         </div>
                         <input
                           type="text"

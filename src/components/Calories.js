@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 class Calories extends Component {
   state = {
     fat: "34.4",
@@ -8,6 +7,17 @@ class Calories extends Component {
   };
   render() {
     const { fat, carb, protein } = this.state;
+
+    // const calculateTotalFat = entries.reduce((totalFat,entry) =>
+    //   totalFat + entry.fat
+    // )
+
+    // const calculateTotalCarbs = entries.reduce((totalCarbs,entry) =>
+    //   totalCarbs += entry.carb
+    // )
+    // const calculateTotalProtein = entries.reduce((totalProtein,entry) =>
+    //   totalProtein += entry.protein
+    // )
     return (
       <div>
         <div className="card card-body mb-3">
