@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/layout/Header";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Entries from "./components/Entries";
-import Calories from "./components/Calories";
 import { Provider } from "./Context";
 import AddEntry from "./components/AddEntry";
 import NotFound from "./components/NotFound";

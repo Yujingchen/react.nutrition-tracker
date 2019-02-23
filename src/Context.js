@@ -24,22 +24,23 @@ export class Provider extends Component {
       {
         id: "1",
         name: "Potatoes",
-        carb: "10",
-        fat: "5",
-        protein: "6",
-        servings: "1.0",
-        calories: "200"
+        carb: 10,
+        fat: 5,
+        protein: 6,
+        servings: 2,
+        calories: 200
       },
       {
-        id: "2",
+        id: 2,
         name: "Chicken",
-        carb: "8",
-        fat: "0.7",
-        protein: "20",
-        servings: "1.0",
-        calories: "300"
+        carb: 8,
+        fat: 0.7,
+        protein: 20,
+        servings: 2,
+        calories: 300
       }
     ],
+    targetCalories: 0,
     dispatch: action => {
       this.setState(state => reducer(state, action));
     }
