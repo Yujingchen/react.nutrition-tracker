@@ -12,7 +12,7 @@ class Calories extends Component {
     return (
       <Consumer>
         {value => {
-          const { entries, targetCalories } = value;
+          const { entries, goal } = value;
           const calculateTotalFat = entries.reduce(
             (totalFat, entry) => totalFat + entry.fat * entry.servings,
             0
@@ -35,10 +35,9 @@ class Calories extends Component {
           );
           return (
             <div>
-              {console.log(calculateTotalProtein)}
               <div className="card card-body mb-3">
                 <h3 className="text-center mb-3">
-                  Calories:{calculateTotalCalories}/{targetCalories}
+                  Calories:{calculateTotalCalories}/{goal}
                 </h3>
                 <ul className="list-group">
                   <li className="list-group-item">

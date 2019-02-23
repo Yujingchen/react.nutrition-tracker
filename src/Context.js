@@ -13,6 +13,10 @@ const reducer = (state, action) => {
         ...state,
         entries: [action.payload, ...state.entries]
       };
+    case "ADD_GOAL":
+      return {
+        goal: action.payload
+      };
     default:
       return state;
   }
@@ -20,6 +24,7 @@ const reducer = (state, action) => {
 
 export class Provider extends Component {
   state = {
+    goal: "0",
     entries: [
       {
         id: "1",
@@ -40,7 +45,7 @@ export class Provider extends Component {
         calories: 300
       }
     ],
-    targetCalories: 0,
+
     dispatch: action => {
       this.setState(state => reducer(state, action));
     }
