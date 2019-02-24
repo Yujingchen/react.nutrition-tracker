@@ -36,9 +36,14 @@ class Calories extends Component {
           return (
             <div>
               <div className="card card-body mb-3">
-                <h3 className="text-center mb-3">
-                  Calories:{calculateTotalCalories}/{goal}
-                </h3>
+                <div className="row-header">
+                  <h3 className="text-center mb-3">
+                    Calories:{calculateTotalCalories}/{goal}
+                  </h3>
+                  <span id="caloriesGoal">
+                    <Setgoals />
+                  </span>
+                </div>
                 <ul className="list-group">
                   <li className="list-group-item">
                     Fats: {calculateTotalFat}g
@@ -50,8 +55,6 @@ class Calories extends Component {
                     Protein: {calculateTotalProtein}g
                   </li>
                 </ul>
-                {/* <button className="btn btn-danger">Set goals</button> */}
-                <Setgoals />
               </div>
             </div>
           );

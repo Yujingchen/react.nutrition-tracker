@@ -127,6 +127,7 @@ class AddEntry extends Component {
                         <input
                           type="text"
                           name="size"
+                          placeholder="Enter servings size"
                           value={size}
                           onChange={this.onChange}
                           className={classnames(
@@ -154,9 +155,9 @@ class AddEntry extends Component {
                         <input
                           type="text"
                           name="servings"
+                          placeholder="Enter servings quantity"
                           value={servings}
                           onChange={this.onChange}
-                          placeholder="How many servings? 1,2,3,4,5..."
                           className={classnames(
                             "form-control form-control-lg",
                             {
@@ -183,6 +184,7 @@ class AddEntry extends Component {
                         <input
                           type="text"
                           name="perFat"
+                          placeholder="Enter fat"
                           className="form-control"
                           value={perFat}
                           onChange={this.onChange}
@@ -198,6 +200,7 @@ class AddEntry extends Component {
                         <input
                           type="text"
                           name="perCarbs"
+                          placeholder="Enter Carbs"
                           className="form-control"
                           value={perCarbs}
                           onChange={this.onChange}
@@ -215,6 +218,7 @@ class AddEntry extends Component {
                           name="perProtein"
                           className="form-control"
                           value={perProtein}
+                          placeholder="Enter protein"
                           onChange={this.onChange}
                         />
                       </div>
