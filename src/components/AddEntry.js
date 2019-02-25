@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "../Context";
+import InputList from "./layout/inputList";
 import classnames from "classnames";
 import uuid from "uuid";
 import "../App.css";
@@ -13,7 +14,7 @@ class AddEntry extends Component {
     perProtein: "",
     size: "",
     servings: "",
-    calories: "200",
+    calories: "",
     errors: {}
   };
 
@@ -27,8 +28,7 @@ class AddEntry extends Component {
       perFat,
       perCarbs,
       perProtein,
-      id,
-      calories
+      id
     } = this.state;
 
     if (name === "") {
@@ -47,7 +47,7 @@ class AddEntry extends Component {
     const fat = perFat * servings;
     const carb = perCarbs * servings;
     const protein = perProtein * servings;
-
+    const calories = ((protein + carb) * 4 + fat * 9).toFixed(0);
     const newEntry = {
       id,
       fat: fat,
@@ -98,6 +98,12 @@ class AddEntry extends Component {
                 <div className="card-body">
                   <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                     <div className="form group">
+                      {/* <InputList
+                        name="name"
+                        value={name}
+                        change={this.onChange}
+                        errors={errors.name}
+                      /> */}
                       <div className="input-group mb-3">
                         <input
                           type="text"

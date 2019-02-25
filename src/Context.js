@@ -24,7 +24,12 @@ const reducer = (state, action) => {
 
 export class Provider extends Component {
   state = {
-    goal: "0",
+    goal: {
+      fat: 0,
+      carbs: 0,
+      protein: 0,
+      calories: 0
+    },
     entries: [
       {
         id: "1",

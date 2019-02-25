@@ -38,7 +38,7 @@ class Calories extends Component {
               <div className="card card-body mb-3">
                 <div className="row-header">
                   <h3 className="text-center mb-3">
-                    Calories:{calculateTotalCalories}/{goal}
+                    Calories:{calculateTotalCalories}/{goal.calories}
                   </h3>
                   <span id="caloriesGoal">
                     <Setgoals />
@@ -46,13 +46,13 @@ class Calories extends Component {
                 </div>
                 <ul className="list-group">
                   <li className="list-group-item">
-                    Fats: {calculateTotalFat}g
+                    Fats: {calculateTotalFat}/{goal.fat}g
                   </li>
                   <li className="list-group-item">
-                    carb: {calculateTotalCarbs}g
+                    carb: {calculateTotalCarbs}/{goal.carbs}g
                   </li>
                   <li className="list-group-item">
-                    Protein: {calculateTotalProtein}g
+                    Protein: {calculateTotalProtein}/{goal.protein}g
                   </li>
                 </ul>
               </div>

@@ -37,9 +37,9 @@
   width: 400px;
   font-size: 17px;
 }
+
 .invalid-feedback {
   display: none;
-  width: 50%;
   margin-top: 0.25rem;
   font-size: 80%;
   color: #dc3545;
@@ -51,4 +51,17 @@
 .row-header {
   margin-top: 0;
   margin-bottom: -2rem;
+}
+.input-group > .custom-file,
+.input-group > .custom-select,
+.input-group > .form-control,
+.input-group > .form-control-plaintext {
+  position: relative;
+  flex: 1 1 auto;
+
+  margin-bottom: 0;
+}
+
+.logo {
+  margin-right: 8px;
 }

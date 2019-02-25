@@ -52,7 +52,7 @@ class Entry extends Component {
                 {showEntryInfo ? (
                   <div>
                     <p> You had {servings} servings</p>
-                    <p>Calories: {calories}</p>
+                    <p>Calories each serving: {calories}</p>
                     <ul className="list-group">
                       <li className="list-group-item"> Fat: {fat}g</li>
                       <li className="list-group-item"> Carb: {carb}g</li>
