@@ -38,7 +38,16 @@ class Calories extends Component {
               <div className="card card-body mb-3">
                 <div className="row-header">
                   <h3 className="text-center mb-3">
-                    Calories:{calculateTotalCalories}/{goal.calories}
+                    Calories:
+                    {calculateTotalCalories > goal.calories &&
+                    goal.calories !== 0 ? (
+                      <span style={{ color: "red" }}>
+                        {" " + calculateTotalCalories}
+                      </span>
+                    ) : (
+                      <span>{" " + calculateTotalCalories}</span>
+                    )}
+                    / {goal.calories}
                   </h3>
                   <span id="caloriesGoal">
                     <Setgoals />
@@ -46,13 +55,38 @@ class Calories extends Component {
                 </div>
                 <ul className="list-group">
                   <li className="list-group-item">
-                    Fats: {calculateTotalFat}/{goal.fat}g
+                    Fats:
+                    {calculateTotalFat > goal.fat && goal.fat !== 0 ? (
+                      <span style={{ color: "red" }}>
+                        {" " + calculateTotalFat}
+                      </span>
+                    ) : (
+                      <span>{" " + calculateTotalFat}</span>
+                    )}
+                    /{goal.fat}g
                   </li>
                   <li className="list-group-item">
-                    carb: {calculateTotalCarbs}/{goal.carbs}g
+                    carb:
+                    {calculateTotalCarbs > goal.carbs && goal.carbs !== 0 ? (
+                      <span style={{ color: "red" }}>
+                        {" " + calculateTotalCarbs}
+                      </span>
+                    ) : (
+                      <span>{" " + calculateTotalCarbs}</span>
+                    )}
+                    /{goal.carbs}g
                   </li>
                   <li className="list-group-item">
-                    Protein: {calculateTotalProtein}/{goal.protein}g
+                    Protein:
+                    {calculateTotalProtein > goal.protein &&
+                    goal.protein !== 0 ? (
+                      <span style={{ color: "red" }}>
+                        {" " + calculateTotalProtein}
+                      </span>
+                    ) : (
+                      <span>{" " + calculateTotalProtein}</span>
+                    )}
+                    /{goal.protein}g
                   </li>
                 </ul>
               </div>

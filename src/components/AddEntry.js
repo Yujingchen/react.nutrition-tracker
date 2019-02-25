@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../Context";
-import InputList from "./layout/inputList";
-import classnames from "classnames";
+import InputList from "./layout/InputList";
+import Prepend from "./layout/prepend";
 import uuid from "uuid";
 import "../App.css";
 
@@ -36,11 +36,23 @@ class AddEntry extends Component {
       return;
     }
     if (size === "") {
-      this.setState({ errors: { size: "servings size is required" } });
+      this.setState({ errors: { size: "Servings size is required" } });
       return;
     }
     if (servings === "") {
-      this.setState({ errors: { servings: "servings is required" } });
+      this.setState({ errors: { servings: "Servings quantity is required" } });
+      return;
+    }
+    if (perFat === "") {
+      this.setState({ errors: { perFat: "Fat value is required" } });
+      return;
+    }
+    if (perCarbs === "") {
+      this.setState({ errors: { perCarbs: "Carb value is required" } });
+      return;
+    }
+    if (perProtein === "") {
+      this.setState({ errors: { perProtein: "Protein is required" } });
       return;
     }
 
@@ -98,134 +110,73 @@ class AddEntry extends Component {
                 <div className="card-body">
                   <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                     <div className="form group">
-                      {/* <InputList
-                        name="name"
-                        value={name}
-                        change={this.onChange}
-                        errors={errors.name}
-                      /> */}
                       <div className="input-group mb-3">
-                        <input
-                          type="text"
+                        <InputList
                           name="name"
-                          placeholder="Entry Name"
                           value={name}
-                          onChange={this.onChange}
-                          className={classnames(
-                            "form-control form-control-lg",
-                            {
-                              "is-invalid": errors.name
-                            }
-                          )}
+                          change={this.onChange}
+                          errors={errors.name}
+                          placeholder="name"
                         />
-                        {errors.name && (
-                          <div className="invalid-feedback">{errors.name}</div>
-                        )}
                       </div>
-
                       <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                          <span className="input-group-text" id="prepend">
-                            Servings Size:
-                          </span>
-                        </div>
-
-                        <input
-                          type="text"
+                        <Prepend name="Size" />
+                        <InputList
                           name="size"
-                          placeholder="Enter servings size"
                           value={size}
-                          onChange={this.onChange}
-                          className={classnames(
-                            "form-control form-control-lg",
-                            {
-                              "is-invalid": errors.size
-                            }
-                          )}
+                          change={this.onChange}
+                          errors={errors.size}
+                          placeholder="size"
                         />
-                        <div className="input-group-append">
-                          <span className="input-group-text">g</span>
-                        </div>
-                        {errors.size && (
-                          <div className="invalid-feedback">{errors.size}</div>
-                        )}
                       </div>
-
                       <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                          <span className="input-group-text" id="prepend">
-                            Servings Quantity:
-                          </span>
-                        </div>
-
-                        <input
-                          type="text"
+                        <Prepend name="Servings Quantity" />
+                        <InputList
                           name="servings"
-                          placeholder="Enter servings quantity"
                           value={servings}
-                          onChange={this.onChange}
-                          className={classnames(
-                            "form-control form-control-lg",
-                            {
-                              "is-invalid": errors.servings
-                            }
-                          )}
+                          change={this.onChange}
+                          errors={errors.servings}
+                          unit={true}
+                          placeholder="serving quantity"
                         />
-                        {errors.servings && (
-                          <div className="invalid-feedback">
-                            {errors.servings}
-                          </div>
-                        )}
                       </div>
 
                       <label htmlFor="gramsPerservings">
                         Grams Per Servings
                       </label>
+
                       <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                          <span className="input-group-text" id="prepend">
-                            Fat:
-                          </span>
-                        </div>
-                        <input
-                          type="text"
+                        <Prepend name="Fat" />
+
+                        <InputList
                           name="perFat"
-                          placeholder="Enter fat"
-                          className="form-control"
                           value={perFat}
-                          onChange={this.onChange}
+                          change={this.onChange}
+                          errors={errors.perFat}
+                          placeholder="fat"
                         />
                       </div>
 
                       <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                          <span className="input-group-text" id="prepend">
-                            Carb:
-                          </span>
-                        </div>
-                        <input
-                          type="text"
+                        <Prepend name="Carb" />
+
+                        <InputList
                           name="perCarbs"
-                          placeholder="Enter Carbs"
-                          className="form-control"
                           value={perCarbs}
-                          onChange={this.onChange}
+                          change={this.onChange}
+                          errors={errors.perCarbs}
+                          placeholder="carbs"
                         />
                       </div>
-
                       <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                          <span className="input-group-text" id="prepend">
-                            Protein:
-                          </span>
-                        </div>
-                        <input
-                          type="text"
+                        <Prepend name="Protein" />
+
+                        <InputList
                           name="perProtein"
-                          className="form-control"
                           value={perProtein}
-                          placeholder="Enter protein"
-                          onChange={this.onChange}
+                          change={this.onChange}
+                          errors={errors.perProtein}
+                          placeholder="protein"
                         />
                       </div>
                     </div>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Modal from "react-responsive-modal";
 import { Consumer } from "./../Context";
-import classnames from "classnames";
-
+import InputList from "./layout/InputList";
+import Prepend from "./layout/prepend";
 class Setgoal extends Component {
   state = {
     open: false,
@@ -77,90 +77,38 @@ class Setgoal extends Component {
                     <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                       <div className="form group">
                         <div className="input-group mb-3">
-                          <div className="input-group-prepend">
-                            <span className="input-group-text" id="prepend">
-                              Fat:
-                            </span>
-                          </div>
-                          <input
-                            id="modelInput"
-                            type="text"
+                          <Prepend name="Fat" />
+
+                          <InputList
                             name="perFat"
-                            placeholder="Enter fat"
                             value={perFat}
-                            onChange={this.onChange}
-                            className={classnames(
-                              "form-control form-control-lg",
-                              {
-                                "is-invalid": errors.perFat
-                              }
-                            )}
+                            change={this.onChange}
+                            errors={errors.perFat}
+                            placeholder="fat"
                           />
-                          {errors.perFat && (
-                            <div className="invalid-feedback">
-                              {errors.perFat}
-                            </div>
-                          )}
                         </div>
 
                         <div className="input-group mb-3">
-                          <div className="input-group-prepend">
-                            <span className="input-group-text" id="prepend">
-                              Carb:
-                            </span>
-                          </div>
-                          <input
-                            id="modelInput"
-                            type="text"
+                          <Prepend name="Carb" />
+
+                          <InputList
                             name="perCarbs"
-                            placeholder="Enter Carbs"
                             value={perCarbs}
-                            onChange={this.onChange}
-                            className={classnames(
-                              "form-control form-control-lg",
-                              {
-                                "is-invalid": errors.perCarbs
-                              }
-                            )}
+                            change={this.onChange}
+                            errors={errors.perCarbs}
+                            placeholder="carbs"
                           />
-                          <div className="input-group-append">
-                            <span className="input-group-text">g</span>
-                          </div>
-                          {errors.perCarbs && (
-                            <div className="invalid-feedback">
-                              {errors.perCarbs}
-                            </div>
-                          )}
                         </div>
-
                         <div className="input-group mb-3">
-                          <div className="input-group-prepend">
-                            <span className="input-group-text" id="prepend">
-                              Protein:
-                            </span>
-                          </div>
-                          <input
-                            id="modelInput"
-                            type="text"
+                          <Prepend name="Protein" />
+
+                          <InputList
                             name="perProtein"
                             value={perProtein}
-                            placeholder="Enter protein"
-                            onChange={this.onChange}
-                            className={classnames(
-                              "form-control form-control-lg",
-                              {
-                                "is-invalid": errors.perProtein
-                              }
-                            )}
+                            change={this.onChange}
+                            errors={errors.perProtein}
+                            placeholder="protein"
                           />
-                          <div className="input-group-append">
-                            <span className="input-group-text">g</span>
-                          </div>
-                          {errors.perProtein && (
-                            <div className="invalid-feedback">
-                              {errors.perProtein}
-                            </div>
-                          )}
                         </div>
                       </div>
                       <input

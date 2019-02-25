@@ -3,21 +3,27 @@ import classnames from "classnames";
 class InputList extends Component {
   render() {
     return (
-      <div className="input-group mb-3">
+      <React.Fragment>
         <input
           type="text"
           name={this.props.name}
-          placeholder={`Entry ${this.props.name}`}
+          placeholder={`Enter ${this.props.placeholder}`}
           value={this.props.value}
           onChange={this.props.change}
           className={classnames("form-control form-control-lg", {
             "is-invalid": this.props.errors
           })}
         />
+        {this.props.unit ? (
+          <div className="input-group-append">
+            <span className="input-group-text">g</span>
+          </div>
+        ) : null}
+
         {this.props.errors && (
           <div className="invalid-feedback">{this.props.errors}</div>
         )}
-      </div>
+      </React.Fragment>
     );
   }
 }
