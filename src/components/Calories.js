@@ -54,7 +54,7 @@ class Calories extends Component {
                   </span>
                 </div>
                 <ul className="list-group">
-                  <li className="list-group-item">
+                  <li className="list-group-item bold-text ">
                     Fats:
                     {calculateTotalFat > goal.fat && goal.fat !== 0 ? (
                       <span style={{ color: "red" }}>
@@ -64,9 +64,21 @@ class Calories extends Component {
                       <span>{" " + calculateTotalFat}</span>
                     )}
                     /{goal.fat}g
+                    <div className="progress">
+                      <div
+                        className="progress-bar bg-warning"
+                        role="progressbar"
+                        style={{
+                          width: `${(calculateTotalFat / goal.fat) * 100}%`
+                        }}
+                        aria-valuenow={(calculateTotalFat / goal.fat) * 100}
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      />
+                    </div>
                   </li>
-                  <li className="list-group-item">
-                    carb:
+                  <li className="list-group-item bold-text ">
+                    Carb:
                     {calculateTotalCarbs > goal.carbs && goal.carbs !== 0 ? (
                       <span style={{ color: "red" }}>
                         {" " + calculateTotalCarbs}
@@ -75,8 +87,20 @@ class Calories extends Component {
                       <span>{" " + calculateTotalCarbs}</span>
                     )}
                     /{goal.carbs}g
+                    <div className="progress ">
+                      <div
+                        className="progress-bar bg-danger"
+                        role="progressbar"
+                        style={{
+                          width: `${(calculateTotalCarbs / goal.carbs) * 100}%`
+                        }}
+                        aria-valuenow={(calculateTotalCarbs / goal.carbs) * 100}
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      />
+                    </div>
                   </li>
-                  <li className="list-group-item">
+                  <li className="list-group-item bold-text ">
                     Protein:
                     {calculateTotalProtein > goal.protein &&
                     goal.protein !== 0 ? (
@@ -87,6 +111,21 @@ class Calories extends Component {
                       <span>{" " + calculateTotalProtein}</span>
                     )}
                     /{goal.protein}g
+                    <div className="progress">
+                      <div
+                        className="progress-bar bg-success"
+                        role="progressbar"
+                        style={{
+                          width: `${(calculateTotalProtein / goal.protein) *
+                            100}%`
+                        }}
+                        aria-valuenow={
+                          (calculateTotalProtein / goal.protein) * 100
+                        }
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      />
+                    </div>
                   </li>
                 </ul>
               </div>

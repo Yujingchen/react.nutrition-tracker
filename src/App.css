@@ -64,4 +64,25 @@
 
 .logo {
   margin-right: 8px;
+  position: relative;
+  bottom: 1px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.btn-light {
+  color: black;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  font-weight: 500;
+}
+.bold-text {
+  font-weight: 500;
+}
+
+.blue-bg {
+  background-color: #2e36b5;
+  color: white;
 }

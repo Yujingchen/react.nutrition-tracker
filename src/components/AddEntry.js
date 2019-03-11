@@ -106,7 +106,7 @@ class AddEntry extends Component {
           return (
             <div>
               <div className="card mb-3">
-                <div className="card-header">Add Entry</div>
+                <div className="card-header bold-text ">Add Entry</div>
                 <div className="card-body">
                   <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                     <div className="form group">
@@ -119,6 +119,7 @@ class AddEntry extends Component {
                           placeholder="name"
                         />
                       </div>
+                      <label htmlFor="gramsPerservings">Servings:</label>
                       <div className="input-group mb-3">
                         <Prepend name="Size" />
                         <InputList
@@ -130,7 +131,7 @@ class AddEntry extends Component {
                         />
                       </div>
                       <div className="input-group mb-3">
-                        <Prepend name="Servings Quantity" />
+                        <Prepend name="Quantity" />
                         <InputList
                           name="servings"
                           value={servings}
@@ -142,7 +143,7 @@ class AddEntry extends Component {
                       </div>
 
                       <label htmlFor="gramsPerservings">
-                        Grams Per Servings
+                        Grams Per Servings:
                       </label>
 
                       <div className="input-group mb-3">

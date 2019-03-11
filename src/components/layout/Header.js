@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-sm bg-dark navbar-dark mb-3 py--0">
+    <nav className="navbar navbar-expand-sm bg-light navbar-light mb-3 py--0">
       <div className="container">
         <a className="navbar-brand" href="/">
           <img
@@ -16,9 +16,9 @@ const Header = () => {
         </a>
         <div>
           <ul className="navbar-nav">
-            <li className="nav-item active">
+            <li className="nav-item ">
               <a className="nav-link" href="/">
-                Home
+                <i className="fas fa-home" /> Home
               </a>
             </li>
             <li className="nav-item">
@@ -29,7 +29,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/">
-                STATS
+                <i className="far fa-calendar-check" /> STATS
               </a>
             </li>
           </ul>

@@ -67,12 +67,15 @@ class Setgoal extends Component {
           const { dispatch } = value;
           return (
             <span id="redButton">
-              <button className="btn btn-danger" onClick={this.onOpenModal}>
-                Add goal
+              <button
+                className="btn btn-danger bold-text"
+                onClick={this.onOpenModal}
+              >
+                Add Goal
               </button>
               <Modal open={open} onClose={this.onCloseModal} little>
                 <div className="card mb-3">
-                  <div className="card-header">Goal</div>
+                  <div className="card-header bold-text ">Set goal</div>
                   <div className="card-body">
                     <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                       <div className="form group">
