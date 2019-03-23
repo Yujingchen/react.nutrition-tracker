@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { deleteEntry } from "../components/action/entryAction";
 import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 class Entry extends Component {
   state = {
@@ -15,8 +16,8 @@ class Entry extends Component {
   };
 
   onDeleteClick = id => {
-    this.props.deleteEntry(id);
-    //fiex deleteEntry(id) not working
+    const { entry, firestore } = this.props;
+    firestore.delete({ collection: "entries", doc: entry.id });
   };
 
   render() {
@@ -71,12 +72,19 @@ class Entry extends Component {
   }
 }
 
-Entry.propType = {
-  entry: PropTypes.object.isRequired,
-  deleteEntry: PropTypes.func.isRequired
+Entry.propTypes = {
+  firestore: PropTypes.object.isRequired
 };
 
-export default connect(
-  null,
-  { deleteEntry }
+export default compose(
+  firestoreConnect(props => [
+    {
+      collection: "entries",
+      storeAs: "singleEntry",
+      doc: props.match.entry.id
+    }
+  ]),
+  connect(({ firestore: { ordered } }, props) => ({
+    singleEntry: ordered.singleEntry && ordered.singleEntry[0]
+  }))
 )(Entry);

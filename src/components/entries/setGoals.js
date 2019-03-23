@@ -3,8 +3,9 @@ import Modal from "react-responsive-modal";
 import InputList from "./layout/InputList";
 import Prepend from "./layout/prepend";
 import { connect } from "react-redux";
-import { addNewGoal } from "./action/entryAction";
 import PropTypes from "prop-types";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 class Setgoal extends Component {
   state = {
@@ -18,6 +19,7 @@ class Setgoal extends Component {
   onSubmit = e => {
     e.preventDefault();
     const { perFat, perCarbs, perProtein } = this.state;
+    const { firestore } = this.props;
     if (perFat === "") {
       this.setState({ errors: { perFat: "Input value is required" } });
       return;
@@ -49,8 +51,8 @@ class Setgoal extends Component {
       calories
     };
 
-    this.props.addNewGoal(newGoal);
-    //fiex addNewGoal(newGoal) not working
+    firestore.add({ collecton: "goal" }, newGoal);
+
     this.onCloseModal();
   };
 
@@ -128,10 +130,12 @@ class Setgoal extends Component {
 }
 
 Setgoal.propTypes = {
-  addNewGoal: PropTypes.func.isRequired
+  firestore: PropTypes.object.isRequired
 };
 
-export default connect(
-  null,
-  { addNewGoal }
+export default compose(
+  firestoreConnect([{ collection: "goal" }]),
+  connect((state, props) => ({
+    goal: state.firestore.ordered.goal
+  }))
 )(Setgoal);

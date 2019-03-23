@@ -3,6 +3,8 @@ import Entry from "./Entry";
 import Calories from "./Calories";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 class Entries extends Component {
   render() {
@@ -21,12 +23,17 @@ class Entries extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  entries: state.entryList.entries
-});
+// const mapStateToProps = state => ({
+//   entries: state.entryList.entries
+// });
 
 Entries.propTypes = {
-  entries: PropTypes.array.isRequired
+  firestore: PropTypes.object.isRequired
 };
 
-export default connect(mapStateToProps)(Entries);
+export default compose(
+  firestoreConnect([{ collection: "entries" }]),
+  connect((state, props) => ({
+    entries: state.firestore.ordered.entries
+  }))
+)(Entries);

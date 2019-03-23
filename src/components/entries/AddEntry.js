@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import InputList from "./layout/InputList";
 import Prepend from "./layout/prepend";
-import uuid from "uuid";
 import "../App.css";
-import { addEntry } from "../components/action/entryAction";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { firebaseConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 class AddEntry extends Component {
   state = {
-    id: uuid(),
     name: "",
     perFat: "",
     perCarbs: "",
@@ -23,15 +22,8 @@ class AddEntry extends Component {
   onChange = e => this.setState({ [e.target.name]: e.target.value });
   onSubmit = e => {
     e.preventDefault();
-    const {
-      name,
-      size,
-      servings,
-      perFat,
-      perCarbs,
-      perProtein,
-      id
-    } = this.state;
+    const { name, size, servings, perFat, perCarbs, perProtein } = this.state;
+    const { firestore } = this.props;
 
     if (name === "") {
       this.setState({ errors: { name: "Entry name is required" } });
@@ -63,7 +55,6 @@ class AddEntry extends Component {
     const protein = perProtein * servings;
     const calories = ((protein + carb) * 4 + fat * 9).toFixed(0);
     const newEntry = {
-      id,
       fat: fat,
       name,
       carb: carb,
@@ -71,11 +62,11 @@ class AddEntry extends Component {
       servings,
       calories
     };
-    this.props.addEntry(newEntry);
-    //fiex addEntry(newEntry) not working
 
+    firestore
+      .add({ collecton: "entries" }, newEntry)
+      .then(() => this.props.history.push("/"));
     this.setState({
-      id: "",
       name: "",
       perFat: "",
       perCarbs: "",
@@ -87,7 +78,6 @@ class AddEntry extends Component {
       protein: "",
       errors: {}
     });
-    this.props.history.push("/");
   };
 
   render() {
@@ -192,10 +182,10 @@ class AddEntry extends Component {
 }
 
 AddEntry.propTypes = {
-  addEntry: PropTypes.func.isRequired
+  firestore: PropTypes.object.isRequired
 };
 
-export default connect(
-  null,
-  { addEntry }
+export default compose(
+  firebaseConnect([{ collection: "entries" }]),
+  connect()
 )(AddEntry);

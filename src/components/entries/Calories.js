@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import Setgoals from "./setGoals";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 class Calories extends Component {
-  state = {
-    fat: "34.4",
-    carb: "274.4",
-    protein: "99.4"
-  };
+  // state = {
+  //   fat: "34.4",
+  //   carb: "274.4",
+  //   protein: "99.4"
+  // };
 
   render() {
     const { entries, goal } = this.props;
@@ -125,12 +127,18 @@ class Calories extends Component {
 }
 
 Calories.propTypes = {
-  entries: PropTypes.array.isRequired
+  firestore: PropTypes.object.isRequired
 };
 
-const mapStateToProp = state => ({
-  entries: state.entryList.entries,
-  goal: state.entryList.goal
-});
+// const mapStateToProp = state => ({
+//   entries: state.entryList.entries,
+//   goal: state.entryList.goal
+// });
 
-export default connect(mapStateToProp)(Calories);
+export default compose(
+  firestoreConnect([{ collection: "goal" }, { collection: "entries" }]),
+  connect((state, props) => ({
+    goal: state.firestore.ordered.goal,
+    entries: state.firestore.ordered.entries
+  }))
+)(Calories);
