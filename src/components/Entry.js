@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Consumer } from "../Context";
 import PropTypes from "prop-types";
+import { deleteEntry } from "../components/action/entryAction";
+import { connect } from "react-redux";
+
 class Entry extends Component {
   state = {
     showEntryInfo: false
@@ -12,8 +14,9 @@ class Entry extends Component {
     });
   };
 
-  onDeleteClick = (id, dispatch) => {
-    dispatch({ type: "DELETE_ENTRY", payload: id });
+  onDeleteClick = id => {
+    this.props.deleteEntry(id);
+    //fiex deleteEntry(id) not working
   };
 
   render() {
@@ -29,48 +32,51 @@ class Entry extends Component {
     const { showEntryInfo } = this.state;
 
     return (
-      <Consumer>
-        {value => {
-          const { dispatch } = value;
-          return (
-            <div>
-              <div className="card card-body mb-3" key={id}>
-                <h4>
-                  {name}
-                  <i
-                    onClick={this.showEntry}
-                    style={{ cursor: "pointer" }}
-                    className="fas fa-sort-down "
-                  />
-                  <i
-                    onClick={this.onDeleteClick.bind(this, id, dispatch)}
-                    style={{ cursor: "pointer", float: "right" }}
-                    className="fas fa-trash-alt"
-                  />
-                </h4>
+      <div>
+        <div className="card card-body mb-3" key={id}>
+          <h4>
+            {name}
+            <i
+              onClick={this.showEntry}
+              style={{ cursor: "pointer" }}
+              className="fas fa-sort-down "
+            />
+            <i
+              onClick={this.onDeleteClick.bind(this, id)}
+              style={{ cursor: "pointer", float: "right" }}
+              className="fas fa-trash-alt"
+            />
+          </h4>
 
-                {showEntryInfo ? (
-                  <div>
-                    <p> You had {servings} servings</p>
-                    <p>Calories each serving: {calories}</p>
-                    <ul className="list-group">
-                      <li className="list-group-item"> Fat: {fat}g</li>
-                      <li className="list-group-item"> Carb: {carb}g</li>
-                      <li className="list-group-item"> Protein: {protein}g</li>
-                    </ul>
-                  </div>
-                ) : null}
-              </div>
+          {showEntryInfo ? (
+            <div>
+              <p>
+                {" "}
+                You had <span className="bold-text-x">{servings}</span> servings
+              </p>
+              <p>
+                Calories each serving:{" "}
+                <span className="bold-text-x">{calories}</span>
+              </p>
+              <ul className="list-group">
+                <li className="list-group-item"> Fat: {fat}g</li>
+                <li className="list-group-item"> Carb: {carb}g</li>
+                <li className="list-group-item"> Protein: {protein}g</li>
+              </ul>
             </div>
-          );
-        }}
-      </Consumer>
+          ) : null}
+        </div>
+      </div>
     );
   }
 }
 
-Entry.protoType = {
-  entry: PropTypes.object.isRequired
+Entry.propType = {
+  entry: PropTypes.object.isRequired,
+  deleteEntry: PropTypes.func.isRequired
 };
 
-export default Entry;
+export default connect(
+  null,
+  { deleteEntry }
+)(Entry);

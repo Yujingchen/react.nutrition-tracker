@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { Consumer } from "../Context";
 import InputList from "./layout/InputList";
 import Prepend from "./layout/prepend";
 import uuid from "uuid";
 import "../App.css";
+import { addEntry } from "../components/action/entryAction";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 class AddEntry extends Component {
   state = {
@@ -19,7 +21,7 @@ class AddEntry extends Component {
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
-  onSubmit = (dispatch, e) => {
+  onSubmit = e => {
     e.preventDefault();
     const {
       name,
@@ -69,8 +71,8 @@ class AddEntry extends Component {
       servings,
       calories
     };
-
-    dispatch({ type: "ADD_ENTRY", payload: newEntry });
+    this.props.addEntry(newEntry);
+    //fiex addEntry(newEntry) not working
 
     this.setState({
       id: "",
@@ -100,102 +102,100 @@ class AddEntry extends Component {
     } = this.state;
 
     return (
-      <Consumer>
-        {value => {
-          const { dispatch } = value;
-          return (
-            <div>
-              <div className="card mb-3">
-                <div className="card-header bold-text ">Add Entry</div>
-                <div className="card-body">
-                  <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                    <div className="form group">
-                      <div className="input-group mb-3">
-                        <InputList
-                          name="name"
-                          value={name}
-                          change={this.onChange}
-                          errors={errors.name}
-                          placeholder="name"
-                        />
-                      </div>
-                      <label htmlFor="gramsPerservings">Servings:</label>
-                      <div className="input-group mb-3">
-                        <Prepend name="Size" />
-                        <InputList
-                          name="size"
-                          value={size}
-                          change={this.onChange}
-                          errors={errors.size}
-                          placeholder="size"
-                        />
-                      </div>
-                      <div className="input-group mb-3">
-                        <Prepend name="Quantity" />
-                        <InputList
-                          name="servings"
-                          value={servings}
-                          change={this.onChange}
-                          errors={errors.servings}
-                          unit={true}
-                          placeholder="serving quantity"
-                        />
-                      </div>
+      <div>
+        <div className="card mb-3">
+          <div className="card-header bold-text ">Add Entry</div>
+          <div className="card-body">
+            <form onSubmit={this.onSubmit}>
+              <div className="form group">
+                <div className="input-group mb-3">
+                  <InputList
+                    name="name"
+                    value={name}
+                    change={this.onChange}
+                    errors={errors.name}
+                    placeholder="name"
+                  />
+                </div>
+                <label htmlFor="gramsPerservings">Servings:</label>
+                <div className="input-group mb-3">
+                  <Prepend name="Size" />
+                  <InputList
+                    name="size"
+                    value={size}
+                    change={this.onChange}
+                    errors={errors.size}
+                    placeholder="size"
+                  />
+                </div>
+                <div className="input-group mb-3">
+                  <Prepend name="Quantity" />
+                  <InputList
+                    name="servings"
+                    value={servings}
+                    change={this.onChange}
+                    errors={errors.servings}
+                    unit={true}
+                    placeholder="serving quantity"
+                  />
+                </div>
 
-                      <label htmlFor="gramsPerservings">
-                        Grams Per Servings:
-                      </label>
+                <label htmlFor="gramsPerservings">Grams Per Servings:</label>
 
-                      <div className="input-group mb-3">
-                        <Prepend name="Fat" />
+                <div className="input-group mb-3">
+                  <Prepend name="Fat" />
 
-                        <InputList
-                          name="perFat"
-                          value={perFat}
-                          change={this.onChange}
-                          errors={errors.perFat}
-                          placeholder="fat"
-                        />
-                      </div>
+                  <InputList
+                    name="perFat"
+                    value={perFat}
+                    change={this.onChange}
+                    errors={errors.perFat}
+                    placeholder="fat"
+                  />
+                </div>
 
-                      <div className="input-group mb-3">
-                        <Prepend name="Carb" />
+                <div className="input-group mb-3">
+                  <Prepend name="Carb" />
 
-                        <InputList
-                          name="perCarbs"
-                          value={perCarbs}
-                          change={this.onChange}
-                          errors={errors.perCarbs}
-                          placeholder="carbs"
-                        />
-                      </div>
-                      <div className="input-group mb-3">
-                        <Prepend name="Protein" />
+                  <InputList
+                    name="perCarbs"
+                    value={perCarbs}
+                    change={this.onChange}
+                    errors={errors.perCarbs}
+                    placeholder="carbs"
+                  />
+                </div>
+                <div className="input-group mb-3">
+                  <Prepend name="Protein" />
 
-                        <InputList
-                          name="perProtein"
-                          value={perProtein}
-                          change={this.onChange}
-                          errors={errors.perProtein}
-                          placeholder="protein"
-                        />
-                      </div>
-                    </div>
-
-                    <input
-                      type="submit"
-                      value="Add Entry"
-                      className="btn btn-block btn-light"
-                    />
-                  </form>
+                  <InputList
+                    name="perProtein"
+                    value={perProtein}
+                    change={this.onChange}
+                    errors={errors.perProtein}
+                    placeholder="protein"
+                  />
                 </div>
               </div>
-            </div>
-          );
-        }}
-      </Consumer>
+
+              <input
+                type="submit"
+                value="Add Entry"
+                className="btn btn-block btn-light"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
-export default AddEntry;
+AddEntry.propTypes = {
+  addEntry: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { addEntry }
+)(AddEntry);

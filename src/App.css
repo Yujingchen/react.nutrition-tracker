@@ -81,7 +81,9 @@
 .bold-text {
   font-weight: 500;
 }
-
+.bold-text-x {
+  font-weight: 700;
+}
 .blue-bg {
   background-color: #2e36b5;
   color: white;

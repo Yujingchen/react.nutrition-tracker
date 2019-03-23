@@ -3,15 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/layout/Header";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Entries from "./components/Entries";
-import { Provider } from "./Context";
 import AddEntry from "./components/AddEntry";
 import NotFound from "./components/NotFound";
+import store from "./store";
+import { Provider } from "react-redux";
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <Provider>
+      <Provider store={store}>
+        <Router>
           <div className="APP">
             <Header />
 
@@ -23,8 +24,8 @@ class App extends Component {
               </Switch>
             </div>
           </div>
-        </Provider>
-      </Router>
+        </Router>
+      </Provider>
     );
   }
 }

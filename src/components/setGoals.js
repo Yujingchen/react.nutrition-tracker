@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Modal from "react-responsive-modal";
-import { Consumer } from "./../Context";
 import InputList from "./layout/InputList";
 import Prepend from "./layout/prepend";
+import { connect } from "react-redux";
+import { addNewGoal } from "./action/entryAction";
+import PropTypes from "prop-types";
+
 class Setgoal extends Component {
   state = {
     open: false,
@@ -12,7 +15,7 @@ class Setgoal extends Component {
     perProtein: ""
   };
 
-  onSubmit = (dispatch, e) => {
+  onSubmit = e => {
     e.preventDefault();
     const { perFat, perCarbs, perProtein } = this.state;
     if (perFat === "") {
@@ -45,7 +48,9 @@ class Setgoal extends Component {
       protein: perProtein,
       calories
     };
-    dispatch({ type: "ADD_GOAL", payload: newGoal });
+
+    this.props.addNewGoal(newGoal);
+    //fiex addNewGoal(newGoal) not working
     this.onCloseModal();
   };
 
@@ -61,74 +66,72 @@ class Setgoal extends Component {
 
   render() {
     const { open, perFat, perCarbs, perProtein, errors } = this.state;
+
     return (
-      <Consumer>
-        {value => {
-          const { dispatch } = value;
-          return (
-            <span id="redButton">
-              <button
-                className="btn btn-danger bold-text"
-                onClick={this.onOpenModal}
-              >
-                Add Goal
-              </button>
-              <Modal open={open} onClose={this.onCloseModal} little>
-                <div className="card mb-3">
-                  <div className="card-header bold-text ">Set goal</div>
-                  <div className="card-body">
-                    <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                      <div className="form group">
-                        <div className="input-group mb-3">
-                          <Prepend name="Fat" />
+      <span id="redButton">
+        <button className="btn btn-danger bold-text" onClick={this.onOpenModal}>
+          Add Goal
+        </button>
+        <Modal open={open} onClose={this.onCloseModal} little>
+          <div className="card mb-3">
+            <div className="card-header bold-text ">Set goal</div>
+            <div className="card-body">
+              <form onSubmit={this.onSubmit}>
+                <div className="form group">
+                  <div className="input-group mb-3">
+                    <Prepend name="Fat" />
 
-                          <InputList
-                            name="perFat"
-                            value={perFat}
-                            change={this.onChange}
-                            errors={errors.perFat}
-                            placeholder="fat"
-                          />
-                        </div>
+                    <InputList
+                      name="perFat"
+                      value={perFat}
+                      change={this.onChange}
+                      errors={errors.perFat}
+                      placeholder="fat"
+                    />
+                  </div>
 
-                        <div className="input-group mb-3">
-                          <Prepend name="Carb" />
+                  <div className="input-group mb-3">
+                    <Prepend name="Carb" />
 
-                          <InputList
-                            name="perCarbs"
-                            value={perCarbs}
-                            change={this.onChange}
-                            errors={errors.perCarbs}
-                            placeholder="carbs"
-                          />
-                        </div>
-                        <div className="input-group mb-3">
-                          <Prepend name="Protein" />
+                    <InputList
+                      name="perCarbs"
+                      value={perCarbs}
+                      change={this.onChange}
+                      errors={errors.perCarbs}
+                      placeholder="carbs"
+                    />
+                  </div>
+                  <div className="input-group mb-3">
+                    <Prepend name="Protein" />
 
-                          <InputList
-                            name="perProtein"
-                            value={perProtein}
-                            change={this.onChange}
-                            errors={errors.perProtein}
-                            placeholder="protein"
-                          />
-                        </div>
-                      </div>
-                      <input
-                        type="submit"
-                        value="Add"
-                        className="btn btn-block btn-light"
-                      />
-                    </form>
+                    <InputList
+                      name="perProtein"
+                      value={perProtein}
+                      change={this.onChange}
+                      errors={errors.perProtein}
+                      placeholder="protein"
+                    />
                   </div>
                 </div>
-              </Modal>
-            </span>
-          );
-        }}
-      </Consumer>
+                <input
+                  type="submit"
+                  value="Add"
+                  className="btn btn-block btn-light"
+                />
+              </form>
+            </div>
+          </div>
+        </Modal>
+      </span>
     );
   }
 }
 
-export default Setgoal;
+Setgoal.propTypes = {
+  addNewGoal: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { addNewGoal }
+)(Setgoal);
