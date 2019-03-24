@@ -1,5 +1,6 @@
-import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import { createStore, compose, combineReducers } from "redux";
 import firebase from "firebase";
+import "firebase/firestore";
 import { reactReduxFirebase, firebaseReducer } from "react-redux-firebase";
 import { reduxFirestore, firestoreReducer } from "redux-firestore";
 
@@ -21,7 +22,7 @@ const rrfConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Initialize other services on firebase instance
-// const firestore = firebase.firestore(); // <- needed if using firestore
+const firestore = firebase.firestore(); // <- needed if using firestore
 // firebase.functions() // <- needed if using httpsCallable
 
 // Add reactReduxFirebase enhancer when making store creator
@@ -46,5 +47,8 @@ const store = createStoreWithFirebase(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
+
+//bug: react-redux v6 a v3.*.* version of react-redux-firebase is required
+//fix npm i --save react-redux-firebase@latest or npm i --save react-redux@^5.0.0
 
 export default store;

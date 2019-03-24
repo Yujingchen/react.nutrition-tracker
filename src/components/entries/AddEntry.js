@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import InputList from "./layout/InputList";
-import Prepend from "./layout/prepend";
-import "../App.css";
+import InputList from "../layout/InputList";
+import Prepend from "../layout/prepend";
+import "../../App.css";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { firebaseConnect } from "react-redux-firebase";

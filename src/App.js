@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/layout/Header";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import Entries from "./components/Entries";
-import AddEntry from "./components/AddEntry";
-import NotFound from "./components/NotFound";
+import Entries from "./components/entries/Entries";
+import AddEntry from "./components/entries/AddEntry";
+import NotFound from "./components/layout/NotFound";
 import store from "./store";
 import { Provider } from "react-redux";
 
