@@ -17,7 +17,7 @@ class Entry extends Component {
 
   onDeleteClick = id => {
     const { entry, firestore } = this.props;
-    firestore.delete({ collection: "entries", doc: entry.id });
+    firestore.delete({ collection: "entries" });
   };
 
   render() {
@@ -81,7 +81,6 @@ export default compose(
     {
       collection: "entries",
       storeAs: "singleEntry",
-      doc: props.match.entry.id
     }
   ]),
   connect(({ firestore: { ordered } }, props) => ({

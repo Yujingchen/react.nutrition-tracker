@@ -51,7 +51,7 @@ class Setgoal extends Component {
       calories
     };
 
-    firestore.add({ collecton: "goal" }, newGoal);
+    firestore.add({ collecton: "goal", doc: this.props.goal }, newGoal);
 
     this.onCloseModal();
   };
@@ -130,7 +130,8 @@ class Setgoal extends Component {
 }
 
 Setgoal.propTypes = {
-  firestore: PropTypes.object.isRequired
+  firestore: PropTypes.object.isRequired,
+  goal: PropTypes.array
 };
 
 export default compose(

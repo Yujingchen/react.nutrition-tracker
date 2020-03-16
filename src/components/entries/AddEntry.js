@@ -4,7 +4,7 @@ import Prepend from "../layout/prepend";
 import "../../App.css";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { firebaseConnect } from "react-redux-firebase";
+import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 
 class AddEntry extends Component {
@@ -178,6 +178,7 @@ class AddEntry extends Component {
         </div>
       </div>
     );
+
   }
 }
 
@@ -186,6 +187,25 @@ AddEntry.propTypes = {
 };
 
 export default compose(
-  firebaseConnect([{ collection: "entries" }]),
+  firestoreConnect(() => [{ collection: "entries" }]),
   connect()
 )(AddEntry);
+
+
+
+
+// export default compose(
+//   firestoreConnect(props => [
+//     {
+//       collection: "entries",
+//       storeAs: "singleEntry",
+//       doc: props.entry.id
+//     }
+//   ]),
+//   connect(({ firestore: { ordered } }, props) => ({
+//     singleEntry: ordered.singleEntry && ordered.singleEntry[0]
+//   }))
+// )(Entry);
+
+
+// export default AddEntry

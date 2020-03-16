@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/layout/Header";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Entries from "./components/entries/Entries";
 import AddEntry from "./components/entries/AddEntry";
 import NotFound from "./components/layout/NotFound";
