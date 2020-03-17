@@ -1,8 +1,8 @@
 import React from "react";
-
+import "../../share.css"
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-sm bg-light navbar-light mb-3 py--0">
+    <nav className="navbar navbar-expand-sm mb-3 py--0 bg-color" >
       <div className="container">
         <a className="navbar-brand" href="/">
           <img
