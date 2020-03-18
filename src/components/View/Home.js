@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProgressBar from "../entries/progressBar/ProgressBar"
+import ProgressBar from "../ProgressBar/ProgressBar"
 class Home extends Component {
     render() {
         const entries = [{
