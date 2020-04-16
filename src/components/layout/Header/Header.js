@@ -1,16 +1,18 @@
 import React from "react";
-import styles from './header.module.scss';
+import styles from './Header.module.scss';
 import classnames from "classnames"
 const NavItem = (
   {
     iconName,
     content,
-    to
+    to,
+    children,
   }) => {
   return (
     <li className="nav-item ">
-      <a tabindex="0" class={classnames(styles["navbar__main-right--icon"], "btn btn-sm-md")}>
+      <a href={to} tabIndex="0" className={classnames(styles["navbar__icon"], "btn btn-sm-md")}>
         <i className={`${iconName}`} /> {content}
+        {children}
       </a>
     </li >
   )
@@ -23,10 +25,13 @@ const Header = () => {
       <nav className={classnames("navbar navbar-expand-sm", styles["navbar--green-color"])} >
         <div className={classnames(styles['navbar__main'], "flex")}>
           <div className="navbar__main-left">
-            <a className={styles["navbar__content--site-name"]} href="/">Food Macro</a>
+            <a className={styles["navbar__site-name"]} href="/">DNT v2</a>
           </div>
           <div className="navbar__main-right">
-            <ul className={classnames(styles['navbar__main-right--list'], "flex")}>
+            <ul className={classnames(styles['navbar__list'], "flex")}>
+              <NavItem iconName='far fa-clock' to='/' >
+                <span className="small-font">23:54pm EEST</span>
+              </NavItem>
               <NavItem iconName='far fa-bell' to='/' />
               <NavItem iconName='far fa-user-circle' to='/' />
               <NavItem iconName='fa fa-sign-out-alt' to='/' />

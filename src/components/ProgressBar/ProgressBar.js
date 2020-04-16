@@ -35,7 +35,7 @@ export default function ProgressBar() {
         <div className={styles["head-right-container"], styles["flex"]}>
           <div className={styles["head-btn-box"], styles["dropdown"]}>
             <ButtonSecondary content="Today" className={classname("fa fa-caret-down", styles["secondary-icon"], styles["dropbtn"])}></ButtonSecondary>
-            <div class="dropdown-content">
+            <div className="dropdown-content">
               <a href="#">Yesterday</a>
               <a href="#">Week</a>
               <a href="#">Months</a>

@@ -9,7 +9,7 @@
 .navbar--green-color{
     background-color:  rgb(0, 170, 70);
 }
-.navbar__content--site-name{
+.navbar__site-name{
     color:white;
     font-size: 30px;
     font-weight: bold;
@@ -19,17 +19,17 @@
     margin-right: 1rem;
     text-decoration: none;
 }
-.navbar__content--site-name:hover {  
+.navbar__site-name:hover {  
     text-decoration: none;
 }
 
 
-.navbar__main-right--list{
+.navbar__list{
     margin-bottom: 0;
     list-style: none;
 }
  
-.navbar__main-right--icon{
+.navbar__icon{
     color:white;
     font-size: 23px;
     text-decoration: none;
