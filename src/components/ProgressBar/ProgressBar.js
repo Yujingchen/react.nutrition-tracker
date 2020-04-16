@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import classname from "classnames"
 import { Line } from 'rc-progress';
 import Setgoals from "../entries/SetGoals";
-import { colors } from "../../colors"
 import { format, formatDistance } from 'date-fns'
 import styles from "./progress-bar.module.scss"
 import { ButtonSecondary } from "../common/button/Button"
@@ -56,7 +55,7 @@ export default function ProgressBar() {
       <ul className="list-group">
         <li>
           <label>Main Goal: Calories</label>
-          <Line percent={percent} strokeWidth="2" trailWidth="2" strokeColor={colors.bgcolor} />
+          <Line percent={percent} strokeWidth="2" trailWidth="2" />
         </li>
       </ul>
     </div >

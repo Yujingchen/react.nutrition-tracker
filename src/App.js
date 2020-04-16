@@ -7,7 +7,7 @@ import AddEntry from "./components/entries/AddEntry";
 import NotFound from "./components/Layout/NotFound";
 import store from "./store";
 import { Provider } from "react-redux";
-
+import "./styles/main.scss"
 import './styles/share.scss';
 
 class App extends Component {

@@ -1,1 +1,0 @@
-export const colors = { "bgcolor": "rgb(0, 170, 70)" }

@@ -22,10 +22,6 @@
     margin: 0 5px 0 5px;
 }
 
-.icon-box{
+.center{
     align-self: center;    
-}
-
-.list-group{
-    list-style: none;
 }
