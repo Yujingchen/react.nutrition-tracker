@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Modal from "react-responsive-modal";
-import InputList from "../layout/InputList";
-import Prepend from "../layout/prepend";
+import InputList from "../Layout/InputList";
+import Prepend from "../Layout/prepend";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { firestoreConnect } from "react-redux-firebase";

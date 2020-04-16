@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "./components/layout/Header";
+import Header from "./components/Layout/Header/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Entries from "./components/entries/Entries";
+import Home from "./components/View/Home";
 import AddEntry from "./components/entries/AddEntry";
-import NotFound from "./components/layout/NotFound";
+import NotFound from "./components/Layout/NotFound";
 import store from "./store";
 import { Provider } from "react-redux";
+import "./styles/main.scss"
+import './styles/share.scss';
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div className="APP">
+          <div>
             <Header />
-
             <div className="container">
               <Switch>
-                <Route exact path="/" component={Entries} />
+                <Route exact path="/" component={Home} />
                 <Route exact path="/entry/add" component={AddEntry} />
                 <Route component={NotFound} />
               </Switch>

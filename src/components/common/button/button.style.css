@@ -1,0 +1,27 @@
+
+.secondary-btn{
+        border: solid 1px white;
+        background-color: rgb(0, 170, 70); /* Green */
+        color: white;
+        padding: 5px 12px 5px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        border-radius: 15px;
+        align-items: center;
+}
+
+.secondary-btn:focus {
+    outline: none;
+  }
+
+.secondary-icon {
+    cursor: pointer;
+    color: white;
+    margin: 0 5px 0 5px;
+}
+
+.center{
+    align-self: center;    
+}
