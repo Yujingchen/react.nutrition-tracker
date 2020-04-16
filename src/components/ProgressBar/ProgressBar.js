@@ -27,7 +27,7 @@ export default function ProgressBar() {
       {/* head start*/}
       <div className={styles["head-container"], styles["flex"]} >
         <div className={styles['head-left-container']}>
-          <h3 className={styles["title-color"]}>
+          <h3 className={"green"}>
             Nutrition Progress
           </h3>
         </div>

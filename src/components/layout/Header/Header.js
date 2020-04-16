@@ -10,7 +10,7 @@ const NavItem = (
   }) => {
   return (
     <li className="nav-item ">
-      <a href={to} tabIndex="0" className={classnames(styles["navbar__icon"], "btn btn-sm-md")}>
+      <a href={to} tabIndex="0" className={classnames(styles["navbar__list-item"], "btn btn-sm-md light-white")}>
         <i className={`${iconName}`} /> {content}
         {children}
       </a>
@@ -19,18 +19,30 @@ const NavItem = (
 }
 
 
+const handleSidebarControlButton = event => {
+  event.preventDefault();
+  event.stopPropagation();
+
+  document.querySelector('.cr-sidebar').classList.toggle('cr-sidebar--open');
+};
+
 const Header = () => {
   return (
     <div className={styles['navbar']}>
-      <nav className={classnames("navbar navbar-expand-sm", styles["navbar--green-color"])} >
+      <nav className="navbar navbar-expand-sm bg-green" >
         <div className={classnames(styles['navbar__main'], "flex")}>
           <div className="navbar__main-left">
-            <a className={styles["navbar__site-name"]} href="/">DNT v2</a>
+            <ul className={classnames(styles['navbar__list'], "flex")}>
+              <NavItem iconName='fas fa-bars' to='/' >
+                <span className={classnames(styles['navbar__time'], "small-font relative")}>Account</span>
+              </NavItem>
+            </ul>
+            {/* <a className={styles["navbar__site-name"]} href="/">DNT v2</a> */}
           </div>
           <div className="navbar__main-right">
             <ul className={classnames(styles['navbar__list'], "flex")}>
               <NavItem iconName='far fa-clock' to='/' >
-                <span className="small-font">23:54pm EEST</span>
+                <span className={classnames(styles['navbar__time'], "small-font relative")}>23:54pm EEST</span>
               </NavItem>
               <NavItem iconName='far fa-bell' to='/' />
               <NavItem iconName='far fa-user-circle' to='/' />
