@@ -1,16 +1,25 @@
 $primary-font-color: black;
 
-.bg-color{
+
+//colors
+.bg-green{
+    background-color:rgb(0, 170, 70);
+}
+.bg-darkgreen{
+  background-color:#28a745;
+
+}
+.green{
     color:rgb(0, 170, 70);
 }
 
-.title-color{
-    color:rgb(0, 170, 70);
-}
+.white{
+    color:#FFFFFF
+  }
+.light-white{
+    color:#EAEDED
+  }
 
-.text-color{
-    color:rgb(0, 170, 70);
-}
 .flex {
     display: flex;
     flex-wrap: wrap;

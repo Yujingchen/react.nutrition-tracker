@@ -4,7 +4,7 @@ import { Line } from 'rc-progress';
 import Setgoals from "../entries/SetGoals";
 import { format, formatDistance } from 'date-fns'
 import styles from "./progress-bar.module.scss"
-import { ButtonSecondary } from "../common/button/Button"
+import { ButtonSecondary } from "../common/Button/Button"
 
 export default function ProgressBar() {
   const [percent, setPercent] = useState(0);
@@ -23,11 +23,11 @@ export default function ProgressBar() {
     let tm = setTimeout(() => setProgress, 10);
   }
   return (
-    <div className="card card-body mb-3">
+    <div className="card-body mb-3">
       {/* head start*/}
       <div className={styles["head-container"], styles["flex"]} >
         <div className={styles['head-left-container']}>
-          <h3 className={styles["title-color"]}>
+          <h3 className={"green"}>
             Nutrition Progress
           </h3>
         </div>
@@ -35,7 +35,7 @@ export default function ProgressBar() {
         <div className={styles["head-right-container"], styles["flex"]}>
           <div className={styles["head-btn-box"], styles["dropdown"]}>
             <ButtonSecondary content="Today" className={classname("fa fa-caret-down", styles["secondary-icon"], styles["dropbtn"])}></ButtonSecondary>
-            <div class="dropdown-content">
+            <div className="dropdown-content">
               <a href="#">Yesterday</a>
               <a href="#">Week</a>
               <a href="#">Months</a>

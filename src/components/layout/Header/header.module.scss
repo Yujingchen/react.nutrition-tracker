@@ -4,33 +4,17 @@
 
 .navbar {
     padding:0;
-
-}
-.navbar--green-color{
-    background-color:  rgb(0, 170, 70);
-}
-.navbar__content--site-name{
-    color:white;
-    font-size: 30px;
-    font-weight: bold;
-    display: inline-block;
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
-    margin-right: 1rem;
-    text-decoration: none;
-}
-.navbar__content--site-name:hover {  
-    text-decoration: none;
 }
 
 
-.navbar__main-right--list{
+
+.navbar__list{
     margin-bottom: 0;
     list-style: none;
+    padding: 0;
 }
  
-.navbar__main-right--icon{
-    color:white;
+.navbar__list-item{
     font-size: 23px;
     text-decoration: none;
     margin:5px
@@ -40,4 +24,8 @@
     justify-content: space-between;
     width: 100%;
     align-items: center;
+}
+
+.navbar__time{
+    top:-4px;
 }

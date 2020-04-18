@@ -1,32 +1,48 @@
 import React from "react";
-import styles from './header.module.scss';
+import styles from './Header.module.scss';
 import classnames from "classnames"
+import { ButtonPrimary } from "../../common/Button/Button"
 const NavItem = (
   {
     iconName,
     content,
-    to
+    to,
+    children,
   }) => {
   return (
     <li className="nav-item ">
-      <a tabindex="0" class={classnames(styles["navbar__main-right--icon"], "btn btn-sm-md")}>
+      <a href={to} tabIndex="0" className={classnames(styles["navbar__list-item"], "btn btn-sm-md light-white")}>
         <i className={`${iconName}`} /> {content}
+        {children}
       </a>
     </li >
   )
 }
 
 
+const handleSidebarControlButton = event => {
+  console.log("open")
+  event.preventDefault();
+  // event.stopPropagation();
+
+  document.querySelector('.sidebar').classList.toggle('sidebar--open');
+};
+
 const Header = () => {
   return (
     <div className={styles['navbar']}>
-      <nav className={classnames("navbar navbar-expand-sm", styles["navbar--green-color"])} >
+      <nav className="navbar navbar-expand-sm bg-green" >
         <div className={classnames(styles['navbar__main'], "flex")}>
           <div className="navbar__main-left">
-            <a className={styles["navbar__content--site-name"]} href="/">Food Macro</a>
+            <ButtonPrimary onClick={handleSidebarControlButton} icon="fas fa-bars">
+            </ButtonPrimary>
+            <span className="font-md white">Accounts</span>
           </div>
           <div className="navbar__main-right">
-            <ul className={classnames(styles['navbar__main-right--list'], "flex")}>
+            <ul className={classnames(styles['navbar__list'], "flex")}>
+              <NavItem iconName='far fa-clock' to='/' >
+                <span className={classnames(styles['navbar__time'], "font-sm relative")}>23:54pm EEST</span>
+              </NavItem>
               <NavItem iconName='far fa-bell' to='/' />
               <NavItem iconName='far fa-user-circle' to='/' />
               <NavItem iconName='fa fa-sign-out-alt' to='/' />
