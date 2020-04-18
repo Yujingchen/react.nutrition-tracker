@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./button.style.css"
+import "./Button.style.css"
 
 export function ButtonPrimary(props) {
     return (
-        <button className="secondary-btn">
+        <button className="primary-btn" onClick={props.onClick}>
             <span className="center">
                 <i className={props.icon} />
             </span>

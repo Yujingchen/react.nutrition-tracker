@@ -88,10 +88,26 @@
     background-color: #2e36b5;
     color: white;
   }
-  .small-font{
-    font-size: 13px;
-  }
+
   .relative{
     position: relative;
   }
   
+
+//front size
+  .font-sm{
+    font-size: 12px;
+  }
+  .font-md{
+    font-size: 18px;
+  }
+  .font-lg{
+    font-size: 25px;
+  }
+
+
+  //postion
+  .center{
+    display: flex;
+    justify-content: center;
+  }

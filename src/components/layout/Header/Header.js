@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './Header.module.scss';
 import classnames from "classnames"
+import { ButtonPrimary } from "../../common/Button/Button"
 const NavItem = (
   {
     iconName,
@@ -20,10 +21,11 @@ const NavItem = (
 
 
 const handleSidebarControlButton = event => {
+  console.log("open")
   event.preventDefault();
-  event.stopPropagation();
+  // event.stopPropagation();
 
-  document.querySelector('.cr-sidebar').classList.toggle('cr-sidebar--open');
+  document.querySelector('.sidebar').classList.toggle('sidebar--open');
 };
 
 const Header = () => {
@@ -32,17 +34,14 @@ const Header = () => {
       <nav className="navbar navbar-expand-sm bg-green" >
         <div className={classnames(styles['navbar__main'], "flex")}>
           <div className="navbar__main-left">
-            <ul className={classnames(styles['navbar__list'], "flex")}>
-              <NavItem iconName='fas fa-bars' to='/' >
-                <span className={classnames(styles['navbar__time'], "small-font relative")}>Account</span>
-              </NavItem>
-            </ul>
-            {/* <a className={styles["navbar__site-name"]} href="/">DNT v2</a> */}
+            <ButtonPrimary onClick={handleSidebarControlButton} icon="fas fa-bars">
+            </ButtonPrimary>
+            <span className="font-md white">Accounts</span>
           </div>
           <div className="navbar__main-right">
             <ul className={classnames(styles['navbar__list'], "flex")}>
               <NavItem iconName='far fa-clock' to='/' >
-                <span className={classnames(styles['navbar__time'], "small-font relative")}>23:54pm EEST</span>
+                <span className={classnames(styles['navbar__time'], "font-sm relative")}>23:54pm EEST</span>
               </NavItem>
               <NavItem iconName='far fa-bell' to='/' />
               <NavItem iconName='far fa-user-circle' to='/' />

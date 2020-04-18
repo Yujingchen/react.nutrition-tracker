@@ -1,0 +1,12 @@
+.listitem--focus{
+    border-left: solid 2px white;
+}
+
+
+.listitem{
+    margin:0;
+    padding:0;
+    width: 182px;
+    height: 74px;
+    padding:14px 16px 14px 16px;
+}

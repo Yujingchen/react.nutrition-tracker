@@ -1,4 +1,22 @@
 
+.primary-btn{
+        background-color: rgb(0, 170, 70); /* Green */
+        color: white;
+        padding: 5px 12px 5px 12px;
+        text-align: center;
+        display: inline-block;
+        align-items: center;
+        border:none;
+        font-size:20px;
+}
+
+.primary-btn:focus {
+    outline: none;
+  }
+.primary-btn:hover {
+    color: black;
+  }
+
 .secondary-btn{
         border: solid 1px white;
         background-color: rgb(0, 170, 70); /* Green */

@@ -4,7 +4,7 @@ import { Line } from 'rc-progress';
 import Setgoals from "../entries/SetGoals";
 import { format, formatDistance } from 'date-fns'
 import styles from "./progress-bar.module.scss"
-import { ButtonSecondary } from "../common/button/Button"
+import { ButtonSecondary } from "../common/Button/Button"
 
 export default function ProgressBar() {
   const [percent, setPercent] = useState(0);
@@ -23,7 +23,7 @@ export default function ProgressBar() {
     let tm = setTimeout(() => setProgress, 10);
   }
   return (
-    <div className="card card-body mb-3">
+    <div className="card-body mb-3">
       {/* head start*/}
       <div className={styles["head-container"], styles["flex"]} >
         <div className={styles['head-left-container']}>
