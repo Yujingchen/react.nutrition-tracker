@@ -4,6 +4,7 @@
 
 /* styles for Navbar */
 .navbar__main{
+    margin: 5px 0;
     justify-content: space-between;
     width: 100%;
     align-items: center;
@@ -31,9 +32,9 @@
 .navbar__link:focus {
     outline-style: none;;    
 }
-.navbar__link-inactive {
+.navbar__link-disable {
     pointer-events: none;
-    cursor: default;
+    cursor: pointer;
     text-decoration: none;
   }
 .navbar__listItem__content{

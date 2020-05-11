@@ -22,28 +22,14 @@
 }
 
 .sidebar__nav{
-    margin:0;
-    padding:0;
+    padding: 0;
     width: 182px;
-    height: 74px;
-    padding:14px 16px 14px 16px;
+    height: 72px;
+    padding: 14px 16px 14px 16px;
     border-right: solid 1px white;
+    margin: 5px 0;
 }
 
-.sidebar__site-name{
-    color:white;
-    font-size: 30px;
-    line-height: inherit;
-    width:inherit;
-    font-weight: bold;
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-}
-.sidebar__site-name:hover {  
-    text-decoration: none;
-    color: white;
-}
 
 
 
@@ -59,28 +45,34 @@
     align-items: center;
 }
 .sidebar__navList{
-    margin: 0 2em 0 0;
     list-style: none;
     padding: 0;
+    text-decoration: none;
 } 
 .sidebar__link{
+    display: block;
     color: #EAEDED;
     font-weight: 400;
-    padding: .375rem .75rem;
     text-align: center;
     font-size: 23px;
     text-decoration: none;
-    margin:5px;
     justify-self: center;
+    padding: 30px 0;
 }
+
 .sidebar__link:hover {
-    color: #212529;
+    background-color: green;
+    color: #EAEDED;
     text-decoration: none;
 }
 .sidebar__link:focus {
-    outline-style: none;;    
+    outline-style: none;
 }
-.sidebar__link-inactive {
+.sidebar__link-active {
+    background-color: green;
+    border-left: solid #EAEDED 4px;
+}
+.sidebar__link-disable {
     pointer-events: none;
     cursor: default;
     text-decoration: none;
@@ -90,5 +82,21 @@
     top:-4px;
 }
 .sidebar__listItem__icon{
-    margin-right: 0.2em;
+/* Place holder */
 }
+.sidebar__logo{
+    color:white;
+    font-size: 30px;
+    line-height: inherit;
+    width:inherit;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sidebar__logo:hover {  
+    text-decoration: none;
+    color: white;
+}
+
