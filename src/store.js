@@ -1,5 +1,5 @@
 import { createStore, compose, combineReducers } from "redux";
-import firebase from "firebase/app";
+import firebase from "firebase";
 import "firebase/firestore";
 import { reactReduxFirebase, firebaseReducer } from "react-redux-firebase";
 import { reduxFirestore, firestoreReducer } from "redux-firestore";
@@ -15,13 +15,15 @@ const firebaseConfig = {
 
 const rrfConfig = {
   userProfile: "users",
-  useFirestoreForProfile: true //Firestore for Profile instead of Realtime DB
+  useFirestoreForProfile: true // Firestore for Profile instead of Realtime DB
 };
 
-//Init firebase instance
+// Initialize firebase instance
 firebase.initializeApp(firebaseConfig);
-//Init firestore
-const firestore = firebase.firestore();
+
+// Initialize other services on firebase instance
+const firestore = firebase.firestore(); // <- needed if using firestore
+// firebase.functions() // <- needed if using httpsCallable
 
 // Add reactReduxFirebase enhancer when making store creator
 const createStoreWithFirebase = compose(
@@ -29,23 +31,35 @@ const createStoreWithFirebase = compose(
   reduxFirestore(firebase) // <- needed if using firestore
 )(createStore);
 
+// Add firebase to reducers
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
-  firestore: firestoreReducer, // <- firestoreneeded if using
+  firestore: firestoreReducer // <- needed if using firestore
 });
 
-
-//Create initial state
+// Create store with reducers and initial state
 const initialState = {};
-// create initialState with settings stored in localstorage that is parsed back to json fotmat
-//Create store
-const store = createStoreWithFirebase(
-  rootReducer,
-  initialState,
-  compose(
-    reactReduxFirebase(firebase),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+let store
+if (window.navigator.userAgent.includes('Chrome')) {
+  store = createStoreWithFirebase(
+    rootReducer,
+    initialState,
+    compose(
+      reactReduxFirebase(firebase),
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
+  );
+} else {
+  store = createStoreWithFirebase(
+    rootReducer,
+    initialState,
+    compose(
+      reactReduxFirebase(firebase),
+    )
+  );
+}
+
+//bug: react-redux v6 a v3.*.* version of react-redux-firebase is required
+//fix npm i --save react-redux-firebase@latest or npm i --save react-redux@^5.0.0
 
 export default store;

@@ -2,30 +2,44 @@
     max-width: inherit;
 }
 
-.navbar {
-    padding:0;
-}
-
-
-
-.navbar__list{
-    margin-bottom: 0;
-    list-style: none;
-    padding: 0;
-}
- 
-.navbar__list-item{
-    font-size: 23px;
-    text-decoration: none;
-    margin:5px
-}
-
+/* styles for Navbar */
 .navbar__main{
     justify-content: space-between;
     width: 100%;
     align-items: center;
 }
-
-.navbar__time{
+.navbar__navList{
+    margin: 0 2em 0 0;
+    list-style: none;
+    padding: 0;
+} 
+.navbar__link{
+    color: #EAEDED;
+    display: inline-block;
+    font-weight: 400;
+    padding: .375rem .75rem;
+    text-align: center;
+    font-size: 23px;
+    text-decoration: none;
+    margin:5px;
+    justify-self: center;
+}
+.navbar__link:hover {
+    color: #212529;
+    text-decoration: none;
+}
+.navbar__link:focus {
+    outline-style: none;;    
+}
+.navbar__link-inactive {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+  }
+.navbar__listItem__content{
+    position: relative;
     top:-4px;
+}
+.navbar__listItem__icon{
+    margin-right: 0.2em;
 }
