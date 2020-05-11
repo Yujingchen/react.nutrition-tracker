@@ -7,7 +7,7 @@ class MainLayout extends Component {
         const { children } = this.props;
         return (
             <main className="app">
-                <Sidebar classes="sidebar bg-green" />
+                <Sidebar />
                 <div className="content">
                     <Header />
                     {children}

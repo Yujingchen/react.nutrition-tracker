@@ -1,26 +1,53 @@
 $primary-font-color: black;
 
-
-//colors
-.bg-green{
-    background-color:rgb(0, 170, 70);
-}
-.bg-darkgreen{
-  background-color:#28a745;
-
-}
-.green{
-    color:rgb(0, 170, 70);
-}
-
-.white{
-    color:#FFFFFF
-  }
-.light-white{
-    color:#EAEDED
-  }
-
 .flex {
     display: flex;
     flex-wrap: wrap;
   }
+
+
+    /* use colors */ 
+    .btn-light {
+      color: black;
+      background-color: #f8f9fa;
+      border-color: #f8f9fa;
+      font-weight: 500;
+    }
+    .bold-text {
+      font-weight: 500;
+    }
+    .bold-text-x {
+      font-weight: 700;
+    }
+    .blue-bg {
+      background-color: #2e36b5;
+      color: white;
+    }
+    .bg-green{
+      background-color:rgb(0, 170, 70);
+    }
+    .bg-darkgreen{
+    background-color:#28a745;
+  
+    }
+   .green{
+       color:rgb(0, 170, 70);
+   }
+  .white{
+       color:#FFFFFF
+   }
+  .light-white{
+      color:#EAEDED
+   }
+    
+  
+  /* use different font sizes */ 
+    .font-sm{
+      font-size: 12px;
+    }
+    .font-md{
+      font-size: 18px;
+    }
+    .font-lg{
+      font-size: 25px;
+    }

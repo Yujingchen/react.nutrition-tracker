@@ -45,3 +45,50 @@
     color: white;
 }
 
+
+
+
+.container {
+    max-width: inherit;
+}
+
+/* Sidebar Styling */
+.sidebar__main{
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.sidebar__navList{
+    margin: 0 2em 0 0;
+    list-style: none;
+    padding: 0;
+} 
+.sidebar__link{
+    color: #EAEDED;
+    font-weight: 400;
+    padding: .375rem .75rem;
+    text-align: center;
+    font-size: 23px;
+    text-decoration: none;
+    margin:5px;
+    justify-self: center;
+}
+.sidebar__link:hover {
+    color: #212529;
+    text-decoration: none;
+}
+.sidebar__link:focus {
+    outline-style: none;;    
+}
+.sidebar__link-inactive {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+  }
+.sidebar__listItem__content{
+    position: relative;
+    top:-4px;
+}
+.sidebar__listItem__icon{
+    margin-right: 0.2em;
+}
