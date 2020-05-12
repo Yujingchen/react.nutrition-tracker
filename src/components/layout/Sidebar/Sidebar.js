@@ -27,7 +27,6 @@ const SideBarItem = (
         )
     }
 }
-
 const linkOnClick = (event, el) => {
     event.preventDefault();
     const activeEl = document.querySelector('.sidebar__link-active')
@@ -61,7 +60,7 @@ function Sidebar() {
             <div className="sidebar__main ">
                 <div className="sidebar__dashbord">
                     <ul className="sidebar__navList flex-column">
-                        <SideBarItem iconName="analytics-outline" to='/' actived>Dashboard</SideBarItem>
+                        <SideBarItem iconName="clipboard-outline" to='/' actived>Dashboard</SideBarItem>
                         <SideBarItem iconName="search-circle-outline" to='/' >Search</SideBarItem>
                         <SideBarItem iconName='pizza-outline' to='/' >Ingrediant</SideBarItem>
                         <SideBarItem iconName='settings-outline' to='/' >Settings</SideBarItem>

@@ -14,10 +14,10 @@ const NavItem = (
   let disableClasses = disabled ? "navbar__link-disable" : ""
   if (iconName != undefined) {
     return (
-      <li className="navbar__listItem noselect">
+      <li className="navbar__listItem">
         <a href={to} tabIndex="0" className={classnames(styles["navbar__link"], styles[disableClasses])}>
           <i className={classnames(iconName, styles["navbar__listItem__icon"])} />
-          <span className={classnames(styles['navbar__listItem__content'], "font-sm")}>
+          <span className={classnames(styles['navbar__listItem__content'], "font-sm noselect")}>
             {children}
           </span>
         </a>
