@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProgressBar from "../ProgressBar/ProgressBar"
+// import ProgressBar from "../ProgressBar/ProgressBar"
 class Home extends Component {
     render() {
         const entries = [{
@@ -15,7 +15,7 @@ class Home extends Component {
         }
         return (
             <div>
-                <ProgressBar entries={entries} goal={goal}></ProgressBar>
+                {/* <ProgressBar entries={entries} goal={goal}></ProgressBar> */}
             </div>
         );
     }

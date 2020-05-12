@@ -52,9 +52,12 @@ function Sidebar() {
     })
     return (
         <div className="sidebar bg-green">
-            <nav className="sidebar__nav center">
-                <a className="sidebar__logo" href="/">DNT v2</a>
-            </nav>
+            <div className="sidebar__top center">
+                <a className="sidebar__logo" href="/">
+                    <span className="sidebar__logo__content">DNT</span>
+                    {/* <ion-icon size="large" name={iconName}></ion-icon> */}
+                </a>
+            </div>
             <div className="sidebar__main ">
                 <div className="sidebar__dashbord">
                     <ul className="sidebar__navList flex-column">
@@ -64,6 +67,9 @@ function Sidebar() {
                         <SideBarItem iconName='settings-outline' to='/' >Settings</SideBarItem>
                     </ul>
                 </div>
+            </div>
+            <div className="sidebar__bottom">
+                <span className="sidebar__copyright">Created by Yujing Chen Copyright @ 2020 </span>
             </div>
         </ div >
     )

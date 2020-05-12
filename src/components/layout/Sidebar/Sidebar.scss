@@ -1,44 +1,33 @@
-.sidebar{
-    position: fixed;
-    top: 0;
-    left: -182px;
-    z-index: 1;
-    display: block;
-    width: 181px;
-    height: 100%;
-    transition: left .2s ease-in;
-    +.content {
-        transition: margin .2s ease-in;
-      }
-}
-.sidebar--open{
-    top: 0;
-    left: 0px;
-    transition: left .2s ease-in;
-    +.content{
-        margin: 0 0 0 182px;
-        transition: margin .2s ease-in;
-    }
-}
-
-.sidebar__nav{
-    padding: 0;
-    width: 182px;
-    height: 72px;
-    padding: 14px 16px 14px 16px;
-    border-right: solid 1px white;
-    margin: 5px 0;
-}
-
-
-
-
-
 .container {
     max-width: inherit;
 }
 
 /* Sidebar Styling */
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: -181px;
+    z-index: 1;
+    display: block;
+    width: 181px;
+    height: 100%;
+    border-right: solid #CCD1D1 1px;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12); 
+    transition: left .2s ease-in;
+    +.content {
+        transition: margin .2s ease-in;
+      }
+}
+.sidebar-open{
+    top: 0;
+    left: 0px;
+    transition: left .2s ease-in;
+    +.content{
+        margin: 0 0 0 180px;
+        transition: margin .2s ease-in;
+    }
+}
 .sidebar__main{
     justify-content: space-between;
     width: 100%;
@@ -59,9 +48,8 @@
     justify-self: center;
     padding: 30px 0;
 }
-
 .sidebar__link:hover {
-    background-color: green;
+    background-color: #1E8449;
     color: #EAEDED;
     text-decoration: none;
 }
@@ -69,7 +57,7 @@
     outline-style: none;
 }
 .sidebar__link-active {
-    background-color: green;
+    background-color: #1E8449;
     border-left: solid #EAEDED 4px;
 }
 .sidebar__link-disable {
@@ -82,8 +70,16 @@
     top:-4px;
 }
 .sidebar__listItem__icon{
-/* Place holder */
+  /* Place holder */
 }
+.sidebar__top{
+    box-sizing: border-box;
+    padding: 0;
+    width: 100%;
+    height: 82px;
+    padding: 24px 16px 14px 16px;
+}
+
 .sidebar__logo{
     color:white;
     font-size: 30px;
@@ -94,9 +90,29 @@
     text-decoration: none;
     text-align: center;
 }
-
 .sidebar__logo:hover {  
     text-decoration: none;
     color: white;
 }
 
+.sidebar__bottom{
+    position: absolute;
+    bottom: 16px;
+    text-align: center;
+}
+
+.sidebar__copyright{
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: auto;
+    font-size: 12px;
+    color: #F0F3F4;
+    width: 80%;
+}
+// .sidebar__copyright__icon{
+//     display: inline-block;
+//     color: red;
+//     position: relative;
+//     top: 5px;
+// }

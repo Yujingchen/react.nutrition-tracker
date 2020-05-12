@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import classname from "classnames"
 import { Line } from 'rc-progress';
-import Setgoals from "../entries/setGoals";
+import Setgoals from "../../entries/setGoals";
 import { format, formatDistance } from 'date-fns'
 import styles from "./progress-bar.module.scss"
-import { ButtonSecondary } from "../common/Button/Button"
+import { ButtonSecondary } from "../../common/Button/Button"
 
 export default function ProgressBar() {
   const [percent, setPercent] = useState(0);

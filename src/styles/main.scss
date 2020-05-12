@@ -64,10 +64,7 @@
 
 
 /* use postions */
-  .center{
-    display: flex;
-    justify-content: center;
-  }
+
 
 .noselect{
   -webkit-touch-callout: none; /* iOS Safari */
@@ -77,4 +74,11 @@
       -ms-user-select: none; /* Internet Explorer/Edge */
           user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
+}
+
+html{ 
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; 
 }
