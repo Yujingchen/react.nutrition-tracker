@@ -1,6 +1,5 @@
-import React from "react";
-import styles from './Sidebar.scss';
-import classnames from "classnames"
+import React, { useEffect } from "react";
+import './Sidebar.scss';
 // import { ButtonPrimary } from "../../common/Button/Button"
 
 const SideBarItem = (
@@ -8,15 +7,19 @@ const SideBarItem = (
         iconName,
         to,
         children,
-        disabled
+        disabled,
+        actived
     }) => {
-    let inactiveClasses = disabled ? "sidebar__link-inactive" : ""
+    let disableClasses = disabled ? "sidebar__link-disable" : ""
+    let activeClasses = actived ? "sidebar__link-active sidebar__link-disable" : ""
     if (iconName != undefined) {
         return (
-            <li className="sidebar__listItem">
-                <a href={to} tabIndex="0" className={classnames(styles["sidebar__link"])}>
-                    <ion-icon name={iconName} className={styles["sidebar__listItem__icon"], styles[inactiveClasses]}></ion-icon>
-                    <span className={classnames(styles['sidebar__listItem_content'], "font-sm")}>
+            <li className="sidebar__listItem noselect">
+                <a href={to} tabIndex="0" className={`sidebar__link ${disableClasses} ${activeClasses}`} >
+                    <div className="sidebar__listItem__icon">
+                        <ion-icon size="large" name={iconName}></ion-icon>
+                    </div>
+                    <span className="sidebar__listItem__content font-md">
                         {children}
                     </span>
                 </a>
@@ -24,22 +27,48 @@ const SideBarItem = (
         )
     }
 }
+const linkOnClick = (event, el) => {
+    event.preventDefault();
+    const activeEl = document.querySelector('.sidebar__link-active')
+    if (activeEl && el) {
+        activeEl.classList.remove("sidebar__link-active", "sidebar__link-disable");
+        el.classList.add("sidebar__link-active", "sidebar__link-disable")
+    }
+};
+
 
 function Sidebar() {
+    useEffect(() => {
+        const sidebarEls = document.querySelectorAll('.sidebar__link')
+        if (sidebarEls) {
+            for (const el of sidebarEls) {
+                el.addEventListener("click", function (event) {
+                    linkOnClick(event, el)
+                }
+                )
+            }
+        }
+    })
     return (
         <div className="sidebar bg-green">
-            <nav className="sidebar__nav center">
-                <a className="sidebar__site-name" href="/">DNT v2</a>
-            </nav>
-            <div className="sidebar__main flex">
+            <div className="sidebar__top center">
+                <a className="sidebar__logo" href="/">
+                    <span className="sidebar__logo__content">DNT</span>
+                    {/* <ion-icon size="large" name={iconName}></ion-icon> */}
+                </a>
+            </div>
+            <div className="sidebar__main ">
                 <div className="sidebar__dashbord">
-                    <ul className="sidebar__navList flex">
-                        <SideBarItem iconName='far fa-clock' to='/'>Dashboard</SideBarItem>
-                        <SideBarItem iconName='far fa-bell' to='/' >Search</SideBarItem>
-                        <SideBarItem iconName='far fa-user-circle' to='/' >Ingrediant</SideBarItem>
-                        <SideBarItem iconName='fa fa-sign-out-alt' to='/' >Settings</SideBarItem>
+                    <ul className="sidebar__navList flex-column">
+                        <SideBarItem iconName="clipboard-outline" to='/' actived>Dashboard</SideBarItem>
+                        <SideBarItem iconName="search-circle-outline" to='/' >Search</SideBarItem>
+                        <SideBarItem iconName='pizza-outline' to='/' >Ingrediant</SideBarItem>
+                        <SideBarItem iconName='settings-outline' to='/' >Settings</SideBarItem>
                     </ul>
                 </div>
+            </div>
+            <div className="sidebar__bottom">
+                <span className="sidebar__copyright">Created by Yujing Chen Copyright @ 2020 </span>
             </div>
         </ div >
     )

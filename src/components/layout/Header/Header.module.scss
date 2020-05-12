@@ -1,9 +1,17 @@
-.container {
-    max-width: inherit;
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    border-left: solid 3px green;
+    top:0
 }
 
 /* styles for Navbar */
 .navbar__main{
+    margin: 5px 0;
     justify-content: space-between;
     width: 100%;
     align-items: center;
@@ -31,9 +39,9 @@
 .navbar__link:focus {
     outline-style: none;;    
 }
-.navbar__link-inactive {
+.navbar__link-disable {
     pointer-events: none;
-    cursor: default;
+    cursor: pointer;
     text-decoration: none;
   }
 .navbar__listItem__content{

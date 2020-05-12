@@ -71,12 +71,12 @@ class Setgoal extends Component {
 
     return (
       <span id="redButton">
-        <button className="btn btn-danger bold-text" onClick={this.onOpenModal}>
+        <button className="btn btn-danger bold" onClick={this.onOpenModal}>
           Add Goal
         </button>
         <Modal open={open} onClose={this.onCloseModal} little>
           <div className="card mb-3">
-            <div className="card-header bold-text ">Set goal</div>
+            <div className="card-header bold ">Set goal</div>
             <div className="card-body">
               <form onSubmit={this.onSubmit}>
                 <div className="form group">

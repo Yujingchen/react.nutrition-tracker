@@ -56,7 +56,7 @@ class Calories extends Component {
               </span>
             </div>
             <ul className="list-group">
-              <li className="list-group-item bold-text ">
+              <li className="list-group-item bold ">
                 Fats:
               {calculateTotalFat > goal.fat && goal.fat !== 0 ? (
                   <span style={{ color: "red" }}>{" " + calculateTotalFat}</span>
@@ -77,7 +77,7 @@ class Calories extends Component {
                   />
                 </div>
               </li>
-              <li className="list-group-item bold-text ">
+              <li className="list-group-item bold ">
                 Carb:
               {calculateTotalCarbs > goal.carbs && goal.carbs !== 0 ? (
                   <span style={{ color: "red" }}>
@@ -100,7 +100,7 @@ class Calories extends Component {
                   />
                 </div>
               </li>
-              <li className="list-group-item bold-text ">
+              <li className="list-group-item bold ">
                 Protein:
               {calculateTotalProtein > goal.protein && goal.protein !== 0 ? (
                   <span style={{ color: "red" }}>

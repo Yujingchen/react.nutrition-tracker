@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import ProgressBar from "../ProgressBar/ProgressBar"
+// import ProgressBar from "../ProgressBar/ProgressBar"
+import Section from "../Progress/Section/Section"
+import styles from "./Home.module.scss"
 class Home extends Component {
     render() {
         const entries = [{
@@ -14,8 +16,8 @@ class Home extends Component {
             protein: 1000
         }
         return (
-            <div>
-                <ProgressBar entries={entries} goal={goal}></ProgressBar>
+            <div className={styles["main"]}>
+                <Section></Section>
             </div>
         );
     }

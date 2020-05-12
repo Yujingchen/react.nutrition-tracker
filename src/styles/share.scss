@@ -1,23 +1,24 @@
 $primary-font-color: black;
-
+/* use layout */ 
 .flex {
     display: flex;
     flex-wrap: wrap;
   }
-
-
-    /* use colors */ 
+.flex-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .center{
+    display: flex;
+    justify-content: center;
+  }
+/* use colors */ 
     .btn-light {
       color: black;
       background-color: #f8f9fa;
       border-color: #f8f9fa;
       font-weight: 500;
-    }
-    .bold-text {
-      font-weight: 500;
-    }
-    .bold-text-x {
-      font-weight: 700;
     }
     .blue-bg {
       background-color: #2e36b5;
@@ -28,7 +29,7 @@ $primary-font-color: black;
     }
     .bg-darkgreen{
     background-color:#28a745;
-  
+
     }
    .green{
        color:rgb(0, 170, 70);
@@ -39,8 +40,15 @@ $primary-font-color: black;
   .light-white{
       color:#EAEDED
    }
-    
-  
+  .dark-blue{
+    color:#5463c0
+  }
+  .bright-blue{
+    color:#2ac8ae
+  }
+  .blue{
+    color:#3fa4d2
+  }
   /* use different font sizes */ 
     .font-sm{
       font-size: 12px;
@@ -51,3 +59,10 @@ $primary-font-color: black;
     .font-lg{
       font-size: 25px;
     }
+  /* use font style */
+  .bold {
+    font-weight: 500;
+  }
+  .extra-bold {
+    font-weight: 700;
+  }

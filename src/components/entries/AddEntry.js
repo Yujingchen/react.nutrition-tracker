@@ -93,7 +93,7 @@ class AddEntry extends Component {
     return (
       <div>
         <div className="card mb-3">
-          <div className="card-header bold-text ">Add Entry</div>
+          <div className="card-header bold ">Add Entry</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form group">
