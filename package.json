@@ -1,10 +1,10 @@
 {
   "name": "calories-tracker",
   "version": "0.1.0",
-  "private": true,
   "engines": {
-    "node": "10.16.3"
+    "node": "10.x"
   },
+  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
