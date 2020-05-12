@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import MainLayout from "./components/Layout/MainLayout/MainLayout"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/View/Home";
 import AddEntry from "./components/entries/AddEntry";
-import NotFound from "./components/Layout/NotFound";
+// import NotFound from "./components/Layout/NotFound";
 import store from "./store";
 import { Provider } from "react-redux";
 import "./styles/main.scss"
@@ -20,7 +19,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/entry/add" component={AddEntry} />
-              <Route component={NotFound} />
+              {/* <Route component={NotFound} /> */}
             </Switch>
           </MainLayout>
         </Router>
