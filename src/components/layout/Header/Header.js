@@ -12,7 +12,7 @@ const NavItem = (
     disabled
   }) => {
   let disableClasses = disabled ? "navbar__link-disable" : ""
-  if (iconName != undefined) {
+  if (iconName !== undefined) {
     return (
       <li className="navbar__listItem">
         <a href={to} tabIndex="0" className={classnames(styles["navbar__link"], styles[disableClasses])}>
@@ -26,7 +26,7 @@ const NavItem = (
   }
   return (
     <li className="navbar__listItem">
-      <a href={to} tabIndex="0" className={classnames(styles["navbar__link", disableClasses])}>
+      <a href={to} tabIndex="0" className={classnames(styles["navbar__link"], disableClasses)}>
         {children}
       </a>
     </li >
@@ -42,7 +42,7 @@ function Header() {
       return
     }
     const sidebarEl = document.querySelector('.sidebar')
-    if (sidebarEl != undefined) {
+    if (sidebarEl !== undefined) {
       sidebarEl.classList.toggle('sidebar-open')
     }
   });

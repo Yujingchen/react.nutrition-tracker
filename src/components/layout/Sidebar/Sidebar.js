@@ -12,7 +12,7 @@ const SideBarItem = (
     }) => {
     let disableClasses = disabled ? "sidebar__link-disable" : ""
     let activeClasses = actived ? "sidebar__link-active sidebar__link-disable" : ""
-    if (iconName != undefined) {
+    if (iconName !== undefined) {
         return (
             <li className="sidebar__listItem noselect">
                 <a href={to} tabIndex="0" className={`sidebar__link ${disableClasses} ${activeClasses}`} >

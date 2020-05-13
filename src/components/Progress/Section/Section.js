@@ -9,7 +9,7 @@ const CardItem = (
         data,
         iconColor
     }) => {
-    if (iconName, sectionName, data != undefined) {
+    if (iconName | sectionName | data !== undefined) {
         return (
             <div className={classnames(styles["card"], "no-select  bg-green")}>
                 <div className={classnames(styles["card__main"])} >
