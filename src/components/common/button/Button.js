@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./Button.style.css"
+import React from "react";
+import "./Button.scss"
 
 export function ButtonPrimary(props) {
     return (
