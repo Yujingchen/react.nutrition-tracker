@@ -1,8 +1,8 @@
-# [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://nta-1.herokuapp.com)
+# [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://mysterious-anchorage-50268.herokuapp.com)
 
 ## Preview
 
-You can check out [live preview](https://nta-1.herokuapp.com).
+You can check out [live preview](https://mysterious-anchorage-50268.herokuapp.com).
 
 ## Quick Start
 
