@@ -1,4 +1,6 @@
 # [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://mysterious-anchorage-50268.herokuapp.com)
+![Daily Nutrition Tracker](public/img/screenshots/screenshoot.png?raw=true 'Daily Nutrition Tracker')
+
 
 ## Preview
 
