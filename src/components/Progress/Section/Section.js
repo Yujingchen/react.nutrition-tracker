@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './Section.module.scss';
 import classnames from "classnames"
+import PieChart from "../../chart/PieChart/PieChart"
 const CardItem = (
     {
         iconName,
@@ -24,7 +25,7 @@ const CardItem = (
                         </span>
                     </div>
                     <div className={classnames(styles["card__chart"])}>
-                        <ion-icon size="large" name={iconName}></ion-icon>
+                        <PieChart></PieChart>
                     </div>
                 </div>
             </div >
