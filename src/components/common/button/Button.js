@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./button.style.css"
+import "./Button.scss"
 
 export function ButtonPrimary(props) {
     return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from './Header.module.scss';
 import classnames from "classnames"
-import { ButtonPrimary } from "../../common/button/Button"
+import { ButtonPrimary } from "../../common/Button/Button"
 import { localeTimeString } from "../../common/Time/Time"
 
 const NavItem = (
