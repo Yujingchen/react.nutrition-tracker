@@ -24,6 +24,8 @@ Live demo is deployed to Heroku(https://dashboard.heroku.com/apps)
 - [x] Section
 - [x] Deploy to heroku
 - [x] Connect to firebase
+- [x] plotly graph
+- [ ] Search, Setting, Ingrediant view
 - [ ] Fetch real data from firebase db
 - [ ] Calories track table
 - [ ] Calories track graph
