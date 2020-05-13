@@ -1,8 +1,4 @@
-// .sidebar--open + .content{
-//     margin: 0 0 0 224px;
-//     transition: margin .2s ease-in;
-// }
-
-// .sidebar + .content {
-//     transition: margin .1s ease-in;
-// }
+.content{
+    height: 100%;
+    min-height: 100vh !important
+}

@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from "react"
 import Plotly from "plotly.js-basic-dist"
+import "./PieChart.scss"
 function PieChart({ id }) {
 
     const divRef = useRef(null);
-    const graphDiv = <div ref={divRef}></div>
+    const graphDiv = <div className="graphDiv" ref={divRef}></div>
 
     useEffect(() => {
         Plotly.newPlot(divRef.current, data, layout, config)
@@ -34,8 +35,8 @@ function PieChart({ id }) {
             },
         ],
         paper_bgcolor: "rgba(0,0,0,0)",
-        height: 80,
-        width: 80,
+        width: 100,
+        height: 150,
         showlegend: false,
         grid: { rows: 1, columns: 1 },
         margin: { l: 0, r: 0, t: 0, b: 0 }

@@ -58,14 +58,12 @@ function Sidebar() {
                 </a>
             </div>
             <div className="sidebar__main ">
-                <div className="sidebar__dashbord">
-                    <ul className="sidebar__navList flex-column">
-                        <SideBarItem iconName="clipboard-outline" to='/' actived>Dashboard</SideBarItem>
-                        <SideBarItem iconName="search-circle-outline" to='/' >Search</SideBarItem>
-                        <SideBarItem iconName='pizza-outline' to='/' >Ingrediant</SideBarItem>
-                        <SideBarItem iconName='settings-outline' to='/' >Settings</SideBarItem>
-                    </ul>
-                </div>
+                <ul className="sidebar__navList flex-column">
+                    <SideBarItem iconName="clipboard-outline" to='/' actived>Dashboard</SideBarItem>
+                    <SideBarItem iconName="search-circle-outline" to='/' >Search</SideBarItem>
+                    <SideBarItem iconName='pizza-outline' to='/' >Ingrediant</SideBarItem>
+                    <SideBarItem iconName='settings-outline' to='/' >Settings</SideBarItem>
+                </ul>
             </div>
             <div className="sidebar__bottom">
                 <span className="sidebar__copyright">Created by Yujing Chen Copyright @ 2020 </span>
