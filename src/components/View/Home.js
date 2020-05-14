@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from './node_modules/react';
 import Section from "../progress/Section/Section"
 import styles from "./Home.module.scss"
 import Table from "../progress/Table/Table"
