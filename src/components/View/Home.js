@@ -1,7 +1,7 @@
-import React, { Component } from './node_modules/react';
-import Section from "../progress/Section/Section"
+import React, { Component } from 'react';
+import Section from "../Progress/Section/Section"
 import styles from "./Home.module.scss"
-import Table from "../progress/Table/Table"
+import Table from "../Progress/Table/Table"
 class Home extends Component {
     render() {
         return (
