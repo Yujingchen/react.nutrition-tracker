@@ -1,18 +1,11 @@
 import React from "react";
 import styles from './Table.module.scss';
 import classnames from "classnames"
-// import PieChart from "../../chart/PieChart/PieChart"
 
 
 
 
-function Table(
-    {
-        sectionName,
-        data,
-        iconColor,
-        tableName
-    }) {
+function Table() {
     return (
         <div className={classnames(styles["card"], "no-select  bg-green")}>
             <div className={classnames(styles["card__container"])} >
@@ -25,7 +18,6 @@ function Table(
                     </span>
                 </div>
                 <div className={classnames(styles["card__chart"])}>
-                    {/* <PieChart></PieChart> */}
                 </div>
             </div>
         </div >

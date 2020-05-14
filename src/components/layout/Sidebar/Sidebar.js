@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import './Sidebar.scss';
-// import { ButtonPrimary } from "../../common/Button/Button"
 
 const SideBarItem = (
     {
@@ -54,7 +53,6 @@ function Sidebar() {
             <div className="sidebar__top center">
                 <a className="sidebar__logo" href="/">
                     <span className="sidebar__logo__content">DNT</span>
-                    {/* <ion-icon size="large" name={iconName}></ion-icon> */}
                 </a>
             </div>
             <div className="sidebar__main ">

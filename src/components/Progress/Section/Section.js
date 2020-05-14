@@ -1,6 +1,5 @@
 import React from "react";
 import styles from './Section.module.scss';
-import classnames from "classnames"
 import Card from "./Card"
 import PieChart from "../../chart/PieChart/PieChart"
 export default function Section() {

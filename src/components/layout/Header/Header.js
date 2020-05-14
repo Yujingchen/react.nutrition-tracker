@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from './Header.module.scss';
 import classnames from "classnames"
 import { ButtonPrimary } from "../../common/Button/Button"
-import { localeTimeString } from "../../common/Time/Time"
 
 const NavItem = (
   {
@@ -50,7 +49,6 @@ function Header() {
   const handleSidebarControl = event => {
     event.preventDefault();
     setOpen(!open)
-    console.log(open)
   };
 
 
@@ -65,7 +63,7 @@ function Header() {
         <div className="navbar__dashbord">
           <ul className={classnames(styles['navbar__navList'], "flex")}>
             <NavItem iconName='far fa-clock' to='/' disabled={true}>
-              {localeTimeString} EEST
+              13:42 EEST
               </NavItem>
             <NavItem iconName='far fa-bell' to='/' />
             <NavItem iconName='far fa-user-circle' to='/' />
