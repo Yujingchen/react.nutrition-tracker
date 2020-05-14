@@ -1,45 +1,22 @@
 import React from "react";
 import styles from './Section.module.scss';
-import classnames from "classnames"
-const CardItem = (
-    {
-        iconName,
-        sectionName,
-        data,
-        iconColor
-    }) => {
-    if (iconName, sectionName, data != undefined) {
-        return (
-            <div className={classnames(styles["card"], "no-select  bg-green")}>
-                <div className={classnames(styles["card__main"])} >
-                    <div className={classnames(styles["card__icon"], iconColor)} >
-                        <ion-icon size="large" name={iconName}></ion-icon>
-                    </div>
-                    <div className={classnames(styles["card__content"], "noselect")}>
-                        <span className={classnames(styles["card__data"], "font-md extra-bold")}>
-                            {data}
-                        </span>
-                        <span className={classnames(styles["card__name"], "font-sm extra-bold")}>
-                            {sectionName}
-                        </span>
-                    </div>
-                    <div className={classnames(styles["card__chart"])}>
-                        <ion-icon size="large" name={iconName}></ion-icon>
-                    </div>
-                </div>
-            </div >
-        )
-    }
-    return null
-}
-
-
+import Card from "./Card"
+import PieChart from "../../chart/PieChart/PieChart"
 export default function Section() {
     return (
         <div className={styles["section"]}>
-            <CardItem sectionName="Crabs" iconName="analytics-outline" data="1500" iconColor="dark-blue" />
-            <CardItem sectionName="Protein" iconName="time-outline" data="130" iconColor="blue" />
-            <CardItem sectionName="Fat" iconName="refresh-outline" data="30" iconColor="bright-blue" />
-        </div>
+            <Card sectionName="Crabs" iconName="analytics-outline" data="1500" iconColor="dark-blue" >
+                <PieChart data="data" colors={["#CDDC39", "#673AB7",]}>
+                </PieChart>
+            </Card>
+            <Card sectionName="Protein" iconName="time-outline" data="130" iconColor="blue" >
+                <PieChart data="data" colors={["#F44336", "#00BCD4",]}>
+                </PieChart>
+            </Card>
+            <Card sectionName="Fat" iconName="refresh-outline" data="30" iconColor="bright-blue" >
+                <PieChart data="data" colors={["#607D8B", "#9B59B6",]}>
+                </PieChart>
+            </Card>
+        </div >
     )
 }

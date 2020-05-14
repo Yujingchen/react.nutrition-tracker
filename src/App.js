@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import MainLayout from "./components/Layout/MainLayout/MainLayout"
+import MainLayout from "./components/layout/MainLayout/MainLayout"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./components/View/Home";
-import AddEntry from "./components/entries/AddEntry";
-// import NotFound from "./components/Layout/NotFound";
+import Home from "./components/view/Home";
 import store from "./store";
 import { Provider } from "react-redux";
 import "./styles/main.scss"
@@ -18,8 +16,6 @@ class App extends Component {
           <MainLayout>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/entry/add" component={AddEntry} />
-              {/* <Route component={NotFound} /> */}
             </Switch>
           </MainLayout>
         </Router>

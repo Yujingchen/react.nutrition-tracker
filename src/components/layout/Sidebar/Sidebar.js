@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import './Sidebar.scss';
-// import { ButtonPrimary } from "../../common/Button/Button"
 
 const SideBarItem = (
     {
@@ -12,7 +11,7 @@ const SideBarItem = (
     }) => {
     let disableClasses = disabled ? "sidebar__link-disable" : ""
     let activeClasses = actived ? "sidebar__link-active sidebar__link-disable" : ""
-    if (iconName != undefined) {
+    if (iconName !== undefined) {
         return (
             <li className="sidebar__listItem noselect">
                 <a href={to} tabIndex="0" className={`sidebar__link ${disableClasses} ${activeClasses}`} >
@@ -54,18 +53,15 @@ function Sidebar() {
             <div className="sidebar__top center">
                 <a className="sidebar__logo" href="/">
                     <span className="sidebar__logo__content">DNT</span>
-                    {/* <ion-icon size="large" name={iconName}></ion-icon> */}
                 </a>
             </div>
             <div className="sidebar__main ">
-                <div className="sidebar__dashbord">
-                    <ul className="sidebar__navList flex-column">
-                        <SideBarItem iconName="clipboard-outline" to='/' actived>Dashboard</SideBarItem>
-                        <SideBarItem iconName="search-circle-outline" to='/' >Search</SideBarItem>
-                        <SideBarItem iconName='pizza-outline' to='/' >Ingrediant</SideBarItem>
-                        <SideBarItem iconName='settings-outline' to='/' >Settings</SideBarItem>
-                    </ul>
-                </div>
+                <ul className="sidebar__navList flex-column">
+                    <SideBarItem iconName="clipboard-outline" to='/' actived>Dashboard</SideBarItem>
+                    <SideBarItem iconName="search-circle-outline" to='/' >Search</SideBarItem>
+                    <SideBarItem iconName='pizza-outline' to='/' >Ingrediant</SideBarItem>
+                    <SideBarItem iconName='settings-outline' to='/' >Settings</SideBarItem>
+                </ul>
             </div>
             <div className="sidebar__bottom">
                 <span className="sidebar__copyright">Created by Yujing Chen Copyright @ 2020 </span>

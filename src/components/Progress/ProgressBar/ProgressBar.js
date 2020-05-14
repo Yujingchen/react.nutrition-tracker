@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classname from "classnames"
 import { Line } from 'rc-progress';
-import Setgoals from "../../entries/setGoals";
-import { format, formatDistance } from 'date-fns'
 import styles from "./progress-bar.module.scss"
 import { ButtonSecondary } from "../../common/Button/Button"
 
@@ -15,7 +13,6 @@ export default function ProgressBar() {
   const setProgress = () => {
     let newPercent = percent + 1;
     if (newPercent >= 100) {
-      console.log("here")
       clearTimeout(tm);
       return;
     }
@@ -24,7 +21,6 @@ export default function ProgressBar() {
   }
   return (
     <div className="card-body mb-3">
-      {/* head start*/}
       <div className={styles["head-container"], styles["flex"]} >
         <div className={styles['head-left-container']}>
           <h3 className={"green"}>
@@ -49,9 +45,7 @@ export default function ProgressBar() {
           </div>
         </div>
       </div>
-      {/* head end */}
 
-      {/* progressBar start */}
       <ul className="list-group">
         <li>
           <label>Main Goal: Calories</label>
