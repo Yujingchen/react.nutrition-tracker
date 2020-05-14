@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import ProgressBar from "../ProgressBar/ProgressBar"
 import Section from "../progress/Section/Section"
 import styles from "./Home.module.scss"
+import Table from "../progress/Table/Table"
 class Home extends Component {
     render() {
         // const entries = [{
@@ -18,6 +19,7 @@ class Home extends Component {
         return (
             <div className={styles["main"]}>
                 <Section></Section>
+                <Table></Table>
             </div>
         );
     }

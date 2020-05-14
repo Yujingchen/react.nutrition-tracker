@@ -3,11 +3,11 @@ import styles from './Card.module.scss';
 import classnames from "classnames"
 import PieChart from "../../chart/PieChart/PieChart"
 function Card(
-    {
+    { data,
         iconName,
         sectionName,
-        data,
-        iconColor
+        iconColor,
+        children
     }) {
     if (iconName | sectionName | data !== undefined) {
         return (
@@ -25,7 +25,7 @@ function Card(
                         </span>
                     </div>
                     <div className={classnames(styles["card__chart"])}>
-                        <PieChart></PieChart>
+                        {children}
                     </div>
                 </div>
             </div >

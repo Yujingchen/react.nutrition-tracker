@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react"
 import Plotly from "plotly.js-basic-dist"
 import "./PieChart.scss"
-function PieChart({ id }) {
-
+function PieChart({ colors }) {
     const divRef = useRef(null);
     const graphDiv = <div className="graphDiv" ref={divRef}></div>
+
 
     useEffect(() => {
         Plotly.newPlot(divRef.current, data, layout, config)
@@ -14,16 +14,19 @@ function PieChart({ id }) {
         values: [1500, 500],
         domain: { column: 0 },
         hoverinfo: "none",
-        hole: .4,
+        hole: .5,
         type: 'pie',
-        textinfo: "none"
+        textinfo: "none",
+        marker: {
+            colors: colors
+        },
     }];
 
     var layout = {
         annotations: [
             {
                 font: {
-                    size: 10,
+                    size: 13,
                     color: "#EAEDED",
                     fontWeight: "bold"
                 },
@@ -39,12 +42,11 @@ function PieChart({ id }) {
         height: 150,
         showlegend: false,
         grid: { rows: 1, columns: 1 },
-        margin: { l: 0, r: 0, t: 0, b: 0 }
+        margin: { l: 0, r: 0, t: 0, b: 0 },
     };
     var config = {
         staticPlot: true
     }
-
     return graphDiv
 }
 
