@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from './Header.module.scss';
 import classnames from "classnames"
-import { ButtonPrimary } from "../../common/Button/Button"
-import { localeTimeString } from "../../common/Time/Time"
+import { ButtonPrimary } from "../../common/button/Button"
 
 const NavItem = (
   {
@@ -12,7 +11,7 @@ const NavItem = (
     disabled
   }) => {
   let disableClasses = disabled ? "navbar__link-disable" : ""
-  if (iconName != undefined) {
+  if (iconName !== undefined) {
     return (
       <li className="navbar__listItem">
         <a href={to} tabIndex="0" className={classnames(styles["navbar__link"], styles[disableClasses])}>
@@ -26,7 +25,7 @@ const NavItem = (
   }
   return (
     <li className="navbar__listItem">
-      <a href={to} tabIndex="0" className={classnames(styles["navbar__link", disableClasses])}>
+      <a href={to} tabIndex="0" className={classnames(styles["navbar__link"], disableClasses)}>
         {children}
       </a>
     </li >
@@ -42,7 +41,7 @@ function Header() {
       return
     }
     const sidebarEl = document.querySelector('.sidebar')
-    if (sidebarEl != undefined) {
+    if (sidebarEl !== undefined) {
       sidebarEl.classList.toggle('sidebar-open')
     }
   });
@@ -50,7 +49,6 @@ function Header() {
   const handleSidebarControl = event => {
     event.preventDefault();
     setOpen(!open)
-    console.log(open)
   };
 
 
@@ -65,7 +63,7 @@ function Header() {
         <div className="navbar__dashbord">
           <ul className={classnames(styles['navbar__navList'], "flex")}>
             <NavItem iconName='far fa-clock' to='/' disabled={true}>
-              {localeTimeString} EEST
+              13:42 EEST
               </NavItem>
             <NavItem iconName='far fa-bell' to='/' />
             <NavItem iconName='far fa-user-circle' to='/' />
