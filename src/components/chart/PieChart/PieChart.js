@@ -5,7 +5,6 @@ function PieChart({ colors }) {
     const divRef = useRef(null);
     const graphDiv = <div className="graphDiv" ref={divRef}></div>
 
-
     useEffect(() => {
         Plotly.newPlot(divRef.current, data, layout, config)
     }, [divRef]);

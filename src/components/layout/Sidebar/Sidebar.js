@@ -63,9 +63,9 @@ function Sidebar() {
                     <SideBarItem iconName='settings-outline' to='/' >Settings</SideBarItem>
                 </ul>
             </div>
-            <div className="sidebar__bottom">
+            {/* <div className="sidebar__bottom">
                 <span className="sidebar__copyright">Created by Yujing Chen Copyright @ 2020 </span>
-            </div>
+            </div> */}
         </ div >
     )
 }
