@@ -2,23 +2,27 @@ import React from "react";
 import styles from './Table.module.scss';
 import classnames from "classnames"
 import LineChart from "../../chart/LineChart/LineChart"
+
 const SideListItem = (
     {
         data,
         children,
     }) => {
     if (data !== undefined) {
+        const varietyStyle = (data) => {
+            return data >= 0 ? "variety-green" : "variety-red"
+        }
         return (
             <li className={classnames(styles["sideList__listItem"], "noselect")}>
                 <div className="listItem__content">
-                    <span className={classnames(styles["listItem__title"], "font-sm bold")}>
+                    <span className={classnames(styles["listItem__title"], "font-sm extra-bold")}>
                         {children}
                     </span>
                     <span className={classnames(styles["listItem__figures"], "font-md extra-bold")}>
                         {data}
                     </span>
-                    <span className={classnames(styles["listItem__variety"], "font-sm bold")}>
-                        {2000 - data >= 0 ? 2500 - data : data - 2500}
+                    <span className={classnames(styles["listItem__variety"], styles[varietyStyle(2000 - data)], "font-sm extra-bold")}>
+                        {2000 - data >= 0 ? "+" + (2500 - data) / 25 : (data - 2500) / 25}%
                     </span>
                 </div>
             </li >

@@ -53,7 +53,7 @@ function Header() {
 
 
   return (
-    <nav className={classnames(styles['navbar'], "bg-green")}>
+    <nav className={classnames(styles['navbar'], "bg-dark")}>
       <div className={classnames(styles['navbar__main'], "flex")}>
         <div className="navbar__logo">
           <ButtonPrimary onClick={handleSidebarControl} icon="fas fa-bars">

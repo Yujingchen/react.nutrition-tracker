@@ -1,8 +1,7 @@
 .card{
     text-align: center;
     box-sizing: border-box;
-    border: solid #CCD1D1 1px;
-    box-shadow: -1px 0px 8px 3px rgba(200,230,205,1);
+    border: solid #000000 1px;
     border-radius: 5px;
 }
 .card__container{
@@ -28,7 +27,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
-    border-bottom: solid 1px #D6DBDF;
+    border-bottom: solid 1px #000000;
 }
 
 .table{
@@ -40,7 +39,7 @@
 }
 .table__title{
     line-height: 49px;
-    color:#E5E8E8;
+    color:#7b7da0;
 }
 .table__option{
     color:#E5E8E8;
@@ -71,13 +70,13 @@
     padding:20px 30px;
 }
 .sideList__listItem{
-    border-right: solid 1px #D6DBDF;
-    border-top: solid 1px #D6DBDF;
+    border-right: solid 1px #000000;
+    border-top: solid 1px #000000;
     padding:18.5px 30px;
     text-align: left;
 }
 .sideList__listItem:last-child{
-    border-bottom: solid 1px #D6DBDF;
+    border-bottom: solid 1px #000000;
     padding:20px 30px;
 }
 
@@ -85,14 +84,22 @@
 .listItem__content{
 }
 .listItem__title{
-margin-right: 30px;
+    color:#7b7da0;
+    margin-right: 30px;
 }
 .listItem__figures{
+    color:#f7f7f8;
     margin-right: 8px;
 }
 .listItem__variety{
-    color: red;
 }
+.variety-red{
+    color: #ff564d;
+}
+.variety-green{
+    color: #22c99e;
+}
+
 .listItem__content{
 
 }
