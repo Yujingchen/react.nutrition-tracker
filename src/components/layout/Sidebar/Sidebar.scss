@@ -13,11 +13,12 @@
     grid-template-rows: 74px auto 50px;
     width: 181px;
     height: 100%;
-    border-right: solid #CCD1D1 1px;
+    border-right: solid #000000 1px;
     box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12); 
     transition: left .2s ease-in;
     box-sizing: border-box;
     overflow-y: scroll;
+    background-color: #232538;
     +.content {
         transition: margin .2s ease-in;
       }
@@ -53,7 +54,7 @@
     padding: 30px 0;
 }
 .sidebar__link:hover {
-    background-color: #1E8449;
+    background-color: #1c1c2c;
     color: #EAEDED;
     text-decoration: none;
 }
@@ -61,8 +62,8 @@
     outline-style: none;
 }
 .sidebar__link-active {
-    background-color: #1E8449;
-    border-left: solid #EAEDED 4px;
+    background-color: #1c1c2c;
+    border-left: solid #6c66fb 4px;
 }
 .sidebar__link-disable {
     pointer-events: none;
@@ -77,6 +78,7 @@
   /* Place holder */
 }
 .sidebar__top{
+    background-color: #2f2e4b;
     box-sizing: border-box;
     padding: 0;
     width: 100%;
@@ -92,6 +94,7 @@
     display: inline-block;
     text-decoration: none;
     text-align: center;
+    background-color: #2f2e4b;
 }
 .sidebar__logo:hover {  
     text-decoration: none;
