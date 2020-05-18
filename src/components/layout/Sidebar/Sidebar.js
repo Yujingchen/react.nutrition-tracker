@@ -49,7 +49,7 @@ function Sidebar() {
         }
     })
     return (
-        <div className="sidebar bg-green">
+        <div className="sidebar">
             <div className="sidebar__top center">
                 <a className="sidebar__logo" href="/">
                     <span className="sidebar__logo__content">DNT</span>
