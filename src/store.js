@@ -46,7 +46,7 @@ if (window.navigator.userAgent.includes('Chrome')) {
     initialState,
     compose(
       reactReduxFirebase(firebase),
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+      // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
   );
 } else {

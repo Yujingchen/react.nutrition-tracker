@@ -1,18 +1,41 @@
 .navbar {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: .5rem 1rem;
+    position: fixed;
+    width:100%;
+    z-index:100
 }
-
 /* styles for Navbar */
 .navbar__main{
     margin: 5px 0;
-    justify-content: space-between;
     width: 100%;
     align-items: center;
+}
+.navbar__top{
+    width: 181px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0;
+    padding: 24px 16px 14px 16px;
+    border-right: 1px solid #515A5A;
+}
+
+.navbar__logo{
+    display: inline-block;
+    color:white;
+    font-size: 30px;
+    line-height: inherit;
+    width:inherit;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    background-color: #2f2e4b;
+}
+.navbar__logo:hover {  
+    text-decoration: none;
+    color: white;
+}
+
+.navbar__dashbord{
+    margin-left: auto;    
 }
 .navbar__navList{
     margin: 0 2em 0 0;

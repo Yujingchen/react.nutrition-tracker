@@ -55,12 +55,17 @@ function Header() {
   return (
     <nav className={classnames(styles['navbar'], "bg-dark")}>
       <div className={classnames(styles['navbar__main'], "flex")}>
-        <div className="navbar__logo">
+        <div className={classnames(styles["navbar__top"], "center")}>
+          <a className={classnames(styles["navbar__logo"])} href="/">
+            <span className={classnames(styles["navbar__logo__content"])}>DNT</span>
+          </a>
+        </div>
+        <div className="navbar__toggle">
           <ButtonPrimary onClick={handleSidebarControl} icon="fas fa-bars">
           </ButtonPrimary>
           <span className="font-md white">Accounts</span>
         </div>
-        <div className="navbar__dashbord">
+        <div className={classnames(styles["navbar__dashbord"])}>
           <ul className={classnames(styles['navbar__navList'], "flex")}>
             <NavItem iconName='far fa-clock' to='/' disabled={true}>
               13:42 EEST
