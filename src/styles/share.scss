@@ -1,4 +1,4 @@
-$primary-font-color: black;
+// $primary-font-color: black;
 /* use layout */ 
 .flex {
     display: flex;
@@ -14,55 +14,54 @@ $primary-font-color: black;
     justify-content: center;
   }
 /* use colors */ 
-    .btn-light {
-      color: black;
-      background-color: #f8f9fa;
-      border-color: #f8f9fa;
-      font-weight: 500;
-    }
-    .blue-bg {
-      background-color: #2e36b5;
-      color: white;
-    }
-    .bg-dark{
-      background-color:#2f2e4b
-    }
-    .bg-darkgreen{
-    background-color:#28a745;
-
-    }
-   .green{
-       color:rgb(0, 170, 70);
-   }
-  .white{
-       color:#FFFFFF
-   }
-  .light-white{
-      color:#EAEDED
-   }
-  .dark-blue{
-    color:#5463c0
-  }
-  .bright-blue{
-    color:#2ac8ae
-  }
-  .blue{
-    color:#3fa4d2
-  }
-  /* use different font sizes */ 
-    .font-sm{
-      font-size: 12px;
-    }
-    .font-md{
-      font-size: 18px;
-    }
-    .font-lg{
-      font-size: 25px;
-    }
-  /* use font style */
-  .bold {
+.btn-light {
+    color: black;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
     font-weight: 500;
   }
-  .extra-bold {
+.blue-bg {
+    background-color: #2e36b5;
+    color: white;
+  }
+.bg-dark{
+    background-color:#2f2e4b
+  }
+.bg-darkgreen{
+    background-color:#28a745;
+  }
+.green{
+    color:rgb(0, 170, 70);
+  }
+.white{
+    color:#FFFFFF
+  }
+.light-white{
+    color:#EAEDED
+  }
+.dark-blue{
+    color:#5463c0
+  }
+.bright-blue{
+    color:#2ac8ae
+  }
+.blue{
+    color:#3fa4d2
+  }
+/* use different font sizes */ 
+.font-sm{
+    font-size: 12px;
+  }
+.font-md{
+    font-size: 18px;
+  }
+.font-lg{
+    font-size: 25px;
+  }
+/* use font style */
+.bold {
+    font-weight: 500;
+  }
+.extra-bold {
     font-weight: 600;
   }
