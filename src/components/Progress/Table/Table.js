@@ -37,7 +37,7 @@ function Table() {
             <div className={classnames(styles["card__container"])} >
                 <table className={styles["table"]}>
                     <tr>
-                        <th colspan="2"  >
+                        <th colSpan="2"  >
                             <div className={classnames(styles["table__head"])}>
                                 <span className={classnames(styles["table__title"])}>Carlories Consume Graph</span>
                                 <span className={classnames(styles["table__icon"])}>

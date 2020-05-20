@@ -5,7 +5,7 @@ import Table from "../Progress/Table/Table"
 class Home extends Component {
     render() {
         return (
-            <div className={styles["main"]}>
+            <div className={styles["mainContent"]}>
                 <Section></Section>
                 <Table></Table>
             </div>
