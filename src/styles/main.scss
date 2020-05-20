@@ -38,3 +38,8 @@ table {
 td,th{
     padding:0;
 }
+
+a:any-link {
+  text-decoration: none;
+  cursor: pointer;
+  }

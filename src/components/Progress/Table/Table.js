@@ -30,6 +30,27 @@ const SideListItem = (
     }
 }
 
+const toggleTableControllButton = (e) => {
+    e.preventDefault();
+    const toggleEle = document.querySelector(`.${styles["dropdown"]}`)
+    console.log(toggleEle)
+    if (toggleEle) {
+        toggleEle.classList.toggle(`${styles["dropdown-open"]}`)
+    }
+}
+
+const DropDown = () => {
+    return (
+        <div className={classnames(styles["dropdown"])}>
+            <ul className={classnames(styles["dropdown__list"])}>
+                <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Show open editor</a></li>
+                <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Close All</a></li>
+                <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Close saved</a></li>
+            </ul>
+        </div>
+    )
+}
+
 
 function Table() {
     return (
@@ -41,9 +62,10 @@ function Table() {
                             <div className={classnames(styles["table__head"])}>
                                 <span className={classnames(styles["table__title"])}>Carlories Consume Graph</span>
                                 <span className={classnames(styles["table__icon"])}>
-                                    <a href="/" tabIndex="0" className={styles["table__option"]} >
+                                    <a href="/" tabIndex="0" className={styles["table__option"]} onClick={toggleTableControllButton}>
                                         <ion-icon size="small" name={"ellipsis-horizontal"}></ion-icon>
                                     </a>
+                                    <DropDown></DropDown>
                                 </span>
                             </div>
                         </th>
@@ -66,7 +88,6 @@ function Table() {
                                 </div>
                             </div>
                         </td>
-
                     </tr>
                 </table>
             </div>

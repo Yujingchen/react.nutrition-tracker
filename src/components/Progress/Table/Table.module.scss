@@ -26,6 +26,7 @@
     width: 100%;
 }
 .table__icon{
+    position: relative;
     padding-top: 15px;
     color: #E5E8E8;
 }
@@ -99,5 +100,41 @@
 
 .tb__main{
 display: flex;
+}
+
+.dropdown{
+    padding: 10px;
+    position: absolute;
+    display: none;
+    border: 1px solid black;
+    background-color: #232538;
+    bottom: -94px;
+    left: -109px;
+    z-index: 10;
+    width: 126px;
+}
+.dropdown__list{
+    text-decoration: none;
+    list-style: none;
+    text-align: left;
+}
+
+
+.dropdown__listItem{
+    padding-bottom: 5px;
+}
+.dropdown__listItem:hover{
+    background-color: #3498DB;
+}
+
+.dropdown__link{
+    color:#ffffff!important;
+    font-size: 10px;
+    margin-left: 20px;
+}
+
+.dropdown-open{
+    display: inline-block;
+
 }
 
