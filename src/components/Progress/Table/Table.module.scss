@@ -1,3 +1,4 @@
+/* styling for card */
 .card{
     text-align: center;
     box-sizing: border-box;
@@ -9,27 +10,18 @@
     width: 100%;
     height: auto;
 }
-
-
-
 .card__chart{
     display: inline-block;
 }
 
 
-
-
-
-
-/*styling for table*/
-
+/* styling for table */
 .table__head{
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
     border-bottom: solid 1px #000000;
 }
-
 .table{
     width: 100%;
 }
@@ -53,8 +45,6 @@
     color: #000000;
     outline-style: none;
 }
-
-
 .tb__side{
     width: 295px;
 }
