@@ -32,21 +32,29 @@ const SideListItem = (
 
 const toggleTableControllButton = (e) => {
     e.preventDefault();
-    const toggleEle = document.querySelector(`.${styles["dropdown"]}`)
-    console.log(toggleEle)
-    if (toggleEle) {
-        toggleEle.classList.toggle(`${styles["dropdown-open"]}`)
+    const modalEle = document.querySelector(`.${styles["modal__dropdown"]}`)
+    console.log(modalEle)
+    if (modalEle) {
+        modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
+    }
+}
+window.onclick = function (event) {
+    const modalEle = document.querySelector(`.${styles["modal__dropdown"]}`)
+    if (event.target == modalEle) {
+        modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
     }
 }
 
 const DropDown = () => {
     return (
-        <div className={classnames(styles["dropdown"])}>
-            <ul className={classnames(styles["dropdown__list"])}>
-                <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Show open editor</a></li>
-                <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Close All</a></li>
-                <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Close saved</a></li>
-            </ul>
+        <div className={styles["modal__dropdown"]}>
+            <div className={classnames(styles["dropdown"])}>
+                <ul className={classnames(styles["dropdown__list"])}>
+                    <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Show open editor</a></li>
+                    <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Close All</a></li>
+                    <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Close saved</a></li>
+                </ul>
+            </div>
         </div>
     )
 }
@@ -65,8 +73,8 @@ function Table() {
                                     <a href="/" tabIndex="0" className={styles["table__option"]} onClick={toggleTableControllButton}>
                                         <ion-icon size="small" name={"ellipsis-horizontal"}></ion-icon>
                                     </a>
-                                    <DropDown></DropDown>
                                 </span>
+                                <DropDown></DropDown>
                             </div>
                         </th>
                     </tr>
