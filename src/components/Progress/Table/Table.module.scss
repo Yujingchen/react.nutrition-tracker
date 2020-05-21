@@ -1,5 +1,6 @@
 /* styling for card */
 .card{
+    position: relative;
     text-align: center;
     box-sizing: border-box;
     border: solid #000000 1px;
@@ -26,7 +27,6 @@
     width: 100%;
 }
 .table__icon{
-    position: relative;
     padding-top: 15px;
     color: #E5E8E8;
 }
@@ -43,7 +43,6 @@
     text-decoration: none;
 }
 .table__option:focus {
-    color: #000000;
     outline-style: none;
 }
 .tb__side{
@@ -58,7 +57,7 @@
 }
 .sideList__listItem:first-child{
     border-top: none;
-    padding:20px 30px;
+    padding: 20px 30px;
 }
 .sideList__listItem{
     border-right: solid 1px #000000;
@@ -99,20 +98,45 @@
 }
 
 .tb__main{
-display: flex;
+    display: flex;
+}
+.modal__dropdown{
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    margin: 0 -20px;
+
 }
 
+.modal__dropdown-open{
+    display: block;
+}
+
+
 .dropdown{
+    // padding: 10px;
+    // position: absolute;
+    // display: none;
+    // border: 1px solid black;
+    // background-color: #232538;
+    // bottom: -94px;
+    // left: -109px;
+    // z-index: 10;
+    position: relative;
+    width: 126px;
     padding: 10px;
-    position: absolute;
-    display: none;
     border: 1px solid black;
     background-color: #232538;
-    bottom: -94px;
-    left: -109px;
-    z-index: 10;
-    width: 126px;
+    float: right;
+    bottom: -49px;
+    right: -1px;
 }
+
+
+
 .dropdown__list{
     text-decoration: none;
     list-style: none;
@@ -133,8 +157,4 @@ display: flex;
     margin-left: 20px;
 }
 
-.dropdown-open{
-    display: inline-block;
-
-}
 
