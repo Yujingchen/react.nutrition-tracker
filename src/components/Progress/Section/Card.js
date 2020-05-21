@@ -10,7 +10,7 @@ function Card(
     }) {
     if (iconName | sectionName | data !== undefined) {
         return (
-            <div className={classnames(styles["card"], "no-select shadow")}>
+            <div className={classnames(styles["card"], "no-select boxShadow-dark")}>
                 <div className={classnames(styles["card__container"])} >
                     <div className={classnames(styles["card__icon"], iconColor)} >
                         <ion-icon size="large" name={iconName}></ion-icon>

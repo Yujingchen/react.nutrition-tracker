@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react"
 import Plotly from "plotly.js-basic-dist"
 import "./LineChart.scss"
 
-function LineChart({ colors }) {
+function LineChart() {
     const divRef = useRef(null);
     const graphDiv = <div className="graphDiv" ref={divRef}></div>
 
@@ -11,17 +11,25 @@ function LineChart({ colors }) {
     }, [divRef]);
 
     var trace1 = {
-        x: ["Mar 13", "Mar 14", "Mar 15", "Mar 16", "Mar 17", "Mar 18", "Mar 19", "Mar 20"],
+        x: ["13 Mar", "14 Mar", "15 Mar", "16 Mar", "17 Mar", "18 Mar", "19 Mar", "20 Mar"],
         y: [2100, 1500, 1900, 1700, 2000, 2200, 1800],
         mode: 'markers',
-        name: 'Calories'
+        name: 'Calories',
+        marker: {
+            color: '#ffffff',
+            border: "1px solid #5463c0"
+        }
     };
 
     var trace2 = {
-        x: ["Mar 13", "Mar 14", "Mar 15", "Mar 16", "Mar 17", "Mar 18", "Mar 19", "Mar 20"],
+        x: ["13 Mar", "14 Mar", "15 Mar", "16 Mar", "17 Mar", "18 Mar", "19 Mar", "20 Mar"],
         y: [2100, 1500, 1900, 1700, 2000, 2200, 1800],
         mode: 'lines',
-        name: 'Calories'
+        name: 'Calories',
+        line: {
+            color: '#5463c0',
+            width: 1
+        }
     };
 
     var data = [trace1, trace2];
@@ -29,8 +37,10 @@ function LineChart({ colors }) {
     var layout = {
         bgcolor: "#7b7da0",
         paper_bgcolor: "rgba(0,0,0,0)",
+        plot_bgcolor: 'rgba(0,0,0,0)',
         grid: { rows: 1, columns: 1 },
         margin: { l: 40, r: 0, t: 0, b: 40 },
+        grid_color: "#2c2d40",
         showlegend: true,
         legend: {
             x: .89, y: 1.2, color: "#7b7da0"

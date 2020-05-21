@@ -49,7 +49,7 @@ function Sidebar() {
         }
     })
     return (
-        <div className="sidebar shadow">
+        <div className="sidebar boxShadow-dark">
             <div className="sidebar__main ">
                 <ul className="sidebar__navList flex-column">
                     <SideBarItem iconName="clipboard-outline" to='/' actived>Dashboard</SideBarItem>

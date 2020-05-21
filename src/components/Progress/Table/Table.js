@@ -62,7 +62,7 @@ const DropDown = () => {
 
 function Table() {
     return (
-        <div className={classnames(styles["card"], "no-select shadow darkblue")}>
+        <div className={classnames(styles["card"], "no-select boxShadow-dark darkblue")}>
             <div className={classnames(styles["card__container"])} >
                 <table className={styles["table"]}>
                     <thead>
@@ -87,7 +87,7 @@ function Table() {
                                     <SideListItem data={1000}>Carlories</SideListItem>
                                     <SideListItem data={1000}>Carlories</SideListItem>
                                     <SideListItem data={2000}>Carlories</SideListItem>
-                                    <SideListItem data={1223}> Carlories</SideListItem>
+                                    <SideListItem data={1223}>Carlories</SideListItem>
                                     <SideListItem data={2134}>Carlories</SideListItem>
                                     <SideListItem data={2134}>Carlories</SideListItem>
                                 </ul>
