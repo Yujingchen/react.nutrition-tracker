@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from './Header.module.scss';
 import classnames from "classnames"
 import { ButtonPrimary } from "../../common/button/Button"
-
+import Time from "../../common/time/Time"
 const NavItem = (
   {
     iconName,
@@ -53,7 +53,7 @@ function Header() {
 
 
   return (
-    <nav className={classnames(styles['navbar'], "bg-dark")}>
+    <nav className={classnames(styles['navbar'], "bg-dark boxShadow-dark")}>
       <div className={classnames(styles['navbar__main'], "flex")}>
         <div className={classnames(styles["navbar__top"], "center")}>
           <a className={classnames(styles["navbar__logo"])} href="/">
@@ -68,7 +68,7 @@ function Header() {
         <div className={classnames(styles["navbar__dashbord"])}>
           <ul className={classnames(styles['navbar__navList'], "flex")}>
             <NavItem iconName='far fa-clock' to='/' disabled={true}>
-              13:42 EEST
+              {<Time />} EEST
               </NavItem>
             <NavItem iconName='far fa-bell' to='/' />
             <NavItem iconName='far fa-user-circle' to='/' />

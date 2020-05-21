@@ -1,10 +1,10 @@
-# [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://mysterious-anchorage-50268.herokuapp.com)
+# [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://nutrition-app-1.herokuapp.com/)
 ![Daily Nutrition Tracker](public/img/screenshots/Screenshot2.png?raw=true 'Daily Nutrition Tracker')
 
 
 ## Preview
 
-You can check out [live preview](https://mysterious-anchorage-50268.herokuapp.com).
+You can check out [live preview](https://nutrition-app-1.herokuapp.com/).
 
 ## Quick Start
 
@@ -17,7 +17,7 @@ You can check out [live preview](https://mysterious-anchorage-50268.herokuapp.co
 ## Note
 
 DNT is built on top of [Create React App](https://github.com/facebook/create-react-app), which means all features that create-react-app supports are available.
-Live demo is deployed to Heroku(https://dashboard.heroku.com/apps)
+Live demo is deployed to Heroku(https://heroku.com/)
 
 ## TODO List
 
