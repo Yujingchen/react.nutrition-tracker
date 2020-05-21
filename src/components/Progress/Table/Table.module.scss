@@ -1,8 +1,8 @@
 /* styling for card */
 .card{
+    position: relative;
     text-align: center;
     box-sizing: border-box;
-    border: solid #000000 1px;
     border-radius: 5px;
 }
 .card__container{
@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
-    border-bottom: solid 1px #000000;
+    border-bottom: solid 3px #2c2d40;
 }
 .table{
     width: 100%;
@@ -42,7 +42,6 @@
     text-decoration: none;
 }
 .table__option:focus {
-    color: #000000;
     outline-style: none;
 }
 .tb__side{
@@ -52,21 +51,23 @@
     display: flex;
 }
 .sideList{
+    width:100%;
     list-style-type:none;
     text-decoration: none;
 }
 .sideList__listItem:first-child{
     border-top: none;
-    padding:20px 30px;
+    padding: 20px 30px;
 }
 .sideList__listItem{
-    border-right: solid 1px #000000;
-    border-top: solid 1px #000000;
+    border-right: solid 3px #2c2d40;
+    border-top: solid 3px #2c2d40;
     padding:18.5px 30px;
     text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .sideList__listItem:last-child{
-    border-bottom: solid 1px #000000;
     padding:20px 30px;
 }
 
@@ -98,6 +99,63 @@
 }
 
 .tb__main{
-display: flex;
+    display: flex;
 }
+.modal__dropdown{
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    margin: 0 -20px;
+
+}
+
+.modal__dropdown-open{
+    display: block;
+}
+
+
+.dropdown{
+    // padding: 10px;
+    // position: absolute;
+    // display: none;
+    // border: 1px solid black;
+    // background-color: #232538;
+    // bottom: -94px;
+    // left: -109px;
+    // z-index: 10;
+    position: relative;
+    width: 126px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #232538;
+    float: right;
+    bottom: -49px;
+    right: -1px;
+}
+
+
+
+.dropdown__list{
+    text-decoration: none;
+    list-style: none;
+    text-align: left;
+}
+
+
+.dropdown__listItem{
+    padding-bottom: 5px;
+}
+.dropdown__listItem:hover{
+    background-color: #3498DB;
+}
+
+.dropdown__link{
+    color:#ffffff!important;
+    font-size: 10px;
+    margin-left: 20px;
+}
+
 
