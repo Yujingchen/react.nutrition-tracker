@@ -1,16 +1,15 @@
 import React, { useRef, useEffect } from "react"
 import Plotly from "plotly.js-basic-dist"
 import "./PieChart.scss"
-function PieChart({ colors }) {
+function PieChart({ colors, target, consume }) {
     const divRef = useRef(null);
     const graphDiv = <div className="graphDiv" ref={divRef}></div>
 
     useEffect(() => {
         Plotly.newPlot(divRef.current, data, layout, config)
     }, [divRef]);
-
     var data = [{
-        values: [1500, 500],
+        values: [consume, target - consume],
         domain: { column: 0 },
         hoverinfo: "none",
         hole: .5,
@@ -20,7 +19,6 @@ function PieChart({ colors }) {
             colors: colors
         },
     }];
-
     var layout = {
         annotations: [
             {
@@ -31,7 +29,7 @@ function PieChart({ colors }) {
                 },
 
                 showarrow: false,
-                text: '75%',
+                text: `${((consume / target) * 100).toFixed(0)} %`,
                 x: 0.5,
                 y: 0.5
             },

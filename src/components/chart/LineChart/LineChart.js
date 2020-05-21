@@ -11,17 +11,17 @@ function LineChart({ colors }) {
     }, [divRef]);
 
     var trace1 = {
-        x: [20, 30, 40, 50],
-        y: [10, 15, 13, 17],
+        x: ["Mar 13", "Mar 14", "Mar 15", "Mar 16", "Mar 17", "Mar 18", "Mar 19", "Mar 20"],
+        y: [2100, 1500, 1900, 1700, 2000, 2200, 1800],
         mode: 'markers',
-        name: 'Scatter'
+        name: 'Calories'
     };
 
     var trace2 = {
-        x: [10, 26, 28, 37],
-        y: [16, 5, 11, 9],
+        x: ["Mar 13", "Mar 14", "Mar 15", "Mar 16", "Mar 17", "Mar 18", "Mar 19", "Mar 20"],
+        y: [2100, 1500, 1900, 1700, 2000, 2200, 1800],
         mode: 'lines',
-        name: 'Lines'
+        name: 'Calories'
     };
 
     var data = [trace1, trace2];

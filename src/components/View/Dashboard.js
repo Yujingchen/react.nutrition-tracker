@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Section from "../Progress/Section/Section"
-import styles from "./Home.module.scss"
+import styles from "./Dashboard.module.scss"
 import Table from "../Progress/Table/Table"
-class Home extends Component {
+class Dashboard extends Component {
     render() {
         return (
-            <div className={styles["mainContent"]}>
+            <div className={styles["dashboard"]}>
                 <Section></Section>
                 <Table></Table>
             </div>
@@ -13,4 +13,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default Dashboard;

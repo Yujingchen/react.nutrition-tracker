@@ -3,7 +3,6 @@
     position: relative;
     text-align: center;
     box-sizing: border-box;
-    border: solid #000000 1px;
     border-radius: 5px;
 }
 .card__container{
@@ -21,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
-    border-bottom: solid 1px #000000;
+    border-bottom: solid 3px #2c2d40;
 }
 .table{
     width: 100%;
@@ -52,6 +51,7 @@
     display: flex;
 }
 .sideList{
+    width:100%;
     list-style-type:none;
     text-decoration: none;
 }
@@ -60,13 +60,14 @@
     padding: 20px 30px;
 }
 .sideList__listItem{
-    border-right: solid 1px #000000;
-    border-top: solid 1px #000000;
+    border-right: solid 3px #2c2d40;
+    border-top: solid 3px #2c2d40;
     padding:18.5px 30px;
     text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .sideList__listItem:last-child{
-    border-bottom: solid 1px #000000;
     padding:20px 30px;
 }
 

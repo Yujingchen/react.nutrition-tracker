@@ -53,7 +53,7 @@ function Header() {
 
 
   return (
-    <nav className={classnames(styles['navbar'], "bg-dark")}>
+    <nav className={classnames(styles['navbar'], "bg-dark shadow")}>
       <div className={classnames(styles['navbar__main'], "flex")}>
         <div className={classnames(styles["navbar__top"], "center")}>
           <a className={classnames(styles["navbar__logo"])} href="/">
