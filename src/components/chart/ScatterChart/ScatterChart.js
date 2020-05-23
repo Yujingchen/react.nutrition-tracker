@@ -7,12 +7,14 @@ function ScatterChart({ colors, target, consume }) {
     const divRef = useRef(null);
 
     const numberRef = useRef(5);
-    console.log(numberRef.current)
-
-    const graphDiv = <div className="graphDiv" ref={divRef}></div>
+    // console.log(numberRef.current)
+    // let myRef;
+    // const testDiv = <div ref={myRef}></div>
+    // console.log(myRef.current)
+    const graphDiv = <div className="graphDiv" ></div>
     if (colors, target, consume) {
         useEffect(() => {
-            Plotly.newPlot(divRef.current, data, layout, config)
+            Plotly.newPlot(graphDiv, data, layout, config)
         }, [divRef]);
 
 
@@ -27,6 +29,13 @@ function ScatterChart({ colors, target, consume }) {
                 colors: colors
             },
         }];
+
+        var data = [{
+            type: "scatter",
+            mode: "line",
+            name: "Hormone value",
+        }]
+
         var layout = {
             annotations: [
                 {

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './Section2.module.scss';
 import classnames from "classnames"
-import LineChart from "../../chart/LineChart/LineChart"
+import PieChart from "../../chart/PieChart/PieChart"
 import DataForm from "../dataform/DataForm"
 function Section4() {
     return (
@@ -10,8 +10,8 @@ function Section4() {
                 <div className={classnames(styles["form__content"])}>
                     <div className="flex">
                         <div className={classnames(styles["graph-container"])}>
-                            <LineChart></LineChart>
-                        </div>
+                            <PieChart consume={70} colors={["#2ac8ae", "#3fa4d2",]} target={100}>
+                            </PieChart>                        </div>
                     </div>
                 </div>
             </DataForm >
