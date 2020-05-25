@@ -1,9 +1,7 @@
 import React from "react";
 import styles from './Section2.module.scss';
 import classnames from "classnames"
-import LineChart from "../../chart/LineChart/LineChart"
 import DataForm from "../dataform/DataForm"
-import PieChart from "../../chart/PieChart/PieChart"
 import ScatterChart from "../../chart/ScatterChart/ScatterChart"
 function Section3() {
     return (

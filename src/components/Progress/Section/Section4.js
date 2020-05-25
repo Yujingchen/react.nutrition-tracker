@@ -11,7 +11,8 @@ function Section4() {
                     <div className="flex">
                         <div className={classnames(styles["graph-container"])}>
                             <PieChart consume={70} colors={["#2ac8ae", "#3fa4d2",]} target={100}>
-                            </PieChart>                        </div>
+                            </PieChart>
+                        </div>
                     </div>
                 </div>
             </DataForm >

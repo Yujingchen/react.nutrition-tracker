@@ -9,7 +9,6 @@ function ScatterChart() {
     useEffect(() => {
         makeplot();
     })
-    // Plotly.d3.csv()
 
 
     function makeplot() {
@@ -17,8 +16,6 @@ function ScatterChart() {
     };
 
     function processData(allRows) {
-
-        console.log(allRows);
         var x = [], y = [], standard_deviation = [];
 
         for (var i = 0; i < allRows.length; i++) {
@@ -26,7 +23,6 @@ function ScatterChart() {
             x.push(row['AAPL_x']);
             y.push(row['AAPL_y']);
         }
-        console.log('X', x, 'Y', y, 'SD', standard_deviation);
         makePlotly(x, y, standard_deviation);
     }
 
@@ -43,10 +39,9 @@ function ScatterChart() {
             height: 300,
             grid: { rows: 1, columns: 1 },
             margin: { l: 25, r: 25, t: 25, b: 25 },
+            showLegend: true
         }
-        console.log(graphDiv)
         Plotly.newPlot(divRef.current, traces, layout);
-
     };
 
     return graphDiv;
