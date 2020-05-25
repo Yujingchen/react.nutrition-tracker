@@ -26,6 +26,7 @@ const SideBarItem = (
         )
     }
 }
+
 const linkOnClick = (event, el) => {
     event.preventDefault();
     const activeEl = document.querySelector('.sidebar__link-active')
