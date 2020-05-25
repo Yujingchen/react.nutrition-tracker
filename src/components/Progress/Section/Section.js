@@ -5,7 +5,7 @@ import PieChart from "../../chart/PieChart/PieChart"
 export default function Section() {
     return (
         <div className={styles["section"]}>
-            <Card sectionName="Crabs" iconName="analytics-outline" data="1500" iconColor="dark-blue" >
+            <Card sectionName="Carbs" iconName="analytics-outline" data="1500" iconColor="dark-blue" >
                 <PieChart consume={1500} colors={["#5463c0", "#673AB7",]} target={2000}>
                 </PieChart>
             </Card>
