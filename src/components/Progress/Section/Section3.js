@@ -4,6 +4,7 @@ import classnames from "classnames"
 import LineChart from "../../chart/LineChart/LineChart"
 import DataForm from "../dataform/DataForm"
 import PieChart from "../../chart/PieChart/PieChart"
+import ScatterChart from "../../chart/ScatterChart/ScatterChart"
 function Section3() {
     return (
         <div className={classnames(styles["section3"])}>
@@ -11,8 +12,8 @@ function Section3() {
                 <div className={classnames(styles["form__content"])}>
                     <div className="flex">
                         <div className={classnames(styles["graph-container"])}>
-                            <PieChart consume={70} colors={["#2ac8ae", "#3fa4d2",]} target={100}>
-                            </PieChart>
+                            <ScatterChart>
+                            </ScatterChart>
                         </div>
                     </div>
                 </div>

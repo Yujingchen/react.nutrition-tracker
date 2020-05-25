@@ -1,68 +1,55 @@
 import React, { useRef, useEffect } from "react"
 import Plotly from "plotly.js-basic-dist"
-import "./PieChart.scss"
+import "./ScatterChart.scss"
 
 
-function ScatterChart({ colors, target, consume }) {
+function ScatterChart() {
     const divRef = useRef(null);
-
-    const numberRef = useRef(5);
-    // console.log(numberRef.current)
-    // let myRef;
-    // const testDiv = <div ref={myRef}></div>
-    // console.log(myRef.current)
-    const graphDiv = <div className="graphDiv" ></div>
-    if (colors, target, consume) {
-        useEffect(() => {
-            Plotly.newPlot(graphDiv, data, layout, config)
-        }, [divRef]);
+    const graphDiv = <div className="graphDiv" ref={divRef}></div>
+    useEffect(() => {
+        makeplot();
+    })
+    // Plotly.d3.csv()
 
 
-        var data = [{
-            values: [consume, target - consume],
-            domain: { column: 0 },
-            hoverinfo: "none",
-            hole: .5,
-            type: 'pie',
-            textinfo: "none",
-            marker: {
-                colors: colors
-            },
-        }];
+    function makeplot() {
+        Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/2014_apple_stock.csv", function (data) { processData(data) });
+    };
 
-        var data = [{
-            type: "scatter",
-            mode: "line",
-            name: "Hormone value",
-        }]
+    function processData(allRows) {
 
-        var layout = {
-            annotations: [
-                {
-                    font: {
-                        size: 13,
-                        color: "#EAEDED",
-                        fontWeight: "bold"
-                    },
-                    showarrow: false,
-                    text: `${((consume / target) * 100).toFixed(0)} %`,
-                    x: 0.5,
-                    y: 0.5
-                },
-            ],
-            paper_bgcolor: "rgba(0,0,0,0)",
-            width: 100,
-            height: 150,
-            showlegend: false,
-            grid: { rows: 1, columns: 1 },
-            margin: { l: 0, r: 0, t: 0, b: 0 },
-        };
-        var config = {
-            staticPlot: true
+        console.log(allRows);
+        var x = [], y = [], standard_deviation = [];
+
+        for (var i = 0; i < allRows.length; i++) {
+            let row = allRows[i];
+            x.push(row['AAPL_x']);
+            y.push(row['AAPL_y']);
         }
-        return graphDiv
+        console.log('X', x, 'Y', y, 'SD', standard_deviation);
+        makePlotly(x, y, standard_deviation);
     }
-    return null
+
+
+    function makePlotly(x, y, standard_deviation) {
+        var traces = [{
+            x: x,
+            y: y
+        }];
+        var layout = {
+            paper_bgcolor: "rgba(0,0,0,0)",
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            width: 500,
+            height: 300,
+            grid: { rows: 1, columns: 1 },
+            margin: { l: 25, r: 25, t: 25, b: 25 },
+        }
+        console.log(graphDiv)
+        Plotly.newPlot(divRef.current, traces, layout);
+
+    };
+
+    return graphDiv;
 }
 
 export default ScatterChart

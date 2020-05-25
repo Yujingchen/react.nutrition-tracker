@@ -40,6 +40,7 @@ function PieChart({ colors, target, consume }) {
             showlegend: false,
             grid: { rows: 1, columns: 1 },
             margin: { l: 0, r: 0, t: 0, b: 0 },
+            autosize: true,
         };
         var config = {
             staticPlot: true

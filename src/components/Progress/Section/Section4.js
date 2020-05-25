@@ -17,8 +17,6 @@ function Section4() {
             </DataForm >
         </div>
     )
-
-
 }
 
 

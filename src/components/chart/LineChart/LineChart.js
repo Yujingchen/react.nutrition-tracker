@@ -57,7 +57,7 @@ function LineChart() {
     };
 
     var config = {
-        staticPlot: true,
+        // staticPlot: true,
         log_x: true,
         log_y: true
     }
