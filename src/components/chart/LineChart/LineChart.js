@@ -35,12 +35,27 @@ function LineChart() {
     var data = [trace1, trace2];
 
     var layout = {
-        bgcolor: "#7b7da0",
         paper_bgcolor: "rgba(0,0,0,0)",
         plot_bgcolor: 'rgba(0,0,0,0)',
         grid: { rows: 1, columns: 1 },
+
+        xaxis: {
+            showgrid: true,
+            zeroline: true,
+            mirror: 'ticks',
+            gridcolor: '#7b7da0',
+            gridwidth: 1,
+            zerolinecolor: '#7b7da0',
+        },
+        yaxis: {
+            showgrid: true,
+            zeroline: true,
+            mirror: 'ticks',
+            gridcolor: '#7b7da0',
+            gridwidth: 1,
+            zerolinecolor: '#7b7da0',
+        },
         margin: { l: 40, r: 0, t: 0, b: 40 },
-        grid_color: "#2c2d40",
         showlegend: true,
         legend: {
             x: .89, y: 1.2, color: "#7b7da0"
@@ -57,7 +72,7 @@ function LineChart() {
     };
 
     var config = {
-        staticPlot: true,
+        // staticPlot: true,
         log_x: true,
         log_y: true
     }
