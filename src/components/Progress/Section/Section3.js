@@ -18,12 +18,6 @@ function Section3() {
             </DataForm >
         </div>
     )
-
-
 }
-
-
-
-
 
 export default Section3

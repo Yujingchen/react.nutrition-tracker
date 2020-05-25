@@ -19,9 +19,4 @@ function Section4() {
         </div >
     )
 }
-
-
-
-
-
 export default Section4
