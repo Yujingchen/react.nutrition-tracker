@@ -33,12 +33,33 @@ function ScatterChart() {
             y: y
         }];
         var layout = {
+            font: {
+                size: 14,
+                color: "#7b7da0",
+                fontWeight: "bold",
+            },
+            xaxis: {
+                showgrid: true,
+                zeroline: true,
+                mirror: 'ticks',
+                gridcolor: '#7b7da0',
+                gridwidth: 1,
+                zerolinecolor: '#7b7da0',
+            },
+            yaxis: {
+                showgrid: true,
+                zeroline: true,
+                mirror: 'ticks',
+                gridcolor: '#7b7da0',
+                gridwidth: 1,
+                zerolinecolor: '#7b7da0',
+            },
             paper_bgcolor: "rgba(0,0,0,0)",
             plot_bgcolor: 'rgba(0,0,0,0)',
             width: 500,
             height: 300,
             grid: { rows: 1, columns: 1 },
-            margin: { l: 25, r: 25, t: 25, b: 25 },
+            margin: { l: 25, r: 0, t: 25, b: 25 },
             showLegend: true
         }
         Plotly.newPlot(divRef.current, traces, layout);
