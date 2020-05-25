@@ -2,7 +2,7 @@
 ![Daily Nutrition Tracker](public/img/screenshots/Screenshot.png?raw=true 'Daily Nutrition Tracker')
 
 ## Warnning
-Deployment on Heruko is not stable, if the web app show error, refresh the page. I am working to fix this but sorry for the innconvinence.
+Deployment on Heruko is not very stable, if the web app doesn't load or show an error, please try again by refreshing the page.
 
 ## Preview
 
