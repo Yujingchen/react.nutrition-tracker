@@ -1,10 +1,12 @@
-# [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://mysterious-anchorage-50268.herokuapp.com)
-![Daily Nutrition Tracker](public/img/screenshots/Screenshot2.png?raw=true 'Daily Nutrition Tracker')
+# [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://nutrition-app-1.herokuapp.com/)
+![Daily Nutrition Tracker](public/img/screenshots/Screenshot.png?raw=true 'Daily Nutrition Tracker')
 
+## Warnning
+Deployment on Heruko is not very stable, if the web app doesn't load or show an error, please try again by refreshing the page.
 
 ## Preview
 
-You can check out [live preview](https://mysterious-anchorage-50268.herokuapp.com).
+You can check out [live preview](https://nutrition-app-1.herokuapp.com/).
 
 ## Quick Start
 
@@ -17,7 +19,7 @@ You can check out [live preview](https://mysterious-anchorage-50268.herokuapp.co
 ## Note
 
 DNT is built on top of [Create React App](https://github.com/facebook/create-react-app), which means all features that create-react-app supports are available.
-Live demo is deployed to Heroku(https://dashboard.heroku.com/apps)
+Live demo is deployed to Heroku(https://heroku.com/)
 
 ## TODO List
 
@@ -29,7 +31,7 @@ Live demo is deployed to Heroku(https://dashboard.heroku.com/apps)
 - [x] plotly graph
 - [ ] Search, Setting, Ingrediant view
 - [ ] Fetch real data from firebase db
-- [ ] Calories track table
-- [ ] Calories track graph
+- [x] Calories track table
+- [x] Calories track graph
 - [ ] User authentication
 - [ ] Responsive with grid
