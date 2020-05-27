@@ -10,17 +10,28 @@ function DataForm({ children, title, modalIndex }) {
                 <div className={classnames(styles["modal__dropdown"], modalUniqueClass)}>
                     <div className={classnames(styles["dropdown"])}>
                         <ul className={classnames(styles["dropdown__list"])}>
-                            <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Show open editor</a></li>
-                            <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Close All</a></li>
-                            <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Close saved</a></li>
+                            <a className={classnames(styles["dropdown__link"])} href="google.com" onClick={handleDropDownClick}>
+                                <li className={classnames(styles["dropdown__listItem"])}>Show open editor</li>
+                            </a>
+                            <a className={classnames(styles["dropdown__link"])} href="google.com" onClick={handleDropDownClick}>
+                                <li className={classnames(styles["dropdown__listItem"])}>Close All</li>
+                            </a>
+                            <a className={classnames(styles["dropdown__link"])} href="google.com" onClick={handleDropDownClick}>
+                                <li className={classnames(styles["dropdown__listItem"])}>Close saved</li>
+                            </a>
                         </ul>
                     </div>
                 </div >
             )
         }
+
+        const handleDropDownClick = (e) => {
+            e.preventDefault()
+            console.log("Wish you best of luck!")
+        }
         const toggleControllButton = (e) => {
-            const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
             e.preventDefault();
+            const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
             if (modalEle) {
                 modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
             }
