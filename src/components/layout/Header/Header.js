@@ -14,7 +14,7 @@ const NavItem = (
   if (iconName !== undefined) {
     return (
       <li className="navbar__listItem">
-        <a href={to} tabIndex="0" className={classnames(styles["navbar__link"], styles[disableClasses])}>
+        <a href={to} tabIndex="0" className={classnames(styles["navbar__link"], styles[disableClasses])} onClick={handleSideBarClick}>
           <i className={classnames(iconName, styles["navbar__listItem__icon"])} />
           <span className={classnames(styles['navbar__listItem__content'], "font-sm noselect")}>
             {children}
@@ -32,6 +32,10 @@ const NavItem = (
   )
 }
 
+const handleSideBarClick = (e) => {
+  e.preventDefault()
+  console.log("Wish you a good day!")
+}
 function Header() {
   const [open, setOpen] = useState(false);
   let initialOpenState = useRef(false);
