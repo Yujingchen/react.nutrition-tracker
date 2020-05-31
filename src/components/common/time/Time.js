@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
 
-function Time() {
+const time = () => {
     const [time, setTime] = useState(formateTime())
     useEffect(() => {
-        setInterval(() => tick(), 1000);
+        setTimeout(() => tick(), 1000);
     })
     function tick() {
         const today = new Date()
@@ -12,7 +12,8 @@ function Time() {
             setTime(localeTime)
         }
     }
-    return time
+    const timeElement = <span>{time}</span>
+    return timeElement
 }
 
 function formateTime(date) {
@@ -24,4 +25,5 @@ function formateTime(date) {
     const defaultTime = today.toLocaleTimeString('en-FI', { hour: 'numeric', minute: 'numeric', hour12: true })
     return defaultTime
 }
-export default Time;
+
+export default time;

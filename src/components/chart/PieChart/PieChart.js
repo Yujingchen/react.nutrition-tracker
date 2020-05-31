@@ -5,7 +5,7 @@ import "./PieChart.scss"
 function PieChart({ colors, target, consume }) {
     const divRef = useRef(null);
     const graphDiv = <div className="graphDiv" ref={divRef}></div>
-    if (colors, target, consume) {
+    if (colors && target && consume) {
         useEffect(() => {
             Plotly.newPlot(divRef.current, data, layout, config)
         }, [divRef]);

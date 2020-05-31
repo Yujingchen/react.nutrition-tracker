@@ -1,5 +1,5 @@
 import { createStore, compose, combineReducers } from "redux";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import "firebase/firestore";
 import { reactReduxFirebase, firebaseReducer } from "react-redux-firebase";
 import { reduxFirestore, firestoreReducer } from "redux-firestore";
@@ -24,7 +24,7 @@ firebase.initializeApp(firebaseConfig);
 // Initialize other services on firebase instance
 const firestore = firebase.firestore(); // <- needed if using firestore
 // firebase.functions() // <- needed if using httpsCallable
-
+console.log(firestore)
 // Add reactReduxFirebase enhancer when making store creator
 const createStoreWithFirebase = compose(
   reactReduxFirebase(firebase, rrfConfig), // firebase instance as first argument
