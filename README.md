@@ -1,12 +1,12 @@
-# [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://nutrition-app-1.herokuapp.com/)
+# [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://caloriestracker-ab17f.firebaseapp.com/)
 ![Daily Nutrition Tracker](public/img/screenshots/Screenshot.png?raw=true 'Daily Nutrition Tracker')
 
 ## Warnning
-Deployment on Heruko is not very stable, you can start reload or try use different browser! I am finding a new cloud to deploy the project.:)
+Deployment on firebase is not very stable, you can try to reload or use different browser! I am finding a new cloud to deploy this project.:)
 
 ## Preview
 
-You can check out [live preview](https://nutrition-app-1.herokuapp.com/).
+You can check out [live preview](https://caloriestracker-ab17f.firebaseapp.com/).
 
 ## Quick Start
 
