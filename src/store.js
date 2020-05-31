@@ -1,16 +1,19 @@
 import { createStore, compose, combineReducers } from "redux";
-import firebase from "firebase";
+import * as firebase from "firebase/app";
 import "firebase/firestore";
+import "firebase/auth";
 import { reactReduxFirebase, firebaseReducer } from "react-redux-firebase";
 import { reduxFirestore, firestoreReducer } from "redux-firestore";
 
-const firebaseConfig = {
+
+var firebaseConfig = {
   apiKey: "AIzaSyDTaT2esFnkzHjTrRd1tBuRKbJOEs0Yym0",
   authDomain: "caloriestracker-ab17f.firebaseapp.com",
   databaseURL: "https://caloriestracker-ab17f.firebaseio.com",
   projectId: "caloriestracker-ab17f",
   storageBucket: "caloriestracker-ab17f.appspot.com",
-  messagingSenderId: "146026107623"
+  messagingSenderId: "146026107623",
+  appId: "1:146026107623:web:cd5fd03ef5685f0f828842"
 };
 
 const rrfConfig = {
@@ -24,7 +27,7 @@ firebase.initializeApp(firebaseConfig);
 // Initialize other services on firebase instance
 const firestore = firebase.firestore(); // <- needed if using firestore
 // firebase.functions() // <- needed if using httpsCallable
-
+console.log(firestore)
 // Add reactReduxFirebase enhancer when making store creator
 const createStoreWithFirebase = compose(
   reactReduxFirebase(firebase, rrfConfig), // firebase instance as first argument

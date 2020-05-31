@@ -33,9 +33,6 @@ function HorizontalChart({ colors }) {
                 color: "#7b7da0",
                 fontWeight: "bold",
             },
-            xaxis: {
-                range: [0, 110],
-            },
             paper_bgcolor: "rgba(0,0,0,0)",
             plot_bgcolor: 'rgba(0,0,0,0)',
             width: 500,
@@ -43,6 +40,7 @@ function HorizontalChart({ colors }) {
             grid: { rows: 1, columns: 1 },
             margin: { l: 60, r: 20, t: 50, b: 70 },
             xaxis: {
+                range: [0, 110],
                 showgrid: true,
                 zeroline: true,
                 mirror: 'ticks',
@@ -90,8 +88,8 @@ function HorizontalChart({ colors }) {
                 };
             }
             layout.annotations.push(result);
+            return null
         })
-
         return graphDiv
     }
     return null
