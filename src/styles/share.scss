@@ -9,6 +9,11 @@
     flex-wrap: wrap;
     flex-direction: column;
   }
+.flex-reverse-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
   .center{
     display: flex;
     justify-content: center;
