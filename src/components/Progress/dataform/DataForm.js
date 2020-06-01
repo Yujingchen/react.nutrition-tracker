@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from './DataForm.module.scss';
 import classnames from "classnames"
 
 function DataForm({ children, title, modalIndex }) {
     if (title && modalIndex) {
+        useEffect(() => {
+            window.addEventListener("click", function (event) {
+                console.log("close")
+                const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
+                if (modalEle && event.target === modalEle) {
+                    modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
+                }
+            }
+            )
+        }, [])
         const modalUniqueClass = `modal-${modalIndex}`
+        const handleDropDownClick = (e) => {
+            e.preventDefault()
+            console.log("Wish you best of luck!")
+        }
+        const toggleControllButton = (e) => {
+            e.preventDefault();
+            const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
+            if (modalEle) {
+                modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
+            }
+        }
         const DropDown = () => {
             return (
                 <div className={classnames(styles["modal__dropdown"], modalUniqueClass)}>
@@ -25,24 +46,6 @@ function DataForm({ children, title, modalIndex }) {
             )
         }
 
-        const handleDropDownClick = (e) => {
-            e.preventDefault()
-            console.log("Wish you best of luck!")
-        }
-        const toggleControllButton = (e) => {
-            e.preventDefault();
-            const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
-            if (modalEle) {
-                modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
-            }
-        }
-        window.addEventListener("click", function (event) {
-            const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
-            if (modalEle && event.target === modalEle) {
-                modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
-            }
-        }
-        )
         return (
             <div className={classnames(styles["card"], "no-select boxShadow-dark darkblue")}>
                 <div className={classnames(styles["card_sub"])} >
