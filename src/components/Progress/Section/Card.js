@@ -6,9 +6,10 @@ function Card(
         iconName,
         sectionName,
         iconColor,
-        children
+        loading,
+        children,
     }) {
-    if (iconName | sectionName | data !== undefined) {
+    if (iconName | sectionName | data !== undefined && loading !== true) {
         return (
             <div className={classnames(styles["card"], "no-select boxShadow-dark")}>
                 <div className={classnames(styles["card__container"])} >
@@ -30,7 +31,12 @@ function Card(
             </div >
         )
     }
-    return null
+    return (
+        <div className={classnames(styles["card"], "no-select boxShadow-dark")}>
+            <div className={classnames(styles["card__container"])} >
+            </div>
+        </div >
+    )
 }
 
 export default Card
