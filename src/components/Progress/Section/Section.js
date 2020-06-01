@@ -5,7 +5,6 @@ import PieChart from "../../chart/PieChart/PieChart"
 export default function Section({ dietsData }) {
     if (dietsData) {
         const { complete, plan } = dietsData
-        console.log(dietsData)
         return (
             <div className={styles["section"]}>
                 <Card sectionName="Carbs" iconName="analytics-outline" data={complete.calories} iconColor="dark-blue" >

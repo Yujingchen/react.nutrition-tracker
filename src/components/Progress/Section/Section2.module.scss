@@ -1,6 +1,7 @@
 .form__content {
     display: grid;
     grid-template-columns: 300px auto;
+    min-height: 303px;
 }
 
 /* styling for sideList */

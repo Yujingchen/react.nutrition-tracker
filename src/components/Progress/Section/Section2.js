@@ -10,10 +10,8 @@ const SideListItem = (
     }) => {
     if (data !== undefined && Object.keys(data).length !== 0) {
         // const variety = data.
-        console.log("data", data)
 
         const { complete, plan } = data
-        console.log("this is today's complete", complete.calories)
         const carloriesComplete = complete.calories
         const caloriesPlan = plan.calories
         const difference = carloriesComplete - caloriesPlan

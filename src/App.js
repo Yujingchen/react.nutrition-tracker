@@ -20,9 +20,7 @@ class App extends Component {
         console.log("user signed in ")
       } else {
         console.log("no user signed in")
-        // No user is signed in.
       }
-      console.log("user id: ", firebase.auth().currentUser.uid)
     });
 
     return (

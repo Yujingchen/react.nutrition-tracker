@@ -6,7 +6,6 @@ function DataForm({ children, title, modalIndex }) {
     if (title && modalIndex) {
         useEffect(() => {
             window.addEventListener("click", function (event) {
-                console.log("close")
                 const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
                 if (modalEle && event.target === modalEle) {
                     modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)

@@ -1,8 +1,12 @@
 import React, { useRef, useEffect } from "react"
 import Plotly from "plotly.js-basic-dist"
 
-function HorizontalChart({ colors }) {
-    if (colors) {
+function HorizontalChart({ colors, complete, plan }) {
+
+    if (colors && complete && plan) {
+        const caloriesRatio = ((complete.calories / plan.calories) * 100).toFixed(0)
+        const proteinRatio = ((complete.protein / plan.protein) * 100).toFixed(0)
+        const fatRatio = ((complete.fat / plan.fat) * 100).toFixed(0)
         const divRef = useRef(null);
         const graphDiv = <div className="graphDiv" ref={divRef}></div>
 
@@ -10,12 +14,11 @@ function HorizontalChart({ colors }) {
             Plotly.newPlot(divRef.current, data, layout, layout)
         }, [divRef]);
 
-        const xdata = [70, 56, 84]
+        const xdata = [caloriesRatio, proteinRatio, fatRatio]
         const ylength = [0, 1, 2]
-        const textList = ["70%", "56%", "84%"]
+        const textList = [`${caloriesRatio}%`, `${proteinRatio}%`, `${fatRatio}%`]
         const data = [{
             type: 'bar',
-
             x: xdata,
             y: ['Calories', 'Fat', 'Protein'],
             orientation: 'h',
