@@ -30,8 +30,8 @@ Live demo is deployed to Heroku(https://heroku.com/)
 - [x] Connect to firebase
 - [x] plotly graph
 - [ ] Search, Setting, Ingrediant view
-- [ ] Fetch real data from firebase db
+- [x] Fetch real data from firebase db
 - [x] Calories track table
 - [x] Calories track graph
-- [ ] User authentication
+- [x] User authentication
 - [ ] Responsive with grid
