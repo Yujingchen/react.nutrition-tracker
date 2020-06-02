@@ -9,8 +9,6 @@ const SideListItem = (
         children,
     }) => {
     if (data !== undefined && Object.keys(data).length !== 0) {
-        // const variety = data.
-
         const { complete, plan } = data
         const carloriesComplete = complete.calories
         const caloriesPlan = plan.calories
@@ -33,55 +31,45 @@ const SideListItem = (
                         {formateVariety}%
                     </span>
                 </div>
-            </li >
+            </li>
         )
     }
     return (
         <li className={classnames(styles["sideList__listItem"], "noselect")}>
             <div className="listItem__content">
             </div>
-        </li >
+        </li>
     )
 }
 
 
 function Section2({ dietsData }) {
-    let sideLists
     if (dietsData && Object.keys(dietsData).length !== 0) {
-        sideLists = (
+        let sideLists = (
             Object.keys(dietsData).map((key, index) => {
                 return (
                     <SideListItem key={key} data={dietsData[key]}> {key}</SideListItem >
                 )
             })
         )
-    }
-    else {
-        sideLists =
-            [1, 2, 3, 4, 5, 6].map((i) => {
-                return (
-                    <SideListItem key={i}></SideListItem>
-                )
-            })
-    }
-
-    return (
-        <div className={classnames(styles["section2"])}>
-            <DataForm modalIndex="1" title="Calorious Consume Graph">
-                <div className={classnames(styles["form__content"])}>
-                    <div className={classnames(styles["sideList__container"])}>
-                        <ul className={classnames(styles["sideList"], "flex-reverse-column")}>
-                            {sideLists}
-                        </ul>
-                    </div>
-                    <div className="flex">
-                        <div className={classnames(styles["graph-container"])}>
-                            <LineChart></LineChart>
+        return (
+            <div className={classnames(styles["section2"])}>
+                <DataForm modalIndex="1" title="Calorious Consume Graph">
+                    <div className={classnames(styles["form__content"])}>
+                        <div className={classnames(styles["sideList__container"])}>
+                            <ul className={classnames(styles["sideList"], "flex-reverse-column")}>
+                                {sideLists}
+                            </ul>
+                        </div>
+                        <div className="flex">
+                            <div className={classnames(styles["graph-container"])}>
+                                <LineChart></LineChart>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </DataForm>
-        </div>
-    )
+                </DataForm>
+            </div>
+        )
+    }
 }
 export default Section2

@@ -22,14 +22,5 @@ export default function Section({ dietsData }) {
             </div >
         )
     }
-    return (
-        <div className={styles["section"]}>
-            <Card loading={true} >
-            </Card>
-            <Card loading={true} >
-            </Card>
-            <Card loading={true}>
-            </Card>
-        </div >
-    )
+    return null
 }

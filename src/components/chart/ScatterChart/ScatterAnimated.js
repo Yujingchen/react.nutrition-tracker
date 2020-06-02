@@ -10,7 +10,6 @@ function ScatterAnimated() {
         makeplot();
     })
 
-
     function makeplot() {
         Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/2014_apple_stock.csv", function (data) { processData(data) });
     };
