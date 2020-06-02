@@ -22,8 +22,11 @@ const Dashboard = (props) => {
 
     window.addEventListener("click", function (event) {
         const modalEle = document.querySelector(".interface")
+        const body = document.getElementsByTagName("body")[0]
+        console.log(body)
         if (modalEle && event.target === modalEle) {
             modalEle.classList.toggle("interface-open")
+            body.classList.toggle("modal-open")
         }
     })
 

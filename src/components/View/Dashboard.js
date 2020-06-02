@@ -20,9 +20,10 @@ const Dashboard = (props) => {
         const handelAddMeal = () => {
             console.log("adding meal")
             const modalEle = document.querySelector(".interface")
-            console.log(modalEle)
-            if (modalEle) {
+            const body = document.getElementsByTagName("body")[0]
+            if (modalEle && body) {
                 modalEle.classList.toggle("interface-open")
+                body.classList.toggle("modal-open")
             }
         }
         return (

@@ -44,3 +44,8 @@ a:any-link {
   text-decoration: none;
   cursor: pointer;
   }
+
+  body.modal-open {
+    overflow: hidden;
+    position: fixed;
+}
