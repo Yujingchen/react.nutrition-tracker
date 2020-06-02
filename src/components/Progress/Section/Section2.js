@@ -22,7 +22,7 @@ const SideListItem = (
         }
         return (
             <li className={classnames(styles["sideList__listItem"], "noselect")}>
-                <div className="listItem__content">
+                <div className={styles["listItem__content"]}>
                     <span className={classnames(styles["listItem__title"], "font-sm extra-bold")}>
                         {children}
                     </span>
@@ -46,35 +46,42 @@ const SideListItem = (
 
 
 function Section2({ dietsData }) {
-
-    if (dietsData) {
-        const sideLists = (
+    let sideLists
+    if (dietsData && Object.keys(dietsData).length !== 0) {
+        sideLists = (
             Object.keys(dietsData).map((key, index) => {
                 return (
                     <SideListItem key={key} data={dietsData[key]}> {key}</SideListItem >
                 )
             })
         )
+    }
+    else {
+        sideLists =
+            [1, 2, 3, 4, 5, 6].map((i) => {
+                return (
+                    <SideListItem key={i}></SideListItem>
+                )
+            })
+    }
 
-        return (
-            <div className={classnames(styles["section2"])}>
-                <DataForm modalIndex="1" title="Calorious Consume Graph">
-                    <div className={classnames(styles["form__content"])}>
-                        <div className={classnames(styles["sideList__container"])}>
-                            <ul className={classnames(styles["sideList"], "flex-reverse-column")}>
-                                {sideLists}
-                            </ul>
-                        </div>
-                        <div className="flex">
-                            <div className={classnames(styles["graph-container"])}>
-                                <LineChart></LineChart>
-                            </div>
+    return (
+        <div className={classnames(styles["section2"])}>
+            <DataForm modalIndex="1" title="Calorious Consume Graph">
+                <div className={classnames(styles["form__content"])}>
+                    <div className={classnames(styles["sideList__container"])}>
+                        <ul className={classnames(styles["sideList"], "flex-reverse-column")}>
+                            {sideLists}
+                        </ul>
+                    </div>
+                    <div className="flex">
+                        <div className={classnames(styles["graph-container"])}>
+                            <LineChart></LineChart>
                         </div>
                     </div>
-                </DataForm>
-            </div>
-        )
-    }
-    return null
+                </div>
+            </DataForm>
+        </div>
+    )
 }
 export default Section2

@@ -13,13 +13,13 @@ import "./store";
 class App extends Component {
   render() {
     firebase.auth().signInWithEmailAndPassword("test@test.com", "testtest").catch(function (error) {
-      console.log("login not success")
+      // console.log("login not success")
     });
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        console.log("user signed in ")
+        // console.log("user signed in ")
       } else {
-        console.log("no user signed in")
+        // console.log("no user signed in")
       }
     });
 

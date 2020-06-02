@@ -2,13 +2,35 @@ import React, { useRef, useEffect } from "react"
 import Plotly from "plotly.js-basic-dist"
 import "./PieChart.scss"
 
-function PieChart({ colors, target, consume }) {
+function PieChartAnimated({ colors, target, consume }) {
     const divRef = useRef(null);
     const graphDiv = <div className="graphDiv" ref={divRef}></div>
     if (colors && target && consume) {
         useEffect(() => {
-            Plotly.newPlot(divRef.current, data, layout, config)
+            Plotly.newPlot(divRef.current, data, layout, config).then(function () {
+                Plotly.animate(divRef.current, frames, {
+                    transition: {
+                        duration: 0
+                    },
+                    frame: {
+                        duration: 10,
+                        redraw: false
+                    }
+                });
+            });
         }, [divRef]);
+
+        const frames = []
+        const x = unpack(allRows, 'AAPL_x')
+        const y = unpack(allRows, 'AAPL_y')
+        const n = x.length - 1;
+
+        for (var i = 0; i <= n; i++) {
+            frames[i] = { data: [{ x: [], y: [] }] }
+            frames[i].data[0].x = x.slice(0, i + 1);
+            frames[i].data[0].y = y.slice(0, i + 1);
+        }
+
         var data = [{
             values: [consume, target - consume],
             domain: { column: 0 },
@@ -50,4 +72,4 @@ function PieChart({ colors, target, consume }) {
     return null
 }
 
-export default PieChart
+export default PieChartAnimated

@@ -13,9 +13,10 @@ const Dashboard = (props) => {
     }, [])
     const today = new Date().toISOString().split('T')[0];
     const lastSixDays = props.recentDiets.diets
-    const todaysData = props.recentDiets.diets[today]
+    const todaysData = props.recentDiets.diets["2020-06-01"]
     return (
         <div className={styles["dashboard"]}>
+            <button onClick={()=>console.log("adding meal")}>Add meal</button>
             <Section dietsData={todaysData}></Section>
             <Section2 dietsData={lastSixDays}></Section2>
             <div className={styles["dashboard-grid"]}>
@@ -33,7 +34,5 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
     fetchDiets: () => dispatch(fetchDiets())
 })
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)

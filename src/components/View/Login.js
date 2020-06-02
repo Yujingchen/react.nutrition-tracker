@@ -6,13 +6,7 @@ import { fetchDiets } from "../../store/action/action"
 const Dashboard = (props) => {
     useEffect(() => {
         props.fetchDiets()
-        // firebase.database().ref("diets").once("value").then((snapshot) => {
-        //     const diets = (snapshot.val())
-        //     console.log(diets)
-        //     setData(diets)
-        // })
     }, [])
-    console.log(props.diets.diets)
     const lastSixDays = props.recentDiets.diets
     const now = props.recentDiets.diets[0]
     return (
