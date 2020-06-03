@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/View/Dashboard";
 import NotFound from "./components/View/NotFound"
 import firebase from "firebase/app"
+import Loading from "./components/View/Loading"
 import "./styles/main.scss"
 import './styles/share.scss';
 import "./store";
@@ -29,6 +30,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route exact path="/404" component={NotFound} />
+            <Route exact path="/loading" component={Loading} />
           </Switch>
         </MainLayout>
       </Router>

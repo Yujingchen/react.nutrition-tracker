@@ -8,12 +8,21 @@ function ScatterAnimated() {
     const graphDiv = <div className="graphDiv" ref={divRef}></div>
     useEffect(() => {
         makeplot();
-    })
+        // click()
+        // console.log("secondtime", document.querySelector(".updatemenu-item-text"))
 
+    })
+    // console.log("firsttime", document.querySelector(".updatemenu-item-text"))
+    // async function click() {
+    //     const btnEle = document.querySelector(".updatemenu-item-text")
+    //     console.log(btnEle)
+    //     if (btnEle) {
+    //         await btnEle.click()
+    //     }
+    // }
     function makeplot() {
         Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/2014_apple_stock.csv", function (data) { processData(data) });
     };
-
     function processData(allRows) {
         function unpack(rows, key) {
             return rows.map(function (row) { return row[key]; });
@@ -71,18 +80,34 @@ function ScatterAnimated() {
             height: 300,
             grid: { rows: 1, columns: 1 },
             margin: { l: 25, r: 0, t: 25, b: 25 },
-            showLegend: true
+            showLegend: true,
+            updatemenus: [{
+                x: 0.1,
+                y: 0,
+                yanchor: "top",
+                xanchor: "right",
+                showactive: false,
+                direction: "left",
+                type: "buttons",
+                pad: { "t": 20, "l": 0, "b": 5 },
+                buttons: [{
+                    method: "animate",
+                    args: [null, {
+                        fromcurrent: true,
+                        transition: {
+                            duration: 0,
+                        },
+                        frame: {
+                            duration: 10,
+                            redraw: false
+                        }
+                    }],
+                    label: "Play"
+                }]
+            }]
         }
         Plotly.newPlot(divRef.current, traces, layout).then(function () {
-            Plotly.animate(divRef.current, frames, {
-                transition: {
-                    duration: 0
-                },
-                frame: {
-                    duration: 10,
-                    redraw: false
-                }
-            });
+            Plotly.addFrames(divRef.current, frames);
         });
     };
 

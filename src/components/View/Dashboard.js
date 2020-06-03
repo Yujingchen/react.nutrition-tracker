@@ -4,32 +4,22 @@ import styles from "./Dashboard.module.scss";
 import Section2 from "../Progress/Section/Section2";
 import Section3 from "../Progress/Section/Section3";
 import Section4 from "../Progress/Section/Section4";
-import InputForm from "../common/form/InputForm"
 import { connect } from 'react-redux'
 import { fetchDiets } from "../../store/action/action"
-
+import Loading from "./Loading"
 const Dashboard = (props) => {
     useEffect(() => {
         props.fetchDiets()
     }, [])
 
     if (props.recentDiets && Object.keys(props.recentDiets).length !== 0) {
-        const today = new Date().toISOString().split('T')[0];
+        // const today = new Date().toISOString().split('T')[0];
         const lastSixDays = props.recentDiets.diets
         const todaysData = props.recentDiets.diets["2020-06-01"]
-        const handelAddMeal = () => {
-            console.log("adding meal")
-            const modalEle = document.querySelector(".interface")
-            const body = document.getElementsByTagName("body")[0]
-            if (modalEle && body) {
-                modalEle.classList.toggle("interface-open")
-                body.classList.toggle("modal-open")
-            }
-        }
         return (
             <div className={styles["dashboard"]}>
-                <button onClick={handelAddMeal}>Add meal</button>
-                <InputForm></InputForm>
+                {/* <button onClick={handelAddMeal}>Add meal</button>
+                <InputForm></InputForm> */}
                 <Section dietsData={todaysData}></Section>
                 <Section2 dietsData={lastSixDays}></Section2>
                 <div className={styles["dashboard-grid"]}>
@@ -39,7 +29,7 @@ const Dashboard = (props) => {
             </div>
         );
     }
-    return null
+    return <Loading />
 }
 const mapStateToProps = (state) => ({
     recentDiets: state.diets

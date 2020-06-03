@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "./InputForm.scss";
-import classnames from "classnames"
 
 const Dashboard = (props) => {
     const [ingredient, setIngredient] = useState("")
@@ -8,7 +7,6 @@ const Dashboard = (props) => {
 
     const handelFormSubmit = (event) => {
         event.preventDefault()
-        console.log("form submitting")
     }
 
     const handleIngredientChange = (event) => {
@@ -23,7 +21,6 @@ const Dashboard = (props) => {
     window.addEventListener("click", function (event) {
         const modalEle = document.querySelector(".interface")
         const body = document.getElementsByTagName("body")[0]
-        console.log(body)
         if (modalEle && event.target === modalEle) {
             modalEle.classList.toggle("interface-open")
             body.classList.toggle("modal-open")
