@@ -1,6 +1,9 @@
 # [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://caloriestracker-ab17f.firebaseapp.com/)
 ![Daily Nutrition Tracker](public/img/screenshots/Screenshot.png?raw=true 'Daily Nutrition Tracker')
 
+## Demo
+![Daily Nutrition Tracker](public/img/gif/demo.gif?raw=true 'Daily Nutrition Tracker')
+
 ## Warnning
 Deployment on firebase is not very stable, you can try to reload or use different browser! I am finding a new cloud to deploy this project.:)
 
