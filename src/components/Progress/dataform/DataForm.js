@@ -1,37 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from './DataForm.module.scss';
 import classnames from "classnames"
 
 function DataForm({ children, title, modalIndex }) {
     if (title && modalIndex) {
+        useEffect(() => {
+            window.addEventListener("click", function (event) {
+                const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
+                if (modalEle && event.target === modalEle) {
+                    modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
+                }
+            }
+            )
+        }, [])
         const modalUniqueClass = `modal-${modalIndex}`
+        const handleDropDownClick = (e) => {
+            e.preventDefault()
+            console.log("Wish you best of luck!")
+        }
+        const toggleControllButton = (e) => {
+            e.preventDefault();
+            const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
+            if (modalEle) {
+                modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
+            }
+        }
         const DropDown = () => {
             return (
                 <div className={classnames(styles["modal__dropdown"], modalUniqueClass)}>
                     <div className={classnames(styles["dropdown"])}>
                         <ul className={classnames(styles["dropdown__list"])}>
-                            <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Show open editor</a></li>
-                            <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Close All</a></li>
-                            <li className={classnames(styles["dropdown__listItem"])}><a className={classnames(styles["dropdown__link"])} href="google.com">Close saved</a></li>
+                            <a className={classnames(styles["dropdown__link"])} href="google.com" onClick={handleDropDownClick}>
+                                <li className={classnames(styles["dropdown__listItem"])}>Show open editor</li>
+                            </a>
+                            <a className={classnames(styles["dropdown__link"])} href="google.com" onClick={handleDropDownClick}>
+                                <li className={classnames(styles["dropdown__listItem"])}>Close All</li>
+                            </a>
+                            <a className={classnames(styles["dropdown__link"])} href="google.com" onClick={handleDropDownClick}>
+                                <li className={classnames(styles["dropdown__listItem"])}>Close saved</li>
+                            </a>
                         </ul>
                     </div>
                 </div >
             )
         }
-        const toggleControllButton = (e) => {
-            const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
-            e.preventDefault();
-            if (modalEle) {
-                modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
-            }
-        }
-        window.addEventListener("click", function (event) {
-            const modalEle = document.querySelector(`.${styles["modal__dropdown"]}.${modalUniqueClass}`)
-            if (modalEle && event.target === modalEle) {
-                modalEle.classList.toggle(`${styles["modal__dropdown-open"]}`)
-            }
-        }
-        )
+
         return (
             <div className={classnames(styles["card"], "no-select boxShadow-dark darkblue")}>
                 <div className={classnames(styles["card_sub"])} >
@@ -49,7 +62,13 @@ function DataForm({ children, title, modalIndex }) {
             </div >
         )
     }
-    return null
+    return (
+        <div className={classnames(styles["card"], "no-select boxShadow-dark darkblue")}>
+            <div className={classnames(styles["card_sub"])} >
+                {children}
+            </div>
+        </div >
+    )
 }
 
 export default DataForm

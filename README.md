@@ -1,6 +1,8 @@
 # [Daily Nutrition Tracker - Nutrition tracker built with React and Plotly.js](https://nutrition-app-1.herokuapp.com/)
-![Daily Nutrition Tracker](public/img/screenshots/Screenshot2.png?raw=true 'Daily Nutrition Tracker')
+![Daily Nutrition Tracker](public/img/screenshots/Screenshot.png?raw=true 'Daily Nutrition Tracker')
 
+## Warnning
+Deployment on Heruko is not very stable, if the web app doesn't load or show an error, please try again by refreshing the page.
 
 ## Preview
 

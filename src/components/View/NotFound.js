@@ -4,9 +4,9 @@ export default function NotFound() {
   return (
     <div>
       <h1 className="dishplay-4">
-        <span className="text-danger">404 Page Not Found</span>
+        <span className="text-danger">Unauthenticated User or page missing</span>
       </h1>
-      <p className="lead">Sorry, that page does not exist</p>
+      <p className="lead">Please try to sign in to the app</p>
     </div>
   );
 }

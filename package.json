@@ -12,7 +12,7 @@
     "@popperjs/core": "^2.1.1",
     "classnames": "^2.2.6",
     "firebase": "^5.11.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "plotly.js-basic-dist": "^1.54.1",
     "plotly.js-finance-dist": "^1.54.1",
     "rc-progress": "^2.5.2",

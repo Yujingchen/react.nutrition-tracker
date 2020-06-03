@@ -5,7 +5,7 @@ import "./PieChart.scss"
 function PieChart({ colors, target, consume }) {
     const divRef = useRef(null);
     const graphDiv = <div className="graphDiv" ref={divRef}></div>
-    if (colors, target, consume) {
+    if (colors && target && consume) {
         useEffect(() => {
             Plotly.newPlot(divRef.current, data, layout, config)
         }, [divRef]);
@@ -24,22 +24,22 @@ function PieChart({ colors, target, consume }) {
             annotations: [
                 {
                     font: {
-                        size: 13,
+                        size: 12,
                         color: "#EAEDED",
-                        fontWeight: "bold"
                     },
                     showarrow: false,
                     text: `${((consume / target) * 100).toFixed(0)} %`,
                     x: 0.5,
-                    y: 0.5
+                    y: 0.5,
+                    cursor: "pointer",
                 },
             ],
             paper_bgcolor: "rgba(0,0,0,0)",
-            width: 100,
+            width: 125,
             height: 150,
             showlegend: false,
             grid: { rows: 1, columns: 1 },
-            margin: { l: 0, r: 0, t: 0, b: 0 },
+            margin: { l: 10, r: 10, t: 10, b: 0 },
             autosize: true,
         };
         var config = {
