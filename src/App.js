@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/View/Dashboard";
 import NotFound from "./components/View/NotFound"
 import firebase from "firebase/app"
+import Loading from "./components/View/Loading"
 import "./styles/main.scss"
 import './styles/share.scss';
 import "./store";
@@ -13,13 +14,13 @@ import "./store";
 class App extends Component {
   render() {
     firebase.auth().signInWithEmailAndPassword("test@test.com", "testtest").catch(function (error) {
-      console.log("login not success")
+      // console.log("login not success")
     });
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        console.log("user signed in ")
+        // console.log("user signed in ")
       } else {
-        console.log("no user signed in")
+        // console.log("no user signed in")
       }
     });
 
@@ -29,6 +30,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route exact path="/404" component={NotFound} />
+            <Route exact path="/loading" component={Loading} />
           </Switch>
         </MainLayout>
       </Router>

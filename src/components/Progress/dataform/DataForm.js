@@ -62,7 +62,13 @@ function DataForm({ children, title, modalIndex }) {
             </div >
         )
     }
-    return null
+    return (
+        <div className={classnames(styles["card"], "no-select boxShadow-dark darkblue")}>
+            <div className={classnames(styles["card_sub"])} >
+                {children}
+            </div>
+        </div >
+    )
 }
 
 export default DataForm

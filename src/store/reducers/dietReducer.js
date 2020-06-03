@@ -1,8 +1,5 @@
 const initialState = {
-    diets: {
-        goal: {},
-        total: {}
-    }
+
 };
 
 export default function (state = initialState, action) {

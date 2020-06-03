@@ -9,8 +9,6 @@ const SideListItem = (
         children,
     }) => {
     if (data !== undefined && Object.keys(data).length !== 0) {
-        // const variety = data.
-
         const { complete, plan } = data
         const carloriesComplete = complete.calories
         const caloriesPlan = plan.calories
@@ -22,7 +20,7 @@ const SideListItem = (
         }
         return (
             <li className={classnames(styles["sideList__listItem"], "noselect")}>
-                <div className="listItem__content">
+                <div className={styles["listItem__content"]}>
                     <span className={classnames(styles["listItem__title"], "font-sm extra-bold")}>
                         {children}
                     </span>
@@ -33,29 +31,27 @@ const SideListItem = (
                         {formateVariety}%
                     </span>
                 </div>
-            </li >
+            </li>
         )
     }
     return (
         <li className={classnames(styles["sideList__listItem"], "noselect")}>
             <div className="listItem__content">
             </div>
-        </li >
+        </li>
     )
 }
 
 
 function Section2({ dietsData }) {
-
-    if (dietsData) {
-        const sideLists = (
+    if (dietsData && Object.keys(dietsData).length !== 0) {
+        let sideLists = (
             Object.keys(dietsData).map((key, index) => {
                 return (
                     <SideListItem key={key} data={dietsData[key]}> {key}</SideListItem >
                 )
             })
         )
-
         return (
             <div className={classnames(styles["section2"])}>
                 <DataForm modalIndex="1" title="Calorious Consume Graph">
@@ -75,6 +71,5 @@ function Section2({ dietsData }) {
             </div>
         )
     }
-    return null
 }
 export default Section2
