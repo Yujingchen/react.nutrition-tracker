@@ -22,7 +22,7 @@ You can check out [live preview](https://caloriestracker-ab17f.firebaseapp.com/)
 ## Note
 
 DNT is built on top of [Create React App](https://github.com/facebook/create-react-app), which means all features that create-react-app supports are available.
-Live demo is deployed to Heroku(https://heroku.com/)
+Live demo is deployed to Firebase Hosting
 
 ## TODO List
 
