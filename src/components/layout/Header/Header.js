@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from './Header.module.scss';
 import classnames from "classnames"
 import { ButtonPrimary } from "../../common/button/Button"
-
+import Time from "../../common/time/Time"
 const NavItem = (
   {
     iconName,
@@ -14,7 +14,7 @@ const NavItem = (
   if (iconName !== undefined) {
     return (
       <li className="navbar__listItem">
-        <a href={to} tabIndex="0" className={classnames(styles["navbar__link"], styles[disableClasses])}>
+        <a href={to} tabIndex="0" className={classnames(styles["navbar__link"], styles[disableClasses])} onClick={handleSideBarClick}>
           <i className={classnames(iconName, styles["navbar__listItem__icon"])} />
           <span className={classnames(styles['navbar__listItem__content'], "font-sm noselect")}>
             {children}
@@ -32,6 +32,10 @@ const NavItem = (
   )
 }
 
+const handleSideBarClick = (e) => {
+  e.preventDefault()
+  console.log("Wish you a good day!")
+}
 function Header() {
   const [open, setOpen] = useState(false);
   let initialOpenState = useRef(false);
@@ -53,17 +57,22 @@ function Header() {
 
 
   return (
-    <nav className={classnames(styles['navbar'], "bg-dark")}>
+    <nav className={classnames(styles['navbar'], "bg-dark boxShadow-dark")}>
       <div className={classnames(styles['navbar__main'], "flex")}>
-        <div className="navbar__logo">
+        <div className={classnames(styles["navbar__top"], "center")}>
+          <a className={classnames(styles["navbar__logo"])} href="/">
+            <span className={classnames(styles["navbar__logo__content"])}>DNT</span>
+          </a>
+        </div>
+        <div className="navbar__toggle">
           <ButtonPrimary onClick={handleSidebarControl} icon="fas fa-bars">
           </ButtonPrimary>
           <span className="font-md white">Accounts</span>
         </div>
-        <div className="navbar__dashbord">
+        <div className={classnames(styles["navbar__dashbord"])}>
           <ul className={classnames(styles['navbar__navList'], "flex")}>
             <NavItem iconName='far fa-clock' to='/' disabled={true}>
-              13:42 EEST
+              {<Time />} EEST
               </NavItem>
             <NavItem iconName='far fa-bell' to='/' />
             <NavItem iconName='far fa-user-circle' to='/' />

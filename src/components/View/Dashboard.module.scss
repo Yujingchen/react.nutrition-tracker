@@ -1,0 +1,9 @@
+.dashboard{
+    overflow: hidden;
+    padding: 45px 50px;
+}
+.dashboard-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+}

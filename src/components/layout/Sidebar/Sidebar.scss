@@ -6,14 +6,13 @@
 
 .sidebar{
     position: fixed;
-    top: 0;
+    top: 76px;
     left: -181px;
     z-index: 1;
     display: grid;
-    grid-template-rows: 74px auto 50px;
+    grid-template-rows: 76px auto 50px;
     width: 181px;
     height: 100%;
-    border-right: solid #000000 1px;
     box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12); 
     transition: left .2s ease-in;
     box-sizing: border-box;
@@ -24,11 +23,10 @@
       }
 }
 .sidebar-open{
-    top: 0;
     left: 0px;
     transition: left .2s ease-in;
     +.content{
-        margin: 0 0 0 181px;
+        margin: 85px 0 0 181px;
         transition: margin .2s ease-in;
     }
 }
@@ -76,29 +74,6 @@
 }
 .sidebar__listItem__icon{
   /* Place holder */
-}
-.sidebar__top{
-    background-color: #2f2e4b;
-    box-sizing: border-box;
-    padding: 0;
-    width: 100%;
-    padding: 24px 16px 14px 16px;
-}
-
-.sidebar__logo{
-    color:white;
-    font-size: 30px;
-    line-height: inherit;
-    width:inherit;
-    font-weight: bold;
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    background-color: #2f2e4b;
-}
-.sidebar__logo:hover {  
-    text-decoration: none;
-    color: white;
 }
 
 .sidebar__bottom{

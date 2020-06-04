@@ -26,6 +26,7 @@ const SideBarItem = (
         )
     }
 }
+
 const linkOnClick = (event, el) => {
     event.preventDefault();
     const activeEl = document.querySelector('.sidebar__link-active')
@@ -49,12 +50,7 @@ function Sidebar() {
         }
     })
     return (
-        <div className="sidebar">
-            <div className="sidebar__top center">
-                <a className="sidebar__logo" href="/">
-                    <span className="sidebar__logo__content">DNT</span>
-                </a>
-            </div>
+        <div className="sidebar boxShadow-dark">
             <div className="sidebar__main ">
                 <ul className="sidebar__navList flex-column">
                     <SideBarItem iconName="clipboard-outline" to='/' actived>Dashboard</SideBarItem>

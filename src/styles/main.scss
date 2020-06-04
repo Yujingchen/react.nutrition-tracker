@@ -1,71 +1,3 @@
-// #prepend {
-//     font-size: 16px;
-//     min-width: 106px;
-//     justify-content: center;
-//   }
-  
-  // #redButton {
-  //   display: flex;
-  //   position: relative;
-  //   line-height: 30px;
-  //   top: -50px;
-  //   float: right;
-  // }
-  
-  // .styles_modal__gNwvD {
-  //   max-width: 800px;
-  //   position: relative;
-  //   padding: 2.2rem;
-  //   background: #ffffff;
-  //   background-clip: padding-box;
-  //   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
-  //   margin: auto;
-  // }
-  
-  /* .form-control-lg {
-    height: calc(2.875rem + 2px);
-    padding: 0.5rem 7rem;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    border-radius: 0.3rem;
-  } */
-  
-  // #modelInput {
-  //   padding-left: 17px;
-  //   padding-top: 0;
-  //   padding-bottom: 0em;
-  //   width: 400px;
-  //   font-size: 17px;
-  // }
-  
-  // .invalid-feedback {
-  //   display: none;
-  //   margin-top: 0.25rem;
-  //   font-size: 80%;
-  //   color: #dc3545;
-  // }
-  // .form-control {
-  //   font-size: 1.25rem;
-  // }
-  
-  // .row-header {
-  //   margin-top: 0;
-  //   margin-bottom: -2rem;
-  // }
-  // .input-group > .custom-file,
-  // .input-group > .custom-select,
-  // .input-group > .form-control,
-  // .input-group > .form-control-plaintext {
-  //   position: relative;
-  //   flex: 1 1 auto;
-  //   margin-bottom: 0;
-  // }
-
-
-
-/* use postions */
-
-
 .noselect{
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -81,6 +13,7 @@ html{
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none; 
+  overflow-x: hidden; //horizontal
 }
 
 body{
@@ -101,8 +34,18 @@ table {
   border-collapse: separate;
   -webkit-border-horizontal-spacing: 0;
   -webkit-border-vertical-spacing: 0;
+}
+
+td,th{
+    padding:0;
+}
+
+a:any-link {
+  text-decoration: none;
+  cursor: pointer;
   }
 
-  td,th{
-    padding:0;
-  }
+  body.modal-open {
+    overflow: hidden;
+    position: fixed;
+}

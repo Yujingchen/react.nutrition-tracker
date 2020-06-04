@@ -1,2 +1,23 @@
 .graphDiv{
 }
+.slice{
+  left: 0; // This one is important!
+}
+.surface{
+    cursor:pointer;
+    // transition: scale;
+    transition-duration: 0.8s;
+    transform-origin:center center;
+}
+.surface:hover {
+    -ms-transform: scale(1.15); /* IE 9 */
+    -webkit-transform: scale(1.15); /* Safari 3-8 */
+    transform: scaleX(1,15); 
+  }
+  .annotation-text{
+    font-weight: bold;
+    cursor: pointer;
+  }
+// .main-svg{
+//       width:120px
+//   }
