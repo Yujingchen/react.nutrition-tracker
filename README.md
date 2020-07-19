@@ -5,7 +5,7 @@
 ![Daily Nutrition Tracker](public/img/gif/demo.gif?raw=true 'Daily Nutrition Tracker')
 
 ## Warnning
-Deployment on firebase is not very stable, you can try to reload or use different browser! I am finding a new cloud to deploy this project.:)
+Web app fail to load sometimes, you can try to reload or use different browser(Goolge chrome or Safairi)! I have switched to firebase web hosting to improve visibility.
 
 ## Preview
 
